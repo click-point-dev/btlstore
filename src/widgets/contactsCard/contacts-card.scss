@@ -1,0 +1,153 @@
+.contacts-card {
+	@include adaptiveValue("padding-block", 31, 11);
+	@include adaptiveValue("padding-inline", 28, 10);
+	border: 2px solid $accent1;
+	border-radius: $radius;
+	background-color: $white;
+	transition:
+		background-color $anim,
+		border-color $anim;
+
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover {
+			background-color: $accent1;
+			border-color: $white;
+
+			.contacts-card__icon {
+				span {
+					color: $white;
+				}
+			}
+
+			.contacts-card__title {
+				color: $white;
+			}
+
+			.contacts-card__decor,
+			.contacts-card__decor:before {
+				border-color: $white;
+			}
+
+			.contacts-card__address {
+				a {
+					color: $white;
+				}
+			}
+
+			.link-header {
+				color: $white;
+			}
+		}
+	}
+
+	// .contacts-card__body
+
+	&__body {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	// .contacts-card__icon
+
+	&__icon {
+		position: relative;
+		@include adaptiveValue("width", 100, 34);
+		aspect-ratio: 1;
+		border: 4px solid $accent1-l;
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiveValue("margin-bottom", 54, 19);
+		span {
+			@include adaptiveValue("font-size", 35, 20);
+			transition: color $anim;
+		}
+		a {
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	// .contacts-card__decor
+
+	&__decor {
+		position: relative;
+		@include adaptiveValue("width", 54, 20);
+		aspect-ratio: 1;
+		border-left: 2px solid $mainColor;
+		border-bottom: 2px solid $mainColor;
+		transition: border-color $anim;
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: 15px;
+			@include adaptiveValue("width", 10, 7);
+			aspect-ratio: 1;
+			right: 0;
+			bottom: -1px;
+			transform-origin: right bottom;
+			rotate: -45deg;
+			border-right: 2px solid $mainColor;
+			border-bottom: 2px solid $mainColor;
+			transition: border-color $anim;
+		}
+	}
+
+	// .contacts-card__title
+
+	&__title {
+		display: flex;
+		@include adaptiveValue("column-gap", 29, 10);
+		align-items: flex-end;
+		transition: color $anim;
+	}
+
+	// .contacts-card__address
+
+	&__address {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("row-gap", 28, 8);
+		justify-content: center;
+
+		a {
+			@include adaptiveValue("font-size", 32, 18);
+			transition: color $anim;
+
+			&:active {
+				color: $accent2;
+				transition: unset;
+			}
+		}
+	}
+
+	// .contacts-card__navigate
+
+	&__navigate {
+		align-self: center;
+		margin-bottom: 55px;
+	}
+
+	// .contacts-card__list
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	// .contacts-card__item
+
+	&__item {
+		line-height: 0;
+	}
+
+	.logo {
+		align-self: center;
+	}
+}

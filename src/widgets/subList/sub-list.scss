@@ -1,0 +1,25 @@
+.sub-list {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 14px;
+	// padding-inline: 20px;
+	// padding-top: 17px;
+	// padding-bottom: 17px;
+	padding: 17px 7px;
+	min-width: 233px;
+	background-color: $bg;
+	backdrop-filter: blur(17px);
+	border-radius: $radius;
+	overflow: hidden;
+
+	// .sub-list__item
+
+	&__item {
+		height: 100%;
+
+		@include adaptiveValue("font-size", 22, 17);
+	}
+}
+.sub-link {
+	height: 100%;
+}

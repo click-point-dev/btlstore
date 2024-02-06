@@ -1,0 +1,7 @@
+textarea {
+	resize: none;
+	width: 100%;
+	&.auto {
+		overflow-y: hidden;
+	}
+}

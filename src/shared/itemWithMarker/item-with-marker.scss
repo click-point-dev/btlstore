@@ -1,0 +1,15 @@
+.item-with-marker {
+	display: inline-flex;
+	justify-content: start;
+	align-items: center;
+	column-gap: rem(20);
+	// .item-with-marker__marker
+
+	&__marker {
+		display: inline-block;
+		aspect-ratio: 1;
+		// background: url('@img/icons/');
+	}
+
+	// .item-with-marker__content
+}

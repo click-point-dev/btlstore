@@ -1,0 +1,4 @@
+.text-s {
+	@include adaptiveValue("font-size", 26, 24);
+	line-height: 130%;
+}

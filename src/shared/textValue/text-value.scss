@@ -1,0 +1,4 @@
+.text-value {
+	@include adaptiveValue("font-size", 53, 35);
+	font-weight: 700;
+}

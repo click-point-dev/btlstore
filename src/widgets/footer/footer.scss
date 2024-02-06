@@ -1,0 +1,53 @@
+.footer {
+	// .footer__container
+	background-color: $white;
+	border-radius: 87px 0 87px 87px;
+	@include adaptiveValue("padding-top", 187, 50);
+	@include adaptiveValue("padding-bottom", 44, 48);
+
+	&__container {
+	}
+
+	// .footer__body
+
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include adaptiveValue("column-gap", 28, 12);
+		@include adaptiveValue("row-gap", 42, 13);
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+.contacts-card {
+	// .contacts-card__body
+
+	&__body {
+	}
+
+	// .contacts-card__icon
+
+	&__icon {
+	}
+
+	// .contacts-card__title
+
+	&__title {
+	}
+
+	// .contacts-card__decor
+
+	&__decor {
+	}
+
+	// .contacts-card__address
+
+	&__address {
+	}
+}
+
+.contacts-card--w2 {
+	grid-column: span 2;
+}

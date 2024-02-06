@@ -1,0 +1,48 @@
+.link-header {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	@include adaptiveValue("font-size", 22, 17);
+	overflow: hidden;
+	transition: color $anim;
+	line-height: 1;
+
+	@media (any-hover: hover) and (pointer: fine) {
+		&::after {
+			content: "";
+			position: absolute;
+			width: calc(100% - 16px);
+			height: 2px;
+			left: -110%;
+			translate: -50% 0;
+			bottom: -1px;
+			background-color: currentColor;
+			transition:
+				background-color $anim,
+				left $anim;
+		}
+
+		&:hover {
+			color: $accent1;
+
+			&::after {
+				left: 50%;
+			}
+		}
+
+		&:active {
+			&::after {
+				transition: none;
+			}
+		}
+	}
+
+	&:active {
+		color: $accent2;
+		transition: none;
+	}
+}
+
+.header-menu__item:has(.sub-list) .link-header:active {
+	color: $accent1;
+}

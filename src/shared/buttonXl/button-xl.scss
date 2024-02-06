@@ -1,0 +1,25 @@
+.button-xl {
+	@include adaptiveValue("padding-block", 22, 17);
+	@include adaptiveValue("padding-inline", 32, 23);
+	font-size: unset;
+	// color: $white;
+	// background-color: $accent1;
+	// border-radius: $radius;
+	// border: 1px solid $accent1;
+	// transition:
+	// 	background-color 0.2s ease,
+	// 	color 0.3s ease,
+	// 	border 0.2s ease;
+
+	// @media (any-hover: hover) and (pointer: fine) {
+	// 	&:hover {
+	// 		color: $accent1;
+	// 		background-color: $white;
+	// 		border: 1px solid $white;
+	// 	}
+	// }
+
+	// &:active {
+	// 	filter: brightness(0.95);
+	// }
+}

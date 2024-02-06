@@ -1,0 +1,141 @@
+.header {
+	// .header__menu
+
+	&__menu {
+	}
+}
+.header-menu {
+	display: flex;
+	align-items: center;
+	flex: 1 1 auto;
+
+	@media (max-width: $burger) {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 3vw);
+		@media (max-width: $mobile) {
+			top: calc(100% + 4vw);
+		}
+		@media (max-width: $mobileSmall) {
+			top: calc(100% + 6vw);
+		}
+		display: inline-flex;
+		flex-direction: column;
+		align-items: start;
+		background-color: $bg;
+		backdrop-filter: blur(17px);
+		overflow: hidden;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-inline: 20px;
+		scale: 1 0;
+		pointer-events: none;
+
+		.open & {
+			pointer-events: all;
+		}
+	}
+
+	// .header-menu__list
+
+	&__list {
+		display: flex;
+		margin-inline: auto;
+		@include adaptiveValue("gap", 10, 0, 1440, 1100, 1);
+
+		@media (max-width: $burger) {
+			flex-direction: column;
+			align-items: start;
+			margin-inline: unset;
+			gap: 0;
+
+			margin-bottom: 10px;
+		}
+	}
+
+	// .header-menu__item
+
+	&__item {
+		display: flex;
+		align-items: center;
+		position: relative;
+
+		&:has(> .sub-list) {
+			position: relative;
+			margin-right: 10px;
+
+			.link-header:after {
+				display: none;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				z-index: 100;
+				height: 5px;
+				aspect-ratio: 0.2;
+				left: calc(100% - 7px);
+				top: calc(50% - 2px);
+				border: 5px solid transparent;
+				border-top: 5px solid $mainColor;
+				opacity: 1;
+				transition: all $anim;
+			}
+
+			.sub-list {
+				position: absolute;
+				left: 0;
+				top: 100%;
+				opacity: 0;
+				transform: scaleY(0);
+
+				padding-top: 0;
+				padding-bottom: 0;
+				pointer-events: none;
+
+				&__item {
+					opacity: 0;
+					transform: translateX(-120%);
+				}
+			}
+
+			@media (any-hover: hover) and (pointer: fine) {
+				&:hover {
+					&:after {
+						translate: 0 2px;
+						border-top: 5px solid $accent1;
+					}
+				}
+			}
+		}
+	}
+
+	.sub-list-open {
+		.sub-list {
+			pointer-events: all;
+		}
+
+		&::after {
+			translate: 0 2px;
+			border-top: 5px solid $accent1;
+		}
+	}
+
+	// .header-menu__link
+
+	&__link {
+		@media (max-width: $burger) {
+			padding-left: 0 !important;
+		}
+	}
+
+	&__cta {
+		@media (max-width: $burger) {
+			width: 100%;
+
+			.button {
+				width: 100%;
+			}
+		}
+	}
+}

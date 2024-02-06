@@ -1,0 +1,13 @@
+.h1,
+h1 {
+	@include adaptiveValue("font-size", 114, 50);
+	font-weight: 800;
+	line-height: 148%;
+	text-transform: uppercase;
+
+	span {
+		font-size: 1.1em;
+		color: $accent1;
+		margin-right: 10px;
+	}
+}
