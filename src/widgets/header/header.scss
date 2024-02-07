@@ -1,8 +1,9 @@
 .header {
 	// .header__container
-	background-color: $bg;
+	background-color: $white;
 	backdrop-filter: blur(17px);
 	@include adaptiveValue("padding-block", 24, 16);
+	border-top: 8px solid #d9d9d9;
 
 	&__container {
 	}
