@@ -8,3 +8,5 @@ export * from './sliderParams';
 export * from './sliderCases';
 export * from './footer';
 export * from './contactsCard';
+export * from './person';
+export * from './tooltip';

@@ -56,6 +56,7 @@
 		@include adaptiveValue("width", 100, 34);
 		aspect-ratio: 1;
 		border: 4px solid $accent1-l;
+		@include adaptiveValue("border-width", 4, 2);
 		border-radius: 100%;
 		display: flex;
 		justify-content: center;

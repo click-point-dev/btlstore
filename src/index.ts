@@ -5,6 +5,7 @@ import { checkbox, circleWithImage, input, textarea } from './shared';
 import {
    clientsSlider,
    headerMenu,
+   person,
    sliderCases,
    sliderParams,
    subList,
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
    input();
    checkbox();
    textarea();
+   person();
 
    if (screenWidth <= 1280) {
       sliderParams();
