@@ -21,6 +21,9 @@
 			text-align: center;
 			text-transform: none;
 		}
+		.h4 {
+			@include adaptiveValue("font-size", 27, 23);
+		}
 	}
 
 	&__decor {

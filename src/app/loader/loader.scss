@@ -1,15 +1,16 @@
 .loader {
 	position: absolute;
 	z-index: 150;
-	// width: 100%;
-	// min-height: 100%;
 	inset: 0;
 	background-color: $accent1;
-	// clip-path: circle(100% at 27.4% 52.4%);
 	clip-path: circle(100% at 50%);
 
 	.subtitle {
 		visibility: hidden;
 		pointer-events: none;
+	}
+
+	.first-screen__cta {
+		visibility: hidden;
 	}
 }

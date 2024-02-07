@@ -4,21 +4,26 @@ import { CustomEase } from 'gsap/CustomEase';
 gsap.registerPlugin(CustomEase);
 
 export function hideLoader(): void {
+   const point = document.querySelector('.first-screen__content h1 span');
+
+   const cords = point && point.getBoundingClientRect();
+
    const tlLoader = gsap.timeline({ paused: true });
 
    tlLoader
       .to('.loader', {
-         clipPath: 'circle(0% at 23% 52.2%)',
+         // clipPath: `circle(0% at 25% 52.2%)`,
+         clipPath: `circle(0% at ${cords.x - 30}px ${cords.y + cords.height - 25}px)`,
          duration: 1.2,
          ease: 'power1.in',
       })
-      .from('.first-screen__bg svg', {
+      .from('.first-screen__content svg', {
          scale: 0,
          delay: -0.3,
          duration: 1,
          ease: 'power3.out',
       })
-      .to('.first-screen__bg svg', {
+      .to('.first-screen__content svg', {
          scale: 1.5,
          duration: 190,
          repeat: -1,
