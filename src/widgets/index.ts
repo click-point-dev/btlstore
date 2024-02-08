@@ -10,3 +10,4 @@ export * from './footer';
 export * from './contactsCard';
 export * from './person';
 export * from './tooltip';
+export * from './cardCircle';
