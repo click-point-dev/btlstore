@@ -280,8 +280,9 @@
 
 		&__items {
 			display: grid;
-			align-items: start;
-			grid-template-columns: repeat(auto-fit, minmax(auto, 300px));
+			// align-items: center;
+			justify-content: space-evenly;
+			grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
 			@include adaptiveValue("column-gap", 60, 25);
 			@include adaptiveValue("row-gap", 36, 20);
 		}
@@ -289,8 +290,8 @@
 		// .services-list__item
 
 		&__item {
-			flex: 0 1 23%;
-			min-width: max-content;
+			// flex: 1 1 30%;
+			// min-width: max-content;
 			@media (max-width: $mobile) {
 				min-width: unset;
 			}
