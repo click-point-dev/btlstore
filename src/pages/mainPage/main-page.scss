@@ -611,6 +611,7 @@
 
 	&__body {
 		position: relative;
+		z-index: 50;
 
 		svg {
 			position: absolute;
@@ -665,11 +666,11 @@
 
 	&__tooltip {
 		position: absolute;
-		z-index: 10;
+		z-index: 100;
 		left: 50%;
 		top: 70%;
 		translate: -50%;
-		opacity: 0;
+		// opacity: 0;
 		pointer-events: none;
 
 		@media (max-width: $tablet) {

@@ -6,6 +6,7 @@
 	background: #00040726;
 	@include adaptiveValue("padding-block", 32, 17);
 	@include adaptiveValue("padding-inline", 46, 22);
+	overflow: hidden;
 
 	// .team-person-info__title
 
