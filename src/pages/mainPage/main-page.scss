@@ -228,6 +228,9 @@
 
 	&__wrapper {
 		justify-content: space-between;
+		@media (min-width: 1281px) {
+			gap: 20px;
+		}
 	}
 }
 
@@ -409,6 +412,7 @@
 			width: 100%;
 			aspect-ratio: 1.53;
 			object-fit: cover;
+			filter: grayscale(1);
 			@media (min-width: $mobile) {
 				position: absolute;
 				width: 100%;
