@@ -39,20 +39,20 @@
 		scale: 0.4;
 	}
 
-	@media (any-hover: hover) and (pointer: fine) {
-		&__decor {
-			transition:
-				opacity $anim,
-				scale $anim 0.1s;
-		}
+	// @media (any-hover: hover) and (pointer: fine) {
+	&__decor {
+		transition:
+			opacity $anim,
+			scale $anim 0.1s;
+	}
 
-		&:hover {
-			.params-circl__decor {
-				opacity: 1;
-				scale: 1;
-			}
+	&:hover {
+		.params-circl__decor {
+			opacity: 1;
+			scale: 1;
 		}
 	}
+	// }
 }
 
 .params-circl--big {
