@@ -1,3 +1,3 @@
-export function {{camelCase}}(): null {
-	return null;
+export function {{camelCase}}(): void {
+
 }
