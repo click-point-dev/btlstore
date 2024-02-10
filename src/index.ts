@@ -1,8 +1,9 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { checkbox, circleWithImage, input, textarea } from './shared';
+import { checkbox, input, textarea } from './shared';
 import {
+   cardCircle,
    clientsSlider,
    headerMenu,
    person,
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
    subList();
    hideLoader();
    tabs();
-   circleWithImage();
    input();
    checkbox();
    textarea();
@@ -27,8 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
    if (screenWidth <= 1280) {
       sliderParams();
-      sliderCases();
    }
+   sliderCases();
+   cardCircle();
 });
 
 window.addEventListener('load', function () {
