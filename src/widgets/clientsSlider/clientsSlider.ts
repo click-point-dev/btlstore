@@ -1,4 +1,5 @@
-import Swiper, { Autoplay } from 'swiper';
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 export function clientsSlider(): void {
    const slider = new Swiper('.clients-slider', {
@@ -60,7 +61,7 @@ export function clientsSlider(): void {
             // },
          },
          1372: {
-            slidesPerView: 'auto',
+            slidesPerView: 7,
             spaceBetween: 116,
             speed: 5000,
             // freeMode: {
