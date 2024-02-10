@@ -1,4 +1,4 @@
-import Swiper, { Autoplay } from 'swiper';
+import Swiper from 'swiper';
 
 export function sliderParams(): void {
    const sliderParams = new Swiper('.slider-params', {
