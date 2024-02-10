@@ -1,28 +1,37 @@
-.card-circle__wrapper {
-	display: flex;
-	gap: 20px;
-	align-items: center;
+@media (max-width: $burger) {
+	.swiper-slide {
+		scale: 0.6;
+		transition: scale $anim !important;
+	}
 
-	.card-circle {
-		flex: 1;
-		min-width: 303px;
+	.swiper-slide-prev,
+	.swiper-slide-next {
+		scale: 0.8;
+	}
+
+	.swiper-slide-prev {
+	}
+
+	.swiper-slide-next {
+	}
+
+	.swiper-slide-active {
+		scale: 1;
 	}
 }
 
 .card-circle {
 	position: relative;
-	max-width: 330px;
+	@include adaptiveValue("max-width", 330, 260);
+	min-width: 260px !important;
+	aspect-ratio: 1;
 	display: flex;
 	flex-direction: column;
-	background: linear-gradient(0deg, #0055b0 3.03%, #0055b000 50%);
-	border-radius: 100%;
-	border: 3.19px solid $white;
-	box-shadow: 0px 4.26px 18.42px 0px rgba(58, 69, 89, 0.34);
-	aspect-ratio: 1/1;
 
 	// .card-circle__decor
 
-	&__decor {
+	.card-circle__decor {
+		position: absolute;
 		z-index: -2;
 		width: 169%;
 		aspect-ratio: 1;
@@ -30,22 +39,32 @@
 		top: 50%;
 		translate: -50% -49.5%;
 		scale: 0.4;
+		pointer-events: none;
+		transition:
+			opacity $anim,
+			scale $anim 0.2s;
+
 		svg path {
 			stroke: red;
 		}
-		.card-circle:hover & {
-			scale: 1;
-		}
 	}
 
-	&__bg,
-	&__decor {
-		position: absolute;
+	&__body {
+		flex: 1;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		background: linear-gradient(0deg, #0055b000 3.03%, #0055b000 0%);
+		border-radius: 100%;
+		border: 3.19px solid $white;
+		box-shadow: 0px 4.26px 18.42px 0px rgba(58, 69, 89, 0.34);
+		overflow: hidden;
 	}
 
 	// .card-circle__bg
 
 	&__bg {
+		position: absolute;
 		z-index: -1;
 		inset: 0;
 		overflow: hidden;
@@ -59,9 +78,8 @@
 			max-width: 100%;
 			object-fit: cover;
 			filter: grayscale(1);
-
-			.card-circle:hover & {
-				filter: grayscale(0);
+			.swiper-slide-active & {
+				// filter: grayscale(0);
 			}
 		}
 	}
@@ -72,7 +90,6 @@
 		max-width: 60%;
 		margin-inline: auto;
 		flex: 1;
-		// aspect-ratio: 1/1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -86,11 +103,31 @@
 	&__title {
 		font-weight: 500;
 		margin-bottom: rem(8);
+		translate: 0px 400px;
+		.swiper-slide-active & {
+			// translate: 0px 0px;
+		}
 	}
 
 	// .card-circle__description
 
 	&__description {
 		font-weight: 500;
+		translate: 0px 400px;
+		.swiper-slide-active & {
+			// translate: 0px 0px;
+		}
+	}
+}
+
+.card-circle:hover .card-circle__decor {
+	scale: 1;
+	opacity: 1;
+}
+
+.swiper-slide-active {
+	.card-circle__decor {
+		opacity: 1;
+		scale: 1;
 	}
 }
