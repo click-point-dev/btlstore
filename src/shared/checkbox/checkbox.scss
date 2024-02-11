@@ -26,6 +26,7 @@
 	&__label {
 		position: relative;
 		display: inline-flex;
+		margin-inline: auto;
 		align-items: center;
 		gap: 10px;
 		max-width: 325px;
@@ -35,7 +36,7 @@
 			flex: 0 0 20px;
 			width: 20px;
 			height: 20px;
-			border: 1px solid $white;
+			border: 1px solid currentColor;
 			background-color: transparent;
 			transition: background-color $anim;
 		}
