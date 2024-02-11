@@ -285,6 +285,10 @@
 			grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
 			@include adaptiveValue("column-gap", 60, 25);
 			@include adaptiveValue("row-gap", 36, 20);
+
+			@media (max-width: $mobile) {
+				justify-content: start;
+			}
 		}
 
 		// .services-list__item
@@ -373,6 +377,7 @@
 
 	&__container {
 		display: flex;
+		flex: 0 0 100%;
 		// align-items: center;
 	}
 
@@ -380,7 +385,8 @@
 
 	&__body {
 		@media (min-width: $mobile) {
-			width: 45%;
+			flex: 0 0 45%;
+			// width: 45%; // правки для формы с картинкой
 		}
 
 		h1 {
@@ -425,6 +431,20 @@
 				border-radius: 0 87px 0 0;
 			}
 		}
+	}
+
+	&__image-title {
+		position: absolute;
+		inset: 0;
+		bottom: 0;
+		z-index: 2;
+		display: flex;
+		align-items: flex-end;
+		@include adaptiveValue("font-size", 36, 26);
+		font-weight: 700;
+		@include adaptiveValue("padding-inline", 60, 20);
+		padding-bottom: 11px;
+		background: linear-gradient(180deg, rgba(0, 85, 176, 0) 15.542%, rgb(0, 85, 176) 100%);
 	}
 }
 
@@ -498,63 +518,13 @@
 	}
 }
 
-.form {
-	// .form__row
-
-	&__row {
-		display: flex;
-		justify-content: space-between;
-		@media (max-width: $burger) {
-			flex-direction: column;
-			row-gap: 28px;
-			.input-block {
-				width: 80%;
-				margin-inline: auto;
-
-				textarea + label {
-					text-align: center;
-				}
-			}
-			&:has(.checkbox__label) {
-				flex-direction: column-reverse;
-				.input-block {
-					width: unset;
-					max-width: 80%;
-				}
-			}
-			.button {
-				margin-inline: auto;
-			}
-		}
-
-		@media (max-width: $mobileSmall) {
-			.input-block {
-				textarea + label {
-					text-align: left;
-				}
-			}
-		}
-
-		&:last-child {
-			justify-content: center;
-		}
-
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 48, 46);
-		}
-
-		&:has([type="checkbox"]) {
-			@include adaptiveValue("gap", 61, 10);
-		}
-	}
-}
-
 //====================team======================
 .main {
 	// .main__team
 
 	&__team {
 		@include adaptiveValue("padding-top", 100, 55);
+		margin-bottom: -1px;
 	}
 }
 .team {
@@ -682,5 +652,23 @@
 			top: unset;
 			bottom: 20px;
 		}
+	}
+}
+
+//====================form-with-image======================
+.main {
+	// .main__form-with-image
+
+	&__form-with-image {
+		@include adaptiveValue("padding-top", 100, 55);
+		background-color: $white;
+		margin-bottom: -2px;
+		overflow: hidden;
+	}
+}
+
+.form-with-image {
+	h3 {
+		@include adaptiveValue("margin-bottom", 48, 30);
 	}
 }

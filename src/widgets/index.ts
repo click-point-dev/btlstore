@@ -11,3 +11,5 @@ export * from './contactsCard';
 export * from './person';
 export * from './tooltip';
 export * from './cardCircle';
+export * from './form';
+export * from './formWithImage';

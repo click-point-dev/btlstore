@@ -1,0 +1,110 @@
+.form-with-image {
+	.services-tabs {
+		// .services-tabs__item
+
+		&__item {
+		}
+	}
+	.services-tabs-item {
+		@media (max-width: $tablet) {
+			display: flex;
+			flex-direction: column-reverse !important;
+		}
+
+		// .services-tabs-item__content
+
+		&__content {
+			padding-top: 0;
+		}
+
+		// .services-tabs-item__container
+
+		&__container {
+			position: relative;
+			z-index: 1;
+			@media (max-width: $tablet) {
+				box-sizing: border-box;
+			}
+
+			.decor-top {
+				position: absolute;
+				z-index: -5;
+				@include adaptiveValue("width", 601, 370);
+				top: 61%;
+				right: 27%;
+				path {
+					stroke: $accent2;
+				}
+
+				@media (max-width: $tablet) {
+					top: 61%;
+					right: -24%;
+				}
+			}
+		}
+
+		// .services-tabs-item__body
+
+		&__body {
+			@media (max-width: $tablet) {
+				flex-basis: 100%;
+			}
+			h3 {
+				@include adaptiveValue("font-size", 62, 32);
+			}
+		}
+
+		// .services-tabs-item__image
+
+		&__image {
+			translate: 0;
+			@media (max-width: $tablet) {
+				// min-height: 500px;
+
+				img {
+					aspect-ratio: 1.6;
+				}
+			}
+		}
+	}
+
+	.form {
+		// .form__row
+
+		&__row {
+		}
+
+		.form__row:has(.checkbox__label) .input-block {
+			// width: 100%;
+			// max-width: unset;
+		}
+		.form__row:has(button) {
+			@media (min-width: $tablet) {
+				justify-content: flex-start;
+			}
+		}
+	}
+	.input-block {
+		width: 100%;
+
+		textarea + label {
+			text-align: left;
+		}
+	}
+	.input {
+	}
+	.checkbox {
+		// .checkbox__input
+
+		&__input {
+		}
+
+		// .checkbox__label
+
+		&__label {
+			@media (min-width: $tablet) {
+				margin-inline: unset;
+			}
+		}
+	}
+}
