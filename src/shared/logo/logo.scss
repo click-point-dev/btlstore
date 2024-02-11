@@ -10,4 +10,8 @@
 			object-position: center;
 		}
 	}
+
+	& * {
+		transition: fill $anim;
+	}
 }
