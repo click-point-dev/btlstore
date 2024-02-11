@@ -10,5 +10,13 @@ export function sliderCases(): void {
       slideToClickedSlide: true,
       centeredSlides: true,
       loop: true,
+      breakpoints: {
+         360: {
+            spaceBetween: 10,
+         },
+         475: {
+            spaceBetween: 30,
+         },
+      },
    });
 }
