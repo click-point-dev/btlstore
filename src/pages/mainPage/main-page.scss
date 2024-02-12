@@ -377,7 +377,7 @@
 
 	&__container {
 		display: flex;
-		flex: 0 0 100%;
+		// flex: 0 0 100%;
 		// align-items: center;
 	}
 
@@ -668,7 +668,4 @@
 }
 
 .form-with-image {
-	h3 {
-		@include adaptiveValue("margin-bottom", 48, 30);
-	}
 }
