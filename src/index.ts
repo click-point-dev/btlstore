@@ -1,7 +1,7 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { checkbox, input, textarea } from './shared';
+import { checkbox, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
    clientsSlider,
@@ -34,4 +34,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.addEventListener('load', function () {
    clientsSlider();
+   paramsCircl();
 });
