@@ -95,6 +95,13 @@
 		// .form__row
 
 		&__row {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 48, 28);
+
+				&:has([type="checkbox"]) {
+					margin-bottom: rem(20);
+				}
+			}
 		}
 
 		.form__row:has(.checkbox__label) .input-block {
