@@ -39,7 +39,8 @@
 			}
 
 			.logo {
-				svg circle {
+				circle,
+				path {
 					fill: $white;
 				}
 			}
