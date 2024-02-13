@@ -1,2 +1,1 @@
-export * from './mainPage';
 export * from './servicesPage';
