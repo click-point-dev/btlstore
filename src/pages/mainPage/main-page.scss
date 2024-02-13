@@ -1,3 +1,9 @@
+.page__main {
+	.footer {
+		border-radius: 87px 0 87px 87px;
+	}
+}
+
 .main {
 	.header {
 		position: absolute;
@@ -440,8 +446,6 @@
 		z-index: 2;
 		display: flex;
 		align-items: flex-end;
-		@include adaptiveValue("font-size", 36, 26);
-		font-weight: 700;
 		@include adaptiveValue("padding-inline", 60, 20);
 		padding-bottom: 11px;
 		background: linear-gradient(180deg, rgba(0, 85, 176, 0) 15.542%, rgb(0, 85, 176) 100%);

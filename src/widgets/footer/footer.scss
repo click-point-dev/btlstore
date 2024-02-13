@@ -1,7 +1,7 @@
 .footer {
 	// .footer__container
 	background-color: $white;
-	border-radius: 87px 0 87px 87px;
+	border-radius: 0 0 87px 87px;
 	@include adaptiveValue("padding-top", 187, 50);
 	@include adaptiveValue("padding-bottom", 44, 48);
 
