@@ -1,16 +1,20 @@
 .sub-list {
+	position: relative;
 	display: inline-flex;
 	flex-direction: column;
 	gap: 14px;
-	// padding-inline: 20px;
-	// padding-top: 17px;
-	// padding-bottom: 17px;
 	padding: 17px 7px;
 	min-width: 233px;
-	background-color: $bg;
-	backdrop-filter: blur(17px);
 	border-radius: $radius;
 	overflow: hidden;
+
+	&:before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: $bg;
+		backdrop-filter: blur(17px);
+	}
 
 	// .sub-list__item
 
