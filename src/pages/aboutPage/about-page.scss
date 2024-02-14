@@ -1,5 +1,9 @@
 .about-page {
-	h1 {
-		font-size: rem(40);
+	&__about {
+		@include adaptiveValue("padding-top", 27, 21);
+		margin-bottom: -1px;
+	}
+
+	.about__text {
 	}
 }
