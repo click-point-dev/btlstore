@@ -1,5 +1,5 @@
 .text {
 	& > p:not(:last-child) {
-		@include adaptiveValue("margin-bottom", 20, 10);
+		@include adaptiveValue("padding-bottom", 20, 10);
 	}
 }

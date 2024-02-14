@@ -19,7 +19,7 @@
 		flex-direction: column;
 		p {
 			text-align: center;
-			text-transform: none;
+			text-transform: lowercase;
 		}
 		.h4 {
 			@include adaptiveValue("font-size", 27, 23);
