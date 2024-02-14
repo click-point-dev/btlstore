@@ -1,3 +1,5 @@
+import { uniqArray } from '../uniqArray';
+
 // Обработа медиа запросов из атрибутов
 export function dataMediaQueries(array, dataSetValue) {
    // Получение объектов с медиа запросами
