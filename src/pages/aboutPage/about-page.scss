@@ -1,8 +1,10 @@
-.about-page {
+.page__about {
 	.header {
 		position: relative;
-		z-index: 100;
 	}
+}
+
+.about-page {
 	&__about {
 		@include adaptiveValue("padding-top", 27, 21);
 		margin-bottom: -1px;

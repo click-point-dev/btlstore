@@ -1,5 +1,9 @@
-.contacts-page {
+.page__contacts {
+	.header {
+		position: relative;
+	}
 }
+
 .contacts {
 	background-color: $white;
 	padding-top: 36px;

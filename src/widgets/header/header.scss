@@ -3,6 +3,9 @@
 	background-color: $white;
 	backdrop-filter: blur(17px);
 	@include adaptiveValue("padding-block", 24, 16);
+	position: absolute;
+	z-index: 100;
+	width: 100%;
 
 	&__container {
 	}
