@@ -5,7 +5,7 @@
 	@include adaptiveValue("column-gap", 31.5, 20);
 	@include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
 	@include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
-	@include adaptiveValue("font-size", 23, 12);
+	@include adaptiveValue("font-size", 23, 15);
 	font-weight: 500;
 	line-height: 92%;
 	border-radius: $radius;
