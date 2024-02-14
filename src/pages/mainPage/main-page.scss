@@ -150,13 +150,13 @@
 	&__about {
 		@include adaptiveValue("padding-block", 100, 55);
 		margin-top: -1px;
+		border-radius: 87px 0 0 0;
 	}
 }
 .about {
 	background-color: $white;
 	position: relative;
 	z-index: 1;
-	border-radius: 87px 0 0 0;
 	// .about__container
 
 	&__container {
@@ -206,6 +206,26 @@
 
 	&__text {
 		max-width: 680px;
+		&:has(:nth-child(2)) {
+			@media (max-width: $mobile) {
+				max-width: unset;
+				background-color: $accent1;
+				margin-inline: -18px;
+				> * {
+					background: $white;
+					padding-inline: 18px;
+				}
+				:first-child {
+					border-radius: 0 0 87px 0;
+					overflow: hidden;
+				}
+
+				:nth-child(2) {
+					border-radius: 0 87px 0 0;
+					overflow: hidden;
+				}
+			}
+		}
 	}
 
 	// .about__params
