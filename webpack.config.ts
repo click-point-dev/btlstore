@@ -80,7 +80,7 @@ const config = (env: EnvVariables): Configuration => {
                },
             },
             {
-               test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+               test: /\.(png|svg|jpg|jpeg|gif|webp|pdf)$/i,
                type: 'asset/resource',
             },
          ],
