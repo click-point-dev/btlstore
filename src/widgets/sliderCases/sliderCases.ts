@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { Lazy } from 'swiper/modules';
 // import 'swiper/css';
 
 export function sliderCases(): void {
@@ -12,18 +13,21 @@ export function sliderCases(): void {
       const sliderCases = new Swiper(item, {
          spaceBetween: 30,
          speed: 500,
-         initialSlide: 0,
+         initialSlide: 1,
          slidesPerView: 'auto',
          slideToClickedSlide: true,
          centeredSlides: true,
-         loop: true,
-         loopAdditionalSlides: 1,
          breakpoints: {
             360: {
                spaceBetween: 10,
+               loop: true,
+               // loopAdditionalSlides: 1,
             },
             475: {
                spaceBetween: 30,
+            },
+            1100: {
+               loop: false,
             },
          },
       });

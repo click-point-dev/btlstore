@@ -10,18 +10,20 @@ export function sliderParams(): void {
    params.forEach(item => {
       const sliderParams = new Swiper(item, {
          speed: 500,
-         initialSlide: 0,
+         initialSlide: 1,
          slidesPerView: 'auto',
          slideToClickedSlide: true,
          centeredSlides: true,
-         loopAdditionalSlides: 1,
-         loop: true,
          breakpoints: {
             360: {
                spaceBetween: 10,
+               loop: true,
             },
             475: {
                spaceBetween: 30,
+            },
+            1100: {
+               loop: false,
             },
          },
       });
