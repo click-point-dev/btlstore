@@ -1,6 +1,85 @@
-.mts-blog-and-voice {
-	h1 {
-		font-size: rem(30);
-		color: greenyellow;
+.page__cases {
+	background-color: $white;
+	.header {
+		position: relative;
 	}
 }
+
+.mts-blog-and-voice {
+	.mts-blog-and-voice {
+		// .mts-blog-and-voice__two-rows-fw-image
+
+		&__two-rows-fw-image {
+		}
+	}
+	.two-rows-fw-image {
+		// .two-rows-fw-image__block
+
+		&__block {
+			display: flex;
+		}
+
+		// .two-rows-fw-image__column
+
+		&__column {
+		}
+
+		// .two-rows-fw-image__container
+
+		&__container {
+		}
+
+		// .two-rows-fw-image__content
+
+		&__content {
+			@include adaptiveValue("padding-top", 20, 0);
+			@include adaptiveValue("padding-bottom", 50, 40);
+		}
+
+		// .two-rows-fw-image__head
+
+		&__head {
+		}
+
+		// .two-rows-fw-image__body
+
+		&__body {
+		}
+
+		// .two-rows-fw-image__text
+
+		&__text {
+		}
+
+		// .two-rows-fw-image__list
+
+		&__list {
+		}
+
+		// .two-rows-fw-image__item
+
+		&__item {
+		}
+
+		// .two-rows-fw-image__image
+
+		&__image {
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.item-with-marker {
+		// .item-with-marker__marker
+
+		&__marker {
+		}
+	}
+	.icon-star-4pins {
+	}
+}
+// flex: 0 0 calc(((100vw - 60px) * 0.5) + 20px);
+// flex: 0 0 43%;

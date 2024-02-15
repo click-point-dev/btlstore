@@ -12,9 +12,87 @@
 
 			{{> widgets/header/header}}
 
-			<main class='мts-blog-and-voice'>
+			<div class="mts-blog-and-voice__breadcrumb">
+				<div class="mts-blog-and-voice__container">
+					<nav class="breadcrumb">
+						<ul itemscope itemtype="https://schema.org/BreadcrumbList" aria-label="Breadcrumb">
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="/">
+									<span itemprop="name">Главная</span>
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="javascript:void(0)">
+									<span itemprop="name">Портфолио</span>
+								</a>
+								<meta itemprop="position" content="2" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="javascript:void(0)">
+									<span itemprop="name">МТС</span>
+								</a>
+								<meta itemprop="position" content="3" />
+							</li>
+						</ul>
+						<div class="breadcrumb__back"><a class='link-header' href="javascript:void(0)">Следующий проект<span class='icon-arrow'></span></a></div>
+					</nav>
+				</div>
+			</div>
 
-				<h1>мts-blog-and-voice</h1>
+			<main class='mts-blog-and-voice'>
+
+				<section class="mts-blog-and-voice__two-rows-fw-image two-rows-fw-image">
+					<div class="two-rows-fw-image__block">
+						<div class="two-rows-fw-image__column">
+							<div class="two-rows-fw-image__container">
+								<div class="two-rows-fw-image__content">
+									<div class="two-rows-fw-image__head">
+										<h2><span>.</span>MTC</h2>
+										<p class='subtitle'>ОПЕРАТОР СВЯЗИ</p>
+									</div>
+									<div class="two-rows-fw-image__body">
+										<div class="two-rows-fw-image__text text">
+											<p><b class='text-bold'>Период проведения:</b> 2021–2022 (апрель, сентябрь).</p>
+											<p><b class='text-bold'>География:</b> Калининград, Нижний Новгород, Тюмень, Уфа, Якутск.</p>
+											<p>Яркое концертное светомузыкальное мероприятие для творческих подростков.</p>
+											<p>Не менее 1500 зрителей в каждом городе.</p>
+										</div>
+										<h6 class='text-l text-bold'>Реализация:</h6>
+										<ul class="two-rows-fw-image__list">
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												Подбор, согласование площадки, заключение договора аренды.
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<b class='text-bold'>Согласование</b>массового мероприятия администрацией.
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												Подача заявок   РАО   ВОИС.
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<b class='text-bold'>Обеспечение бытового райдера</b> команды продюсерского центра «Эколь».
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												Технический персонал  концерте, обеспечение формой.
+
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												Подготовка проведение фан-встречи.
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="two-rows-fw-image__image"><img src="/images/cases/01.webp" alt="фото веселой вечеринки"></div>
+					</div>
+				</section>
 
 			</main>
 			{{> widgets/footer/footer}}
