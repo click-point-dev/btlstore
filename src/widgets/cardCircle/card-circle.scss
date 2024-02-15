@@ -61,6 +61,14 @@
 		overflow: hidden;
 	}
 
+	// .card-circle__link
+
+	&__link {
+		display: block;
+		position: absolute;
+		inset: 0;
+	}
+
 	// .card-circle__bg
 
 	&__bg {
