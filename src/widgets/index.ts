@@ -13,3 +13,4 @@ export * from './tooltip';
 export * from './cardCircle';
 export * from './form';
 export * from './formWithImage';
+export * from './breadcrumb';
