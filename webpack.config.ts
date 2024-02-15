@@ -16,7 +16,11 @@ const isFile = (itemName: string): boolean => {
 function getPages() {
    const content = readdirSync(PUBLIC_FOLDER);
    const pages = content.filter(
-      item => !isFile(item) && item !== 'images' && item !== 'fonts',
+      item =>
+         !isFile(item) &&
+         item !== 'images' &&
+         item !== 'fonts' &&
+         item !== 'assets',
    );
    return ['index', ...pages];
 }
@@ -133,6 +137,11 @@ const config = (env: EnvVariables): Configuration => {
                {
                   from: path.resolve(__dirname, 'public', 'fonts'),
                   to: path.resolve(__dirname, 'build', 'fonts'),
+                  noErrorOnMissing: true,
+               },
+               {
+                  from: path.resolve(__dirname, 'public', 'assets'),
+                  to: path.resolve(__dirname, 'build', 'assets'),
                   noErrorOnMissing: true,
                },
             ],
