@@ -93,7 +93,7 @@ const config = (env: EnvVariables): Configuration => {
             '.css',
             '.scss',
             '.hbs',
-            'handlebars',
+            '.handlebars',
          ],
          alias: {
             '@img': path.resolve(__dirname, 'public/images'),
