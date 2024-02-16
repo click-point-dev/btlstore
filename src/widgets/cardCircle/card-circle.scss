@@ -1,26 +1,26 @@
-@media (max-width: $burger) {
-	.swiper-slide {
-		scale: 0.6;
-		transition: scale $anim !important;
-	}
-
-	.swiper-slide-prev,
-	.swiper-slide-next {
-		scale: 0.8;
-	}
-
-	.swiper-slide-prev {
-	}
-
-	.swiper-slide-next {
-	}
-
-	.swiper-slide-active {
-		scale: 1;
-	}
-}
-
 .card-circle {
+	@media (max-width: $burger) {
+		.swiper-slide {
+			scale: 0.6;
+			transition: scale $anim !important;
+		}
+
+		.swiper-slide-prev,
+		.swiper-slide-next {
+			scale: 0.8;
+		}
+
+		.swiper-slide-prev {
+		}
+
+		.swiper-slide-next {
+		}
+
+		.swiper-slide-active {
+			scale: 1;
+		}
+	}
+
 	position: relative;
 	@include adaptiveValue("max-width", 330, 260);
 	min-width: 260px !important;
