@@ -1,6 +1,7 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
+import { mtsBlogAndVoice } from './pages';
 import { checkbox, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
    console.log('DOMLoad');
    headerMenu();
    subList();
-   hideLoader();
    tabs();
    input();
    checkbox();
@@ -30,9 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
    }
    sliderCases();
    cardCircle();
+   mtsBlogAndVoice();
 });
 
 window.addEventListener('load', function () {
+   hideLoader();
    clientsSlider();
    paramsCircl();
 });
