@@ -7,9 +7,7 @@ gsap.registerPlugin(CustomEase);
 
 export function hideLoader(): void {
    const point = document.querySelector('.first-screen__content h1 span');
-
    const cords = point && point.getBoundingClientRect();
-
    const tlLoader = gsap.timeline({ paused: true });
 
    tlLoader
@@ -36,8 +34,5 @@ export function hideLoader(): void {
          ),
       });
 
-   window.addEventListener('load', () => {
-      console.log('load');
-      tlLoader.play();
-   });
+   tlLoader.play();
 }
