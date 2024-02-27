@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 
 export function cardCircle(): void {
-   const circles: Element[] = gsap.utils.toArray('.card-circle');
+   const circles: Element[] = gsap.utils.toArray('.card-circle--animated');
    if (!circles.length) return;
 
    circles.forEach(circle => {
