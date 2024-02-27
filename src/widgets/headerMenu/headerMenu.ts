@@ -19,6 +19,7 @@ function replaceSubList(header: Element) {
 
    if (!sublist || !subListItems.length || !listItems) return;
 
+   sublist.closest('.header-menu__item').remove();
    sublist.remove();
 
    Array.from(subListItems)
@@ -28,8 +29,6 @@ function replaceSubList(header: Element) {
          item.firstElementChild.className = 'header-menu__link link-header';
          listItems.prepend(item);
       });
-
-   console.log(subListItems);
 }
 
 function openBurger(header: Element, burgerIcon: Element) {

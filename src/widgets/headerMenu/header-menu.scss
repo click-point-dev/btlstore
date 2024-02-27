@@ -63,6 +63,7 @@
 		&:has(> .sub-list) {
 			position: relative;
 			margin-right: 10px;
+			cursor: pointer;
 
 			.link-header:after {
 				display: none;
