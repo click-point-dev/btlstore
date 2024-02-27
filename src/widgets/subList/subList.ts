@@ -64,20 +64,5 @@ function openSubList(subList: NodeListOf<Element>, openedClass: string) {
             takeEffect();
          });
       }
-
-      // if (!isHoverableDevice()) {
-      //    parentLink.addEventListener('click', () => {
-      //       if (!listParent.classList.contains(openedClass)) {
-      //          takeEffect();
-      //          return;
-      //       }
-      //       if (listParent.classList.contains(openedClass)) {
-      //          removeEffect();
-      //          return;
-      //       }
-      //    });
-      // }
-
-      // console.log(list, listParent, parentLink);
    });
 }

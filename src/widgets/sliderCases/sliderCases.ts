@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import { Lazy } from 'swiper/modules';
 // import 'swiper/css';
 
 export function sliderCases(): void {
