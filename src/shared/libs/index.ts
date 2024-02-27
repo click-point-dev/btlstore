@@ -4,3 +4,4 @@ export * from './getHash';
 export * from './dataMediaQueries';
 export * from './setHash';
 export * from './uniqArray';
+export * from './getCoords';
