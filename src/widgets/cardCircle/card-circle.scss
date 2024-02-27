@@ -23,7 +23,8 @@
 
 	position: relative;
 	@include adaptiveValue("max-width", 330, 260);
-	min-width: 260px !important;
+
+	min-width: 260px; //TODO проверить. убрал important для совместимости с page__cases. не проверял!
 	aspect-ratio: 1;
 	display: flex;
 	flex-direction: column;
