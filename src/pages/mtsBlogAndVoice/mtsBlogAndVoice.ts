@@ -1,3 +1,1 @@
-export function mtsBlogAndVoice(): void {
-
-}
+export function mtsBlogAndVoice(): void {}

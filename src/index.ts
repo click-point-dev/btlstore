@@ -1,7 +1,7 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { mtsBlogAndVoice } from './pages';
+import { pageCases } from './pages';
 import { checkbox, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
    }
    sliderCases();
    cardCircle();
-   mtsBlogAndVoice();
+   pageCases();
 });
 
 window.addEventListener('load', function () {
