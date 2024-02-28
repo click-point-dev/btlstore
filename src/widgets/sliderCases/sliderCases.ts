@@ -12,14 +12,14 @@ export function sliderCases(): void {
       const sliderCases = new Swiper(item, {
          spaceBetween: 30,
          speed: 500,
-         initialSlide: 1,
+         initialSlide: 6,
          slidesPerView: 'auto',
          slideToClickedSlide: true,
          centeredSlides: true,
+         loop: true,
          breakpoints: {
             360: {
                spaceBetween: 10,
-               loop: true,
                // loopAdditionalSlides: 1,
             },
             475: {
