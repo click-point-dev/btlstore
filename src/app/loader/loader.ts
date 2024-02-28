@@ -6,24 +6,27 @@ gsap.registerPlugin(CustomEase);
 //FIX add loader const, checker for this existance
 
 export function hideLoader(): void {
-   const point = document.querySelector('.first-screen__content h1 span');
+   const point = document.querySelector('.first-screen__logo');
    const cords = point && point.getBoundingClientRect();
    const tlLoader = gsap.timeline({ paused: true });
 
+   const x = (cords.right - cords.left) / 2 + cords.left;
+   const y = (cords.bottom - cords.top) / 2 + cords.top;
+   console.log(x);
    tlLoader
       .to('.loader', {
          // clipPath: `circle(0% at 25% 52.2%)`,
-         clipPath: `circle(0% at ${cords ? cords.x - 30 : 100}px ${cords ? cords.y + cords.height - 25 : 200}px)`,
+         clipPath: `circle(0% at ${cords ? x : 100}px ${cords ? y : 200}px)`,
          duration: 1.2,
          ease: 'power1.in',
       })
-      .from('.first-screen__content svg', {
+      .from('.first-screen__decor', {
          scale: 0,
          delay: -0.3,
          duration: 1,
          ease: 'power3.out',
       })
-      .to('.first-screen__content svg', {
+      .to('.first-screen__decor', {
          scale: 1.5,
          duration: 190,
          repeat: -1,

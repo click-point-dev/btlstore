@@ -17,6 +17,7 @@
 			border-color: $white;
 
 			.contacts-card__icon {
+				border: 4px solid $white;
 				span {
 					color: $white;
 				}
@@ -42,9 +43,11 @@
 			}
 
 			.logo {
-				circle,
 				path {
-					fill: $white;
+					fill: white;
+				}
+				.text-pro {
+					fill: $accent1;
 				}
 			}
 		}
@@ -66,12 +69,14 @@
 		@include adaptiveValue("width", 100, 34);
 		aspect-ratio: 1;
 		border: 4px solid $accent1-l;
+
 		@include adaptiveValue("border-width", 4, 2);
 		border-radius: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		@include adaptiveValue("margin-bottom", 54, 19);
+		transition: border $anim;
 		span {
 			@include adaptiveValue("font-size", 35, 20);
 			transition: color $anim;

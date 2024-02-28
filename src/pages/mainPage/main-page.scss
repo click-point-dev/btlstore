@@ -42,14 +42,26 @@
 
 	&__content {
 		margin-block: auto;
-		h1 {
+		.first-screen__h1 {
 			position: relative;
 			span {
 				color: inherit;
 				font-weight: 200;
 			}
 
-			svg {
+			.first-screen__logo {
+				@include adaptiveValue("width", 700, 300);
+
+				path {
+					fill: $white;
+				}
+
+				path.text-pro {
+					fill: $accent1;
+				}
+			}
+
+			.first-screen__decor {
 				position: absolute;
 				// z-index: 5;
 
@@ -57,8 +69,9 @@
 				@include adaptiveValue("width", 1293, 575);
 				@include adaptiveValue("height", 1293, 575);
 				transform-origin: center;
-				top: -314%;
-				left: -64%;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
 			}
 		}
 		.subtitle {
@@ -108,7 +121,7 @@
 		div {
 			position: absolute;
 			inset: 0;
-			background: linear-gradient(89deg, #0055b0 6.64%, rgba(0, 85, 176, 0.46) 97.58%);
+			background: linear-gradient(89deg, #bf274d 6.64%, #89626c63 97.58%);
 			// height: 100%;
 		}
 	}
@@ -371,7 +384,7 @@
 	// .services-tabs__item
 
 	&__item {
-		@include adaptiveValue("margin-bottom", 30, 32);
+		@include adaptiveValue("padding-bottom", 30, 32);
 	}
 }
 
@@ -466,7 +479,7 @@
 		align-items: flex-end;
 		@include adaptiveValue("padding-inline", 60, 20);
 		padding-bottom: 11px;
-		background: linear-gradient(180deg, rgba(0, 85, 176, 0) 15.542%, rgb(0, 85, 176) 100%);
+		background: linear-gradient(0deg, #bf274d 15.542%, #89626c00 100%);
 	}
 }
 
@@ -686,8 +699,18 @@
 		background-color: $white;
 		margin-bottom: -2px;
 		overflow: hidden;
-	}
-}
 
-.form-with-image {
+		label:not(.checkbox__label) {
+			color: $mainColor;
+		}
+
+		.input {
+			color: $mainColor;
+			border-bottom: 2px solid currentColor;
+		}
+
+		// .checkbox__label:after {
+		// 	color: $mainColor;
+		// }
+	}
 }

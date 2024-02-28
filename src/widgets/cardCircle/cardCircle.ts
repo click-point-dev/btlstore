@@ -14,8 +14,8 @@ export function cardCircle(): void {
 
       hoverAnimation
          .to(gradient, {
-            backgroundImage:
-               'linear-gradient(0deg, #0055b0 3.03%, #0055b000 50%)',
+            background:
+               'linear-gradient(0.00deg, rgb(191, 39, 77) 3.03%,rgba(137, 98, 108, 0) 50%)',
          })
          .to(
             image,
