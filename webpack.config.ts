@@ -1,29 +1,55 @@
 import path from 'path';
-import { readdirSync, statSync } from 'fs';
+import fs, { readdirSync, statSync, readdir, stat } from 'fs';
 import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 
-const PUBLIC_FOLDER = `${__dirname}/public`;
+// const PUBLIC_FOLDER = `${__dirname}/public`;
 
-const isFile = (itemName: string): boolean => {
-   const itemPath = path.join(PUBLIC_FOLDER, itemName);
-   return statSync(itemPath).isFile();
-};
+// const isFile = (itemName: string): boolean => {
+//    const itemPath = path.join(PUBLIC_FOLDER, itemName);
+//    return statSync(itemPath).isFile();
+// };
 
-function getPages() {
-   const content = readdirSync(PUBLIC_FOLDER);
-   const pages = content.filter(
-      item =>
-         !isFile(item) &&
-         item !== 'images' &&
-         item !== 'fonts' &&
-         item !== 'assets',
-   );
-   return ['index', ...pages];
-}
+//рабочий вариант
+// function getPages() {
+//    const content = readdirSync(PUBLIC_FOLDER);
+//    const pages = content.filter(
+//       item =>
+//          !isFile(item) &&
+//          item !== 'images' &&
+//          item !== 'fonts' &&
+//          item !== 'assets',
+//    );
+//    return ['index', ...pages];
+// }
+
+// пыталя закодить массив страниц с учетом вложенности. пока не работает
+// const arr: string[] = [];
+// function getPages(base: string) {
+//    readdirSync(base).forEach(item => {
+//       if (statSync(base + '/' + item).isDirectory()) {
+//          getPages(base + '/' + item);
+//       } else {
+//          arr.push(path.join(base, item));
+//       }
+//    });
+// }
+// getPages(PUBLIC_FOLDER); //?
+// arr.length; //?
+
+// const pagesArray = [
+//    ...arr
+//       .filter(item => path.basename(item) === 'index.hbs')
+//       .map(
+//          item =>
+//             path.basename(path.dirname(item)) !== 'public' &&
+//             path.basename(path.dirname(item)),
+//       ),
+//    'index',
+// ];
 
 type Mode = 'production' | 'development';
 
@@ -32,8 +58,6 @@ interface EnvVariables {
    port: number;
 }
 
-// const PAGES: string[] = ['index', 'about'];
-
 const config = (env: EnvVariables): Configuration => {
    const isDev = env.mode === 'development';
    const isProd = env.mode === 'production';
@@ -41,10 +65,6 @@ const config = (env: EnvVariables): Configuration => {
    return {
       mode: env.mode ?? 'development',
       entry: path.resolve(__dirname, 'src', 'index.ts'),
-      // entry: pages.reduce((config, page) => {
-      // 	config[page] = `./src/${page.toLowerCase()}/${page.toLowerCase()}.js`;
-      // 	return config;
-      // }, {}),
       output: {
          filename: 'bundle-[contenthash].js',
          path: path.resolve(__dirname, 'build'),
@@ -105,7 +125,32 @@ const config = (env: EnvVariables): Configuration => {
          },
       },
       plugins: [
-         ...getPages().map(
+         // ...getPages().map(
+         //    page =>
+         //       new HtmlWebpackPlugin({
+         //          template:
+         //             page === 'index'
+         //                ? path.resolve(__dirname, 'public', 'index.hbs')
+         //                : path.resolve(
+         //                     __dirname,
+         //                     'public',
+         //                     `${page}/index.hbs`,
+         //                  ),
+         //          filename:
+         //             page === 'index' ? `index.html` : `${page}/index.html`,
+         //          favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
+         //       }),
+         // ),
+         ...[
+            'about',
+            'components',
+            'contacts',
+            'cases/mts-blog-and-voice',
+            'cases/zhiznмart',
+            'services',
+            'vacancies',
+            'index',
+         ].map(
             page =>
                new HtmlWebpackPlugin({
                   template:
