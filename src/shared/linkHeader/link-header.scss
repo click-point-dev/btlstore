@@ -1,7 +1,7 @@
 .link-header {
 	position: relative;
 	display: inline-block;
-	padding: 10px;
+	@include adaptiveValue("padding", 10, 5);
 	@include adaptiveValue("font-size", 22, 17);
 	overflow: hidden;
 	transition: color $anim;
