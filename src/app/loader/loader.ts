@@ -1,9 +1,8 @@
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
+import { documentLock, documentUnlock } from '../../shared';
 
 gsap.registerPlugin(CustomEase);
-
-//FIX add loader const, checker for this existance
 
 export function hideLoader(): void {
    const point = document.querySelector('.first-screen__logo');
@@ -25,6 +24,9 @@ export function hideLoader(): void {
          delay: -0.3,
          duration: 1,
          ease: 'power3.out',
+         onComplete: () => {
+            documentUnlock();
+         },
       })
       .to('.first-screen__decor', {
          scale: 1.5,

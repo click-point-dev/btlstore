@@ -2,7 +2,7 @@ import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
 import { pageCases } from './pages';
-import { checkbox, input, paramsCircl, textarea } from './shared';
+import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
    clientsSlider,
@@ -13,10 +13,10 @@ import {
    subList,
 } from './widgets';
 
+documentLock();
 document.addEventListener('DOMContentLoaded', function () {
    const screenWidth = window.innerWidth;
 
-   console.log('DOMLoad');
    headerMenu();
    subList();
    tabs();

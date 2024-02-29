@@ -5,3 +5,4 @@ export * from './dataMediaQueries';
 export * from './setHash';
 export * from './uniqArray';
 export * from './getCoords';
+export * from './documentLock';
