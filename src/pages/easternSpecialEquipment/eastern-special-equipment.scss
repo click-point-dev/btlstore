@@ -1,0 +1,16 @@
+.eastern-special-equipment {
+	.two-rows-fw-image__block {
+		background-color: $blue !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: $blue !important;
+		}
+	}
+
+	svg circle {
+		stroke: $blue;
+		stroke-opacity: 0.5;
+	}
+}
