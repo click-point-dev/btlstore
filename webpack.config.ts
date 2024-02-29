@@ -142,6 +142,7 @@ const config = (env: EnvVariables): Configuration => {
          //       }),
          // ),
          ...[
+            'index',
             'about',
             'components',
             'contacts',
@@ -153,7 +154,7 @@ const config = (env: EnvVariables): Configuration => {
             'cases/razumnye-ot-naroda',
             'services',
             'vacancies',
-            'index',
+            'portfolio',
          ].map(
             page =>
                new HtmlWebpackPlugin({

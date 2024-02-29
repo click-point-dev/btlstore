@@ -11,3 +11,4 @@ export * from './razumnyeOtNaroda';
 export * from './tnt';
 export * from './pageCases';
 export * from './easternSpecialEquipment';
+export * from './portfolioPage';

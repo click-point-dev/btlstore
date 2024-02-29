@@ -1,0 +1,25 @@
+.page__portfolio {
+	.header {
+		position: relative;
+	}
+}
+
+.portfolio {
+	background-color: $white;
+	padding-top: 36px;
+	margin-block: -1px;
+
+	&__body {
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.card-circle {
+		position: relative;
+		z-index: 5;
+		flex: 0 0;
+	}
+}
