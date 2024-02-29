@@ -1,0 +1,47 @@
+.nav-prev-next {
+	opacity: 0.4;
+	// .nav-prev-next__container
+
+	&__container {
+	}
+
+	// .nav-prev-next__body
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 10px;
+	}
+
+	// .nav-prev-next__item
+
+	&__item {
+		a {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			span {
+				translate: 0 0.15em;
+			}
+		}
+
+		&:first-child {
+			span {
+				scale: -1 1;
+			}
+		}
+
+		&:last-child {
+			a {
+				text-align: right;
+			}
+		}
+	}
+
+	.link-header {
+	}
+
+	.icon-arrow {
+	}
+}

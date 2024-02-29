@@ -30,6 +30,19 @@
 		@include adaptiveValue("font-size", 68, 34);
 	}
 
+	.breadcrumb__next {
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	.nav-prev-next {
+		@include adaptiveValue("padding-top", 50, 32, 992, 360, 1);
+		@media (min-width: $tablet) {
+			display: none;
+		}
+	}
+
 	.two-rows-fw-image {
 		// .two-rows-fw-image__block
 

@@ -29,6 +29,10 @@
 		font-size: 0.7em;
 	}
 
+	li:last-child {
+		font-weight: 600;
+	}
+
 	&__next {
 		a {
 			display: flex;

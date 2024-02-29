@@ -14,3 +14,4 @@ export * from './cardCircle';
 export * from './form';
 export * from './formWithImage';
 export * from './breadcrumb';
+export * from './navPrevNext';
