@@ -1,20 +1,136 @@
+<!DOCTYPE html>
 <html lang='ru'>
 
 	<head>
-		{{> app/head title='TNT | Webpack-template'}}
+		{{> app/head title='tnt | Webpack-template'}}
 	</head>
 
 	<body>
-		<div class='page page__cases wrapper'>
+		<div class='page page-cases wrapper'>
 
 			{{> app/loader/loader}}
 
 
 			{{> widgets/header/header}}
 
+			<div class="tnt__breadcrumb">
+				<div class="tnt__container">
+					<nav class="breadcrumb">
+						<ul itemscope itemtype="https://schema.org/BreadcrumbList" aria-label="Breadcrumb">
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="/">
+									<span itemprop="name">Главная</span>
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="javascript:void(0)">
+									<span itemprop="name">Портфолио</span>
+								</a>
+								<meta itemprop="position" content="2" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a class='link-header' itemprop="item" href="javascript:void(0)">
+									<span itemprop="name">tnt</span>
+								</a>
+								<meta itemprop="position" content="3" />
+							</li>
+						</ul>
+						<div class="breadcrumb__next"><a class='link-header' href="/cases/mts-blog-and-voice">Следующий проект<span class='icon-arrow'></span></a></div>
+					</nav>
+				</div>
+			</div>
+
 			<main class='tnt'>
 
-				<h1>tnt</h1>
+				<section class="tnt__two-rows-fw-image two-rows-fw-image">
+					<div class="two-rows-fw-image__block">
+						<div class="two-rows-fw-image__column">
+							<div class="two-rows-fw-image__container">
+								<div class="two-rows-fw-image__content">
+									<div class="two-rows-fw-image__head">
+										<h2><span>.</span>ТНТ</h2>
+									</div>
+									<div class="two-rows-fw-image__body">
+										<div class="two-rows-fw-image__text text">
+											<p><b class='text-bold'>Период проведения: </b>2020-2022г</p>
+											<p><b class='text-bold'>География: </b>Тверь, Ярославль, Рыбинск, Тула, Новомосковск, Саратов, Балаково, Владимир, Белгород, Старый Оскол, Рязань.</p>
+										</div>
+										<h6 class='text-l text-bold'>Задачи агенства:</h6>
+										<ul class="two-rows-fw-image__list">
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<p>Получение максимальных охватов в регионах СМИ и пабликах.</p>
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<p>Получение от пользователей откликов в виде комментариев.</p>
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<p>Нативное вирусное продвижение.</p>
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<p>Привлечение внимания к сериалам и побуждение зрителей к просмотру.</p>
+											</li>
+											<li class="two-rows-fw-image__item item-with-marker">
+												<span class='item-with-marker__marker icon-star-4pins'></span>
+												<p>Разжигание интереса к рекламируемому объекту путем нестандартных подходов.</p>
+											</li>
+										</ul>
+										<div class="text text-s">
+											<p>Запуск рекламных кампаний посредством вирусного продвижения сериалов <b>«Война семей» (2 сезона), «Патриот» (2 сезона), «Девушки с Макаровым», «Полярный».</b></p>
+											<p>PR-поддержка запуска сезонов шоу «Холостяк».</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class='two-rows-fw-image__column'>
+							<div class="two-rows-fw-image__images">
+
+								<div class='two-rows-fw-image__image'>
+									<div class='swiper-wrapper'>
+										<div class='image-full-width swiper-slide'>
+											<img src="/images/cases/tnt/02.webp" alt="фото выступающего на конференции">
+										</div>
+										<div class='image-full-width swiper-slide'>
+											<img src="/images/cases/tnt/03.webp" alt="фото выступающего на конференции">
+										</div>
+										<div class='image-full-width swiper-slide'>
+											<img src="/images/cases/tnt/01.webp" alt="фото присутствующих гостей на конференции">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</section>
+
+				<div class='card-circle'>
+					<div class="card-circle__decor">
+
+						<svg width="100%" height="100%" viewBox="0 0 1293 1293" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="646" cy="646" r="147.5" stroke="#F1F8FF" stroke-opacity="0.15" />
+							<circle cx="646" cy="646" r="227" stroke="#F1F8FF" stroke-opacity="0.15" />
+							<circle cx="646" cy="646" r="308" stroke="#F1F8FF" stroke-opacity="0.17" />
+							<circle cx="646" cy="646" r="525.5" stroke="#F1F8FF" stroke-opacity="0.17" />
+							<circle cx="646" cy="646" r="404" stroke="#F1F8FF" stroke-opacity="0.5" />
+							<circle cx="646" cy="646" r="646" stroke="#F1F8FF" stroke-opacity="0.5" />
+							<circle cx="646" cy="646" r="197.5" stroke="#F1F8FF" stroke-opacity="0.15" stroke-width="4" />
+							<circle cx="646" cy="646" r="455" stroke="#F1F8FF" stroke-opacity="0.15" stroke-width="4" />
+						</svg>
+					</div>
+					<div class="card-circle__body">
+						<div class="card-circle__bg">
+							<div class="card-circle__image"><img src="/images/cases/09.webp" alt="фото четверых молодых людей"></div>
+						</div>
+					</div>
+				</div>
 
 			</main>
 			{{> widgets/footer/footer}}
