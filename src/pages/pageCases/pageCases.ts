@@ -46,10 +46,9 @@ export function pageCases(screenWidth: number = 991.98): void {
             ? `${top - 35}px`
             : `${top - height / 5}px`,
          circleX = mediaQuery.matches
-            ? `${right - width / 2.2}px`
-            : `${left - width / 2.9}px`;
+            ? `${right - width / 1.8}px`
+            : `${left - width / 3}px`;
 
-      // circleItem.style.position = 'absolute';
       circleItem.style.top = circleY;
       circleItem.style.left = circleX;
    }

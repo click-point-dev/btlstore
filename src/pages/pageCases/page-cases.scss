@@ -218,7 +218,7 @@
 				z-index: 10;
 				inset: 0;
 				@include adaptiveValue("padding-block", 128, 80);
-				@include adaptiveValue("padding-left", 198, 60);
+				@include adaptiveValue("padding-left", 240, 120, 1440, 991.98, 1);
 				padding-right: 30px;
 			}
 		}

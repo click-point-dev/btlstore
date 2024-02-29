@@ -44,6 +44,10 @@
 		transition:
 			opacity $anim,
 			scale $anim 0.1s;
+
+		svg path {
+			stroke: $accent1;
+		}
 	}
 
 	&:hover {

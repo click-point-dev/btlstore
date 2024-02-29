@@ -1,4 +1,8 @@
 .header {
+	.logo {
+		@include adaptiveValue("width", 184, 105, 1440, 678, 1);
+	}
+
 	// .header__container
 	background-color: $white;
 	backdrop-filter: blur(17px);
