@@ -362,7 +362,11 @@
 			column-gap: 30px;
 			row-gap: 10px;
 			justify-content: start;
-			background-color: #deefff;
+			background-color: $accent1-xl;
+		}
+
+		button {
+			background-color: transparent;
 		}
 
 		// ._tab-active
@@ -384,7 +388,7 @@
 	// .services-tabs__item
 
 	&__item {
-		@include adaptiveValue("padding-bottom", 30, 32);
+		//
 	}
 }
 
@@ -484,6 +488,11 @@
 }
 
 .services {
+	// .services__containeer
+	&__container {
+		@include adaptiveValue("padding-top", 30, 32);
+	}
+
 	// .services__cases
 
 	&__cases {
