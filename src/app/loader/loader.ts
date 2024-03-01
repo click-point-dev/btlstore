@@ -1,32 +1,39 @@
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-import { documentLock, documentUnlock } from '../../shared';
+import { documentUnlock } from '../../shared';
 
 gsap.registerPlugin(CustomEase);
 
 export function hideLoader(): void {
    const point = document.querySelector('.first-screen__logo');
    const cords = point && point.getBoundingClientRect();
+   const loader: HTMLElement = document.querySelector('.loader');
+
+   // loader.style.top = `${window.scrollY - 20}px`;
+   // console.log(window.scrollY);
+
    const tlLoader = gsap.timeline({ paused: true });
 
-   const x = (cords.right - cords.left) / 2 + cords.left;
-   const y = (cords.bottom - cords.top) / 2 + cords.top;
-   console.log(x);
+   const cX = (cords.right - cords.left) / 2 + cords.left;
+   const cY = (cords.bottom - cords.top) / 2 + cords.top;
+
    tlLoader
-      .to('.loader', {
-         // clipPath: `circle(0% at 25% 52.2%)`,
-         clipPath: `circle(0% at ${cords ? x : 100}px ${cords ? y : 200}px)`,
+      .to('body', {
+         opacity: 1,
+      })
+      .to(loader, {
+         clipPath: `circle(0% at ${cords ? cX : 100}px ${cords ? cY : 300}px)`,
          duration: 1.2,
          ease: 'power1.in',
+         onComplete: () => {
+            documentUnlock();
+         },
       })
       .from('.first-screen__decor', {
          scale: 0,
          delay: -0.3,
          duration: 1,
          ease: 'power3.out',
-         onComplete: () => {
-            documentUnlock();
-         },
       })
       .to('.first-screen__decor', {
          scale: 1.5,
