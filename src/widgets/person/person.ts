@@ -11,10 +11,13 @@ export function person() {
 
    gsap.registerPlugin(ScrollTrigger);
    gsap.from('.team__image', {
-      scrollTrigger: '.team__body',
-      y: 800,
+      scrollTrigger: {
+         trigger: '.team__body',
+         start: '20% 35%',
+      },
+      y: '120%',
       duration: 0.9,
-      stagger: 0.05,
+      stagger: 0.08,
       ease: 'back.out(0.7)',
    });
    gsap.from('[data-name="persons"]', { y: 800, delay: 2 });
