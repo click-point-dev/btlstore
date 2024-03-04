@@ -23,7 +23,7 @@ $fontFamily: Montserrat, sans-serif, Arial;
 
 // Основные цвета
 $mainColor: #120005; // Цвет шрифта по умолчанию
-$bg: #f1f8ffcc;
+$bg: #f1f8ffe0;
 $white: #fff3f6;
 $accent1: #bf274d;
 $accent1-l: #bf274d89;
@@ -80,7 +80,8 @@ body {
 	background-color: $accent1;
 
 	// Скролл заблокирован
-	.lock & {
+	.lock &,
+	.popup-shown & {
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
