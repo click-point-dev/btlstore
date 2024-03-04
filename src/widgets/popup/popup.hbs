@@ -1,0 +1,14 @@
+<div class="popup" data-popup-type='{{type}}'>
+	<div class="popup__close">
+		<span class='icon-close'></span>
+	</div>
+	<div class="popup__block">
+		{{#if container}}
+			<div class="popup__container">
+				{{> @partial-block}}
+			</div>
+		{{else}}
+			{{> @partial-block}}
+		{{/if}}
+	</div>
+</div>
