@@ -38,13 +38,14 @@
 		bottom: 7px;
 		color: inherit;
 		line-height: 100%;
-		// pointer-events: none;
+		pointer-events: none;
 		@include adaptiveValue("padding-inline", 10, 9);
 	}
 
 	.input {
 		display: block;
 		width: 100%;
+		min-height: 62px;
 		@include adaptiveValue("padding", 10, 9);
 		&:-webkit-autofill {
 			transition: all 5000s ease-in-out;
@@ -82,4 +83,9 @@
 		background-color: $white;
 		border-radius: $radius;
 	}
+}
+
+input.input.fn {
+	display: none;
+	pointer-events: none;
 }
