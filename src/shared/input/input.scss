@@ -60,7 +60,8 @@
 		@include adaptiveValue("font-size", 24, 22);
 
 		&::placeholder {
-			display: none;
+			// display: none;
+			opacity: 0;
 		}
 	}
 
