@@ -6,3 +6,4 @@ export * from './setHash';
 export * from './uniqArray';
 export * from './getCoords';
 export * from './documentLock';
+export * from './insertContent';
