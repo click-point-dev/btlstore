@@ -13,7 +13,7 @@ export function person() {
    gsap.from('.team__image', {
       scrollTrigger: {
          trigger: '.team__body',
-         start: '20% 35%',
+         start: '20% center',
       },
       y: '120%',
       duration: 0.9,
