@@ -7,3 +7,4 @@ export * from './uniqArray';
 export * from './getCoords';
 export * from './documentLock';
 export * from './insertContent';
+export * from './addClass';
