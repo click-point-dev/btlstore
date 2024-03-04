@@ -2,7 +2,7 @@
 <html lang='ru'>
 
 	<head>
-		{{> app/head title='Services | Webpack-template'}}
+		{{> app/head canonical='https://probtl.ru/services' title='Организовываем мероприятия любой сложности' description='Полный спектр услуг в сфере BTL и Event. Организация мероприятий под ключ. Корпоративы. Бизнес-события. Праздники. Реализация промоакций в городах РФ. Собственный штат промоутеров.' ogImage='https://probtl.ru/images/main-page/01.webp'}}
 	</head>
 
 	<body>
@@ -45,8 +45,8 @@
 														<li class="services-tabs-item__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Спортивные мероприятия</li>
 													</ul>
 													<div class="services-tabs-item__cta">
-														<div class="button button-color button-xl">
-															<a href='javascript:void(0)' class=''>Заказать</a>
+														<div class="button button-color button-xl" data-popup-type='request-popup'>
+															<button>Заказать</button>
 														</div>
 													</div>
 												</div>
@@ -78,8 +78,8 @@
 														<li class="services-tabs-item__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Пресс-туры</li>
 													</ul>
 													<div class="services-tabs-item__cta">
-														<div class="button button-color button-xl">
-															<a href='javascript:void(0)' class=''>Заказать</a>
+														<div class="button button-color button-xl" data-popup-type='request-popup'>
+															<button>Заказать</button>
 														</div>
 													</div>
 												</div>
@@ -112,8 +112,8 @@
 														<li class="services-tabs-item__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Директ-мейл</li>
 													</ul>
 													<div class="services-tabs-item__cta">
-														<div class="button button-color button-xl">
-															<a href='javascript:void(0)' class=''>Заказать</a>
+														<div class="button button-color button-xl" data-popup-type='request-popup'>
+															<button>Заказать</button>
 														</div>
 													</div>
 												</div>
@@ -133,6 +133,54 @@
 
 			</main>
 			{{> widgets/footer/footer}}
+			{{#> widgets/popup/popup type='request-popup'}}
+				<div class="main__full-width-form full-width-form">
+					<div class="full-width-form__container">
+						<div class="full-width-form__head">
+							<div class="full-width-form__title">
+								<h5 class=' text-white'>Закажите услугу</h5>
+							</div>
+							<div class="full-width-form__sub-title">
+								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
+							</div>
+						</div>
+						<div class="full-width-form__body">
+							<form class="full-width-form__form form" action="">
+								<div class="form__row">
+									<div class='input-block text-white'>
+										<input class="input" name="name" id="name" type="text" placeholder="" />
+										<label for="name">Имя</label>
+										<input class="input fn" name="fn" id="fn" type="text" required />
+									</div>
+									<div class='input-block text-white'>
+										<input class="input" name="city" id="city" type="text" placeholder="" />
+										<label for="city">Город</label>
+									</div>
+									<div class='input-block text-white'>
+										<input class="input" name="phone" id="phone" type="tel" placeholder="" required />
+										<label for="phone">Телефон</label>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class='input-block text-white'>
+										<textarea class="input" name="message" id="message" rows="1"></textarea>
+										<label for="message">Опишите, что вам требуется организовать</label>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class="button button-light button-xl">
+										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
+									</div>
+									<div class='input-block checkbox text-white'>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
+										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			{{/widgets/popup/popup}}
 			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
 		</div>
 	</body>
