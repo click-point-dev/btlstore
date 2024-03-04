@@ -1,13 +1,14 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { pageCases } from './pages';
+import { pageCases, vacanciesPage } from './pages';
 import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
    clientsSlider,
    headerMenu,
    person,
+   popup,
    sliderCases,
    sliderParams,
    subList,
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
    sliderCases();
    cardCircle();
    pageCases();
+   popup();
+   vacanciesPage();
 });
 
 window.addEventListener('load', function () {
