@@ -526,6 +526,7 @@
 	}
 }
 .full-width-form {
+	background-color: $accent1;
 	// .full-width-form__container
 
 	&__container {
@@ -554,6 +555,10 @@
 	// .full-width-form__body
 
 	&__body {
+		&--s {
+			max-width: 832px;
+			margin-inline: auto;
+		}
 	}
 
 	// .full-width-form__form
