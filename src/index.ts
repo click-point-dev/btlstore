@@ -6,6 +6,7 @@ import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
    clientsSlider,
+   form,
    headerMenu,
    person,
    popup,
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
    sliderCases();
    cardCircle();
    pageCases();
+   form();
    popup();
    vacanciesPage();
 });
