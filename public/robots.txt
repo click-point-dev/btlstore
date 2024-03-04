@@ -1,0 +1,17 @@
+#All
+User-Agent: *
+Allow: /
+Disallow: /404
+Disallow: /privacy
+#Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /404
+Disallow: /privacy
+#Google
+User-agent: Googlebot
+Allow: /
+Disallow: /404
+Disallow: /privacy
+Sitemap: https://probtl.ru/sitemap.xml
+Host: probtl.ru
