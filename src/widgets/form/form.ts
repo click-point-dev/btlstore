@@ -82,6 +82,14 @@ export function form(): void {
             },
          ]);
       }
+      if (form.agreement) {
+         validate.addField(form.agreement, [
+            {
+               rule: Rules.Required,
+               errorMessage: 'Согласие обязательно',
+            },
+         ]);
+      }
 
       // if (form['file[]']) {
       //    validate.addField('#filesInput', [
