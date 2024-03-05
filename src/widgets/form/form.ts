@@ -51,6 +51,10 @@ export function form(): void {
                errorMessage: 'Только буквы, тире, пробел',
             },
             {
+               rule: Rules.Required,
+               errorMessage: 'Введите имя',
+            },
+            {
                rule: Rules.MinLength,
                value: 3,
                errorMessage: 'Минимум 3 символа',
@@ -128,6 +132,8 @@ export function form(): void {
       const method = form.getAttribute('method');
       const loader = form.querySelector('.form__loader') as HTMLElement;
 
+      // formData.set('Title', `Заявка с сайта probtl.ru`);
+      formData.set('Title', `Заявка с сайта ${window.location.hostname}`);
       // if (vacancy) formData.set('Title', `Отклик на вакансию: ${vacancy}`);
 
       // for (const item of formData.entries()) {
