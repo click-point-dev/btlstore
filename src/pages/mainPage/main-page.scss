@@ -63,6 +63,7 @@
 
 			.first-screen__decor {
 				position: absolute;
+				pointer-events: none;
 				// z-index: 5;
 
 				width: 1293px;
