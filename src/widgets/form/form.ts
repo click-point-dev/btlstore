@@ -133,7 +133,7 @@ export function form(): void {
       const loader = form.querySelector('.form__loader') as HTMLElement;
 
       // formData.set('Title', `Заявка с сайта probtl.ru`);
-      formData.set('Title', `Заявка с сайта ${window.location.hostname}`);
+      formData.set('title', `Заявка с сайта ${window.location.hostname}`);
       // if (vacancy) formData.set('Title', `Отклик на вакансию: ${vacancy}`);
 
       // for (const item of formData.entries()) {
