@@ -4,3 +4,4 @@ node_modules
 **/*.zip
 **/*.ai
 **/*.doc
+**/request.php
