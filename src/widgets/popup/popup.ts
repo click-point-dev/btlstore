@@ -15,7 +15,7 @@ export function popup(): void {
       timeline
          .to(item, {
             css: {
-               display: 'flex',
+               display: 'grid',
                visibility: 'visible',
                pointerEvents: 'all',
             },
