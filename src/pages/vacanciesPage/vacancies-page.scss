@@ -176,6 +176,9 @@
 	// .vacancy__section-content
 
 	&__section-content {
+		.text:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 20);
+		}
 	}
 
 	// .vacancy__list
