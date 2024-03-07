@@ -1,7 +1,7 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { pageCases, vacanciesPage } from './pages';
+import { page404, pageCases, vacanciesPage } from './pages';
 import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
@@ -42,4 +42,5 @@ window.addEventListener('load', function () {
    hideLoader();
    clientsSlider();
    paramsCircl();
+   page404();
 });

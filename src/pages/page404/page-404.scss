@@ -1,0 +1,45 @@
+.page__404 {
+	.header {
+		position: relative;
+	}
+}
+
+.page-404 {
+	position: relative;
+	text-align: center;
+	@include adaptiveValue("padding-block", 162, 92);
+	background-color: $white;
+	border-radius: 87px 0 87px 0;
+	overflow: hidden;
+
+	&__body {
+		:not(:last-child) {
+			@include adaptiveValue("padding-bottom", 20, 15);
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+
+		&--1,
+		&--2 {
+			@include adaptiveValue("width", 1293, 400);
+			@include adaptiveValue("height", 1293, 400);
+		}
+
+		&--1 {
+			@include adaptiveValue("left", -846, -200);
+			@include adaptiveValue("top", 311, 300);
+			scale: 0;
+		}
+
+		&--2 {
+			// left: 983px;
+			// top: -809px;
+			@include adaptiveValue("left", 983, 200);
+			@include adaptiveValue("top", -809, -200);
+		}
+	}
+}
