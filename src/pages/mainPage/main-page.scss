@@ -727,5 +727,11 @@
 		// .checkbox__label:after {
 		// 	color: $mainColor;
 		// }
+
+		.success {
+			h3 {
+				color: $accent1 !important;
+			}
+		}
 	}
 }

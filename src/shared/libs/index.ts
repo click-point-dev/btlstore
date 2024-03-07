@@ -8,3 +8,4 @@ export * from './getCoords';
 export * from './documentLock';
 export * from './insertContent';
 export * from './addClass';
+export * from './rundomInt';

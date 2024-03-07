@@ -1,6 +1,6 @@
 import Inputmask from 'inputmask';
 import JustValidate, { Rules } from 'just-validate';
-import { addClass, removeClass } from '../../shared';
+import { addClass, changeElements, removeClass } from '../../shared';
 import gsap from 'gsap';
 
 export function form(): void {
@@ -151,14 +151,18 @@ export function form(): void {
          // console.log(res);
 
          if (res.status !== 200) {
-            throw new Error(`❌ Что-то не так. Код ответа ${res.status}`);
+            throw new Error(`❌ Что-то пошло не так. Код ответа ${res.status}`);
          }
-
-         console.log('Успех');
-         // flsModules.popup.open('#popup-accept');
+         const success = document.querySelector('.success') as HTMLElement;
+         changeElements(form, success, 2000);
       } catch (error) {
          console.error(error);
-         // flsModules.popup.open('#popup-reject');
+         const errorBlock = document.createElement('div');
+         errorBlock.className = 'text text-white';
+         errorBlock.style.paddingBlock = '50px';
+         errorBlock.style.textAlign = 'center';
+         errorBlock.textContent = error;
+         form.insertAdjacentElement('afterbegin', errorBlock);
       } finally {
          removeClass(loader, 'visible');
          form.reset();
