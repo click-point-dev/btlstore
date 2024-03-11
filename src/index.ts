@@ -1,7 +1,7 @@
 import { hideLoader } from './app';
 import { tabs } from './features';
 import './index.scss';
-import { page404, pageCases, vacanciesPage } from './pages';
+import { mainPage, page404, pageCases, vacanciesPage } from './pages';
 import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
 import {
    cardCircle,
@@ -18,7 +18,6 @@ import {
 documentLock();
 document.addEventListener('DOMContentLoaded', function () {
    const screenWidth = window.innerWidth;
-
    headerMenu();
    subList();
    tabs();
@@ -40,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.addEventListener('load', function () {
    hideLoader();
+   mainPage();
    clientsSlider();
    paramsCircl();
    page404();
