@@ -132,8 +132,9 @@
 		justify-content: center;
 
 		a {
-			@include adaptiveValue("font-size", 32, 18);
+			@include adaptiveValue("font-size", 32, 15);
 			transition: color $anim;
+			padding-block: 5px;
 
 			&:active {
 				color: $accent2;
