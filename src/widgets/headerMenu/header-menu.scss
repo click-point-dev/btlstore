@@ -21,7 +21,7 @@
 		}
 		display: inline-flex;
 		flex-direction: column;
-		align-items: start;
+		align-items: flex-start;
 		background-color: $bg;
 		backdrop-filter: blur(17px);
 		overflow: hidden;
@@ -45,7 +45,7 @@
 
 		@media (max-width: $burger) {
 			flex-direction: column;
-			align-items: start;
+			align-items: flex-start;
 			margin-inline: unset;
 			gap: 0;
 
