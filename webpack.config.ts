@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 // const PUBLIC_FOLDER = `${__dirname}/public`;
 
@@ -75,26 +76,69 @@ const config = (env: EnvVariables): Configuration => {
          rules: [
             {
                test: /\.s[ac]ss$/i,
-               use: [
-                  // Creates `style` nodes from JS strings
-                  isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-                  // Translates CSS into CommonJS
-                  'css-loader',
-                  // Compiles Sass to CSS
-                  'sass-loader',
-               ],
+               // use: [
+               //    // Creates `style` nodes from JS strings
+               //    isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+               //    // Translates CSS into CommonJS
+               //    'css-loader',
+               //    // Compiles Sass to CSS
+               //    'sass-loader',
+               // ],
+               use: isProd
+                  ? [MiniCssExtractPlugin.loader, 'postcss-loader']
+                  : [
+                       'style-loader',
+                       {
+                          loader: 'css-loader',
+                          options: { importLoaders: 2 },
+                       },
+                       'postcss-loader',
+                       'sass-loader',
+                    ],
             },
             {
                test: /\.css$/i,
-               use: [
-                  isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-                  'css-loader',
-               ],
+               use: isProd
+                  ? [MiniCssExtractPlugin.loader, 'postcss-loader']
+                  : [
+                       'style-loader',
+                       {
+                          loader: 'css-loader',
+                          options: { importLoaders: 1 },
+                       },
+                       {
+                          loader: 'postcss-loader',
+                          options: {
+                             postcssOptions: {
+                                plugins: [
+                                   // Other plugins,
+                                   'autoprefixer',
+                                   [
+                                      'css-has-pseudo',
+                                      {
+                                         // Options
+                                      },
+                                   ],
+                                ],
+                             },
+                          },
+                       },
+                    ],
             },
             {
                test: /\.tsx?$/,
                use: 'ts-loader',
                exclude: /node_modules/,
+            },
+            {
+               test: /\.(?:js|mjs|cjs)$/,
+               exclude: /node_modules/,
+               use: {
+                  loader: 'babel-loader',
+                  options: {
+                     presets: [['@babel/preset-env', { targets: 'defaults' }]],
+                  },
+               },
             },
             {
                test: /\.hbs$/,
@@ -103,10 +147,10 @@ const config = (env: EnvVariables): Configuration => {
                   rootRelative: [__dirname + '/src/'],
                },
             },
-            {
-               test: /\.(png|svg|jpg|jpeg|gif|webp|pdf)$/i,
-               type: 'asset/resource',
-            },
+            // {
+            //    test: /\.(png|svg|jpg|jpeg|gif|webp|pdf)$/i,
+            //    type: 'asset/resource',
+            // },
          ],
       },
       resolve: {
@@ -217,7 +261,7 @@ const config = (env: EnvVariables): Configuration => {
               hot: true,
               static: {
                  directory: path.resolve(__dirname, 'public'),
-                 publicPath: './',
+                 publicPath: '/',
               },
            }
          : undefined,
