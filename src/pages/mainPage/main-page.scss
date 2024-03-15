@@ -242,23 +242,35 @@
 	// .about__params
 
 	&__params {
-		.about-swiper:has(&) & {
-			@media (min-width: 1281px) {
-				flex-grow: 0;
-				flex-shrink: 0;
-				@include adaptiveValue("flex-basis", 303, 231);
-			}
-			@include adaptiveValue("max-width", 303, 231);
+		@include adaptiveValue("max-width", 303, 231);
 
-			.params-circl {
-				margin-inline: auto;
-				margin-bottom: rem(50);
-			}
-
-			p {
-				text-align: center;
-			}
+		.params-circl {
+			margin-inline: auto;
+			margin-bottom: rem(50);
 		}
+
+		p {
+			text-align: center;
+		}
+
+		//раскоментировать вместо кода выше, если что-то пойдет не так с крыглишками-параметрами
+		// .about-swiper:has(&) & {
+		// 	@media (min-width: 1281px) {
+		// 		flex-grow: 0;
+		// 		flex-shrink: 0;
+		// 		@include adaptiveValue("flex-basis", 303, 231);
+		// 	}
+		// 	@include adaptiveValue("max-width", 303, 231);
+
+		// 	.params-circl {
+		// 		margin-inline: auto;
+		// 		margin-bottom: rem(50);
+		// 	}
+
+		// 	p {
+		// 		text-align: center;
+		// 	}
+		// }
 	}
 
 	// .about__wrapper
