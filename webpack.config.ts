@@ -85,7 +85,16 @@ const config = (env: EnvVariables): Configuration => {
                //    'sass-loader',
                // ],
                use: isProd
-                  ? [MiniCssExtractPlugin.loader, 'postcss-loader']
+                  ? [
+                       MiniCssExtractPlugin.loader,
+                       //   'style-loader',
+                       {
+                          loader: 'css-loader',
+                          options: { importLoaders: 2 },
+                       },
+                       'postcss-loader',
+                       'sass-loader',
+                    ]
                   : [
                        'style-loader',
                        {
@@ -99,7 +108,14 @@ const config = (env: EnvVariables): Configuration => {
             {
                test: /\.css$/i,
                use: isProd
-                  ? [MiniCssExtractPlugin.loader, 'postcss-loader']
+                  ? [
+                       MiniCssExtractPlugin.loader,
+                       {
+                          loader: 'css-loader',
+                          options: { importLoaders: 1 },
+                       },
+                       'postcss-loader',
+                    ]
                   : [
                        'style-loader',
                        {
