@@ -106,23 +106,7 @@ const config = (env: EnvVariables): Configuration => {
                           loader: 'css-loader',
                           options: { importLoaders: 1 },
                        },
-                       {
-                          loader: 'postcss-loader',
-                          options: {
-                             postcssOptions: {
-                                plugins: [
-                                   // Other plugins,
-                                   'autoprefixer',
-                                   [
-                                      'css-has-pseudo',
-                                      {
-                                         // Options
-                                      },
-                                   ],
-                                ],
-                             },
-                          },
-                       },
+                       'postcss-loader',
                     ],
             },
             {
@@ -130,7 +114,7 @@ const config = (env: EnvVariables): Configuration => {
                use: 'ts-loader',
                exclude: /node_modules/,
             },
-            {
+            isProd && {
                test: /\.(?:js|mjs|cjs)$/,
                exclude: /node_modules/,
                use: {
@@ -242,7 +226,7 @@ const config = (env: EnvVariables): Configuration => {
             ],
          }),
       ],
-      devtool: isDev ? 'inline-source-map' : false,
+      devtool: isDev ? 'eval-source-map' : false,
 
       devServer: isDev
          ? {
