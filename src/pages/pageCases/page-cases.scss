@@ -91,7 +91,7 @@
 			@include adaptiveValue("padding-bottom", 50, 40);
 			max-width: 43%;
 			@media (max-width: $tablet) {
-				max-width: unset;
+				max-width: 100%;
 			}
 		}
 
@@ -101,8 +101,12 @@
 			@include adaptiveValue("margin-bottom", 52, 39);
 			h2 {
 				line-height: 1;
+				@media (max-width: $tablet) {
+					width: calc(100% - 110px);
+					overflow-wrap: break-word;
+				}
 			}
-			padding-right: 132px;
+			// margin-right: 132px;
 		}
 
 		// .two-rows-fw-image__body
