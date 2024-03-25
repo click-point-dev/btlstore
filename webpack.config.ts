@@ -196,6 +196,7 @@ const config = (env: EnvVariables): Configuration => {
             'cases/tnt',
             'cases/eastern-special-equipment',
             'cases/razumnye-ot-naroda',
+            'cases/gazpromneft-innovacii',
             'services',
             'vacancies',
             'portfolio',

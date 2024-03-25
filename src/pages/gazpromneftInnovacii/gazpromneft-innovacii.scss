@@ -1,0 +1,16 @@
+.gazpromneft-innovacii {
+	.two-rows-fw-image__block {
+		background-color: $accent-gp !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: $accent-gp !important;
+		}
+	}
+
+	svg circle {
+		stroke: $accent-gp;
+		stroke-opacity: 0.5;
+	}
+}

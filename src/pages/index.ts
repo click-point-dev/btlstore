@@ -13,3 +13,4 @@ export * from './pageCases';
 export * from './easternSpecialEquipment';
 export * from './portfolioPage';
 export * from './page404';
+export * from './gazpromneftInnovacii';
