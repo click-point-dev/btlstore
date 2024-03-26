@@ -99,7 +99,8 @@
 
 		&__head {
 			@include adaptiveValue("margin-bottom", 52, 39);
-			h2 {
+			h2,
+			.subtitle {
 				line-height: 1;
 				@media (max-width: $tablet) {
 					width: calc(100% - 110px);
@@ -241,6 +242,10 @@
 				@include adaptiveValue("padding-block", 128, 80);
 				@include adaptiveValue("padding-left", 240, 120, 1440, 991.98, 1);
 				padding-right: 30px;
+			}
+
+			.image-position-top {
+				object-position: top;
 			}
 		}
 	}
