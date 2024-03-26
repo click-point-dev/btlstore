@@ -1,0 +1,16 @@
+.kari {
+	.two-rows-fw-image__block {
+		background-color: #991e66 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #991e66 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #991e66;
+		stroke-opacity: 0.5;
+	}
+}
