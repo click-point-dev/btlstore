@@ -1,0 +1,16 @@
+.rzhd {
+	.two-rows-fw-image__block {
+		background-color: #EE3523 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #EE3523 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #EE3523;
+		stroke-opacity: 0.5;
+	}
+}
