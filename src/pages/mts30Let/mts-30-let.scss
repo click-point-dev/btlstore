@@ -1,0 +1,24 @@
+.mts-30-let {
+	.two-rows-fw-image__block {
+		background-color: $accent2 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: $accent2 !important;
+		}
+	}
+
+	svg circle {
+		stroke: $accent2;
+		stroke-opacity: 0.5;
+	}
+
+	.color-block {
+		background-color: #681922 !important;
+
+		&:after {
+			background: linear-gradient(#681922 5%, rgba(29, 2, 9, 0) 50%) !important;
+		}
+	}
+}
