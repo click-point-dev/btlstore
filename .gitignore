@@ -5,3 +5,4 @@ node_modules
 **/*.ai
 **/*.doc
 **/request.php
+*.ini
