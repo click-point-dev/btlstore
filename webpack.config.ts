@@ -204,6 +204,10 @@ const config = (env: EnvVariables): Configuration => {
             'vacancies',
             'portfolio',
             '404',
+            'event',
+            'pr',
+            'btl',
+            'promotional-staff',
          ].map(
             page =>
                new HtmlWebpackPlugin({

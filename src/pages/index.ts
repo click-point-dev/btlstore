@@ -17,3 +17,7 @@ export * from './gazpromneftInnovacii';
 export * from './mts30Let';
 export * from './kari';
 export * from './rzhd';
+export * from './eventPage';
+export * from './prPage';
+export * from './btlPage';
+export * from './promotionalStaffPage';
