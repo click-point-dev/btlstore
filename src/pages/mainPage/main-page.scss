@@ -310,7 +310,7 @@
 		// .services__list
 
 		&__list {
-			margin-bottom: rem(62);
+			// margin-bottom: rem(62);
 		}
 	}
 	.services-list {
@@ -396,6 +396,9 @@
 	// .services-tabs__items
 
 	&__items {
+		& > div {
+			@include adaptiveValue("margin-bottom", 140, 62);
+		}
 	}
 
 	// .services-tabs__item
