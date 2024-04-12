@@ -1,1 +1,118 @@
-.event-page {}
+.event-page {
+	.h2 {
+		line-height: 1;
+		@include adaptiveValue("margin-bottom", 25, 15);
+	}
+	.item-with-marker {
+		overflow-wrap: anywhere;
+		// .item-with-marker__marker
+
+		&__marker {
+			color: $accent2;
+		}
+	}
+
+	.main {
+		// .main__services
+
+		&__services {
+			@include adaptiveValue("padding-bottom", 100, 55);
+		}
+	}
+	.services {
+		border-radius: unset;
+		// .services__container
+
+		&__container {
+		}
+
+		// .services__row
+
+		&__row {
+			display: flex;
+			gap: 30px;
+
+			@media (max-width: $tablet) {
+				flex-direction: column;
+			}
+		}
+
+		// .services__column
+
+		&__column {
+			&:last-child {
+				@media (min-width: $tablet) {
+					flex: 0 0 360px;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+
+		// .services__text
+
+		&__text {
+			@include adaptiveValue("margin-bottom", 40, 30);
+		}
+
+		// .services__list
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			row-gap: 20px;
+			@include adaptiveValue("margin-bottom", 60, 24);
+		}
+
+		// .services__list-item
+
+		&__list-item {
+		}
+
+		// .services__image
+
+		&__image {
+			flex: 1 0 auto;
+			max-height: 1000px;
+			// position: relative;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				@media (max-width: $tablet) {
+					max-height: 600px;
+				}
+			}
+			@include adaptiveValue("margin-bottom", 30, 20);
+		}
+	}
+
+	&__team {
+		background-color: white;
+	}
+
+	&__head {
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+
+		> * {
+			@include adaptiveValue("flex-basis", 320, 280);
+		}
+	}
+
+	.portfolio__head {
+		@include adaptiveValue("margin-bottom", 48, 30);
+		h3 {
+			@include adaptiveValue("font-size", 62, 32);
+			span {
+				font-size: 2em;
+			}
+		}
+	}
+}

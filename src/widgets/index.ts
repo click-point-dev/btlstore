@@ -16,3 +16,5 @@ export * from './formWithImage';
 export * from './breadcrumb';
 export * from './navPrevNext';
 export * from './popup';
+export * from './plateWithText';
+export * from './cardCirclePlate';

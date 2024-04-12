@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang='ru'>
 
 	<head>
-		{{> app/head title='Components'}}
 	</head>
 
 	<body>
@@ -52,7 +52,7 @@
 						<p class='text-xxs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto odit illo tempore deleniti sit animi ipsam quam, accusantium consequuntur libero laudantium, aliquam officia ut sequi. Et facere molestiae dignissimos quis!</p>
 					{{/widgets/components/components}}
 					{{#> widgets/components/components title='Accent color text' label='.text-accent'}}
-						<p class='text-xs'><span class='text-accent'>Lorem ipsum dolor sit amet consectetur</span> adipisicing elit. Architecto odit illo tempore deleniti sit animi ipsam quam, accusantium consequuntur libero laudantium, aliquam officia ut sequi. Et facere molestiae dignissimos quis!</p>
+						<p><span class='text-accent'>Lorem ipsum dolor sit amet consectetur</span> adipisicing elit. Architecto odit illo tempore deleniti sit animi ipsam quam, accusantium consequuntur libero laudantium, aliquam officia ut sequi. Et facere molestiae dignissimos quis!</p>
 					{{/widgets/components/components}}
 					{{#> widgets/components/components title='White text' label='.text-white' bg=true}}
 						<p class='text-xs'><span class='text-white'>Lorem ipsum dolor sit amet consectetur</span> adipisicing elit. Architecto odit illo tempore deleniti sit animi ipsam quam, accusantium consequuntur libero laudantium, aliquam officia ut sequi. Et facere molestiae dignissimos quis!</p>
@@ -314,50 +314,55 @@
 								</div>
 							</div>
 						</div>
-				</div>
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Large button' label='.button-xl'}}
-					{{> shared/buttonXl/buttonXl}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Color button' label='.button-color'}}
-					{{> shared/buttonColor/buttonColor}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Company Logo' label='.logo'}}
-					{{> shared/logo/logo}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Sub List' label='.sub-list'}}
-					{{> widgets/subList/subList}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Header' label='.header'}}
-					{{> widgets/header/header}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Header Menu' label='.header-menu'}}
-					{{> widgets/headerMenu/headerMenu}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Item with marker' label='.item-with-marker'}}
-					<li class="item-with-marker">
-						<span class='item-with-marker__marker icon-close'></span>
-						Lorem, ipsum.
-					</li>
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Input type text' label='.input' bg=true}}
-					<div class='input-block'>
-						<input class="input" name="name" id="name" type="text" placeholder="" />
-						<label for="name">Имя</label>
-					</div>
-					<div class='input-block '>
-						<input class="input just-validate-error-field" name="name" id="name" type="text" placeholder="" />
-						<label for="name">Имя</label>
-						<div class="just-validate-error-label">Поле содержит недопустимые символы</div>
-					</div>
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Cards with contacts' label='.contacts-card'}}
-					{{> widgets/contactsCard/contactsCard}}
-				{{/widgets/components/components}}
-				{{#> widgets/components/components title='Breadcrumb' label='.breadcrumb'}}
-					{{> widgets/breadcrumb/breadcrumb}}
-				{{/widgets/components/components}}
 
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Large button' label='.button-xl'}}
+						{{> shared/buttonXl/buttonXl}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Color button' label='.button-color'}}
+						{{> shared/buttonColor/buttonColor}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Company Logo' label='.logo'}}
+						{{> shared/logo/logo}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Sub List' label='.sub-list'}}
+						{{> widgets/subList/subList}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Header' label='.header'}}
+						{{> widgets/header/header}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Header Menu' label='.header-menu'}}
+						{{> widgets/headerMenu/headerMenu}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Item with marker' label='.item-with-marker'}}
+						<li class="item-with-marker">
+							<span class='item-with-marker__marker icon-close'></span>
+							Lorem, ipsum.
+						</li>
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Input type text' label='.input' bg=true}}
+						<div class='input-block'>
+							<input class="input" name="name" id="name" type="text" placeholder="" />
+							<label for="name">Имя</label>
+						</div>
+						<div class='input-block '>
+							<input class="input just-validate-error-field" name="name" id="name" type="text" placeholder="" />
+							<label for="name">Имя</label>
+							<div class="just-validate-error-label">Поле содержит недопустимые символы</div>
+						</div>
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Cards with contacts' label='.contacts-card'}}
+						{{> widgets/contactsCard/contactsCard}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Breadcrumb' label='.breadcrumb'}}
+						{{> widgets/breadcrumb/breadcrumb}}
+					{{/widgets/components/components}}
+					{{#> widgets/components/components title='Color plate with text' label='.plate-with-text'}}
+						{{#> widgets/plateWithText/PlateWithText}}
+							<h3>Lorem, ipsum dolor.</h3>
+						{{/widgets/plateWithText/PlateWithText}}
+					{{/widgets/components/components}}
+				</div>
 		</div>
 		</main>
 		</div>

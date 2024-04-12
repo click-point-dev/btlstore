@@ -1,0 +1,11 @@
+.plate-with-text {
+	display: inline-block;
+	border: 2px solid $accent1;
+	border-radius: $radius;
+	@include adaptiveValue("padding-block", 25, 15);
+	@include adaptiveValue("padding-inline", 35, 25);
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 20, 12);
+	}
+}

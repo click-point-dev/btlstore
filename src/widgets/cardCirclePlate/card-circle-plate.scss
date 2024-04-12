@@ -1,0 +1,46 @@
+.card-circle-plate {
+	@include adaptiveValue("width", 320, 280);
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue("gap", 10, 7);
+
+	> :last-child {
+		flex: 1 1 auto;
+	}
+	// .card-circle-plate__circle
+
+	&__circle {
+		aspect-ratio: 1;
+		border-radius: 100%;
+		overflow: hidden;
+		background-color: rgb(211, 211, 211);
+		@include adaptiveValue("padding", 5, 3);
+		box-shadow: $dropShadow;
+	}
+
+	// .card-circle-plate__body
+
+	&__body {
+		height: 100%;
+		border-radius: 100%;
+		border: 3px solid white;
+		overflow: hidden;
+	}
+
+	// .card-circle-plate__bg
+
+	&__bg {
+		height: 100%;
+	}
+
+	// .card-circle-plate__image
+
+	&__image {
+		height: 100%;
+		img {
+			width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+		}
+	}
+}
