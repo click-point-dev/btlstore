@@ -3,4 +3,8 @@ h3 {
 	@include adaptiveValue("font-size", 43, 24);
 	font-weight: 700;
 	line-height: 130%; /* 55.9px */
+
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 15, 10);
+	}
 }
