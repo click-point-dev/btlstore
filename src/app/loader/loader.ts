@@ -9,6 +9,8 @@ export function hideLoader(): void {
    // loader.style.top = `${window.scrollY - 20}px`;
    // console.log(window.scrollY);
 
+   if (!point && !cords && !loader) return;
+
    const tlLoader = gsap.timeline({ paused: true });
 
    const cX = (cords.right - cords.left) / 2 + cords.left;
