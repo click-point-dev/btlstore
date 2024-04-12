@@ -208,6 +208,19 @@ const config = (env: EnvVariables): Configuration => {
             'pr',
             'btl',
             'promotional-staff',
+            'cases/alfabank',
+            'cases/bochkarev',
+            'cases/burger-king',
+            'cases/heineken',
+            'cases/jagermaster',
+            'cases/komandor',
+            'cases/megafon',
+            'cases/red-bull',
+            'cases/rosselhozbank',
+            'cases/rosselhozbank-2',
+            'cases/sovkombank',
+            'cases/tele2',
+            'cases/za-rodinu',
          ].map(
             page =>
                new HtmlWebpackPlugin({
