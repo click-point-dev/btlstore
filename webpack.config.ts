@@ -101,7 +101,7 @@ const config = (env: EnvVariables): Configuration => {
                           loader: 'css-loader',
                           options: { importLoaders: 2 },
                        },
-                       'postcss-loader',
+                       //   'postcss-loader',
                        'sass-loader',
                     ],
             },
@@ -122,7 +122,7 @@ const config = (env: EnvVariables): Configuration => {
                           loader: 'css-loader',
                           options: { importLoaders: 1 },
                        },
-                       'postcss-loader',
+                       //   'postcss-loader',
                     ],
             },
             {
