@@ -1,1 +1,16 @@
-.za-rodinu {}
+.za-rodinu {
+	.two-rows-fw-image__block {
+		background-color: #e31e24 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #e31e24 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #e31e24;
+		stroke-opacity: 0.5;
+	}
+}

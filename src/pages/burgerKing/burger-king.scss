@@ -1,1 +1,16 @@
-.burger-king {}
+.burger-king {
+	.two-rows-fw-image__block {
+		background-color: #c91f01 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #c91f01 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #c91f01;
+		stroke-opacity: 0.5;
+	}
+}
