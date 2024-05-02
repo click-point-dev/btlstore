@@ -85,7 +85,7 @@
 	&__image {
 		height: 100%;
 		img {
-			max-width: 100%;
+			width: 100%; //TODO проверить: ихменил с max-width на width. для совместимости с page-cases
 			height: 100%;
 			object-fit: cover;
 			filter: grayscale(1);
