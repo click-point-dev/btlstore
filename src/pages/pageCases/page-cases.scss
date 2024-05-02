@@ -23,6 +23,9 @@
 	.subtitle {
 		@include adaptiveValue("font-size", 36, 24);
 		text-transform: none;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 22, 10);
+		}
 	}
 
 	h2,
@@ -59,7 +62,7 @@
 		&__column {
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: flex-start;
 
 			&:first-child {
 				flex: 0 0 100%;
@@ -73,6 +76,14 @@
 				background-color: $accent2;
 				@media (max-width: $tablet) {
 					translate: 0;
+				}
+
+				@media (min-width: $tablet) {
+					min-height: 1100px;
+				}
+
+				&:has(.image-full-width:only-child) {
+					max-height: 1100px;
 				}
 			}
 		}
@@ -114,19 +125,19 @@
 
 		&__body {
 			h6 {
-				@include adaptiveValue("margin-bottom", 28, 20);
+				@include adaptiveValue("margin-bottom", 10, 15);
 			}
 		}
 
 		// .two-rows-fw-image__text
 
 		&__text {
-			:first-child {
+			& > div:not(:last-child) {
 				@include adaptiveValue("margin-bottom", 22, 10);
 			}
 
 			&:not(:last-child) {
-				@include adaptiveValue("margin-bottom", 25, 32);
+				@include adaptiveValue("margin-bottom", 40, 32);
 			}
 		}
 
