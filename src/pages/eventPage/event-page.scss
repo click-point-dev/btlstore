@@ -41,10 +41,12 @@
 
 		&__column {
 			&:last-child {
+				display: flex;
+				flex-direction: column;
 				@media (min-width: $tablet) {
 					flex: 0 0 360px;
-					display: flex;
-					flex-direction: column;
+					// display: flex;
+					// flex-direction: column;
 				}
 			}
 		}
@@ -72,7 +74,7 @@
 		// .services__image
 
 		&__image {
-			flex: 1 0 auto;
+			flex: 0 0 auto;
 			max-height: 1000px;
 			// position: relative;
 			img {
