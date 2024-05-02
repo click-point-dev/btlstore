@@ -9,6 +9,12 @@
 	padding-top: 36px;
 	margin-block: -1px;
 
+	&__type {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 55);
+		}
+	}
+
 	&__body {
 		display: flex;
 		gap: 30px;
