@@ -40,14 +40,28 @@ export function pageCases(screenWidth: number = 991.98): void {
 
       if (!circleItem || !baseCircleElement) return;
 
-      const { left, top, right } = getCoords(baseCircleElement);
-      const { width, height } = circleItem.getBoundingClientRect(),
-         circleY = mediaQuery.matches
-            ? `${top - 35}px`
-            : `${top - height / 5}px`,
-         circleX = mediaQuery.matches
-            ? `${right - width / 1.8}px`
-            : `${left - width / 3}px`;
+      // for checking if only one image on the page
+      const isOneImage =
+         Array.from(document.querySelectorAll('.image-full-width')).length ===
+            1 &&
+         !document.querySelector('.two-rows-fw-image__image + figcaption');
+
+      const {
+         left,
+         top,
+         right,
+         height: baseHeight,
+      } = getCoords(baseCircleElement);
+      const { width, height } = circleItem.getBoundingClientRect();
+
+      const circleY = mediaQuery.matches
+         ? `${top - 35}px`
+         : isOneImage
+           ? `${top + baseHeight / 2 - height / 4}px`
+           : `${top - height / 5}px`;
+      const circleX = mediaQuery.matches
+         ? `${right - width / 1.8}px`
+         : `${left - width / 3}px`;
 
       circleItem.style.top = circleY;
       circleItem.style.left = circleX;
