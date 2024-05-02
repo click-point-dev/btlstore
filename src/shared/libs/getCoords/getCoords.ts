@@ -7,5 +7,7 @@ export function getCoords(elem: HTMLElement) {
       right: box.right + window.pageXOffset,
       bottom: box.bottom + window.pageYOffset,
       left: box.left + window.pageXOffset,
+      width: box.right - box.left,
+      height: box.bottom - box.top,
    };
 }
