@@ -55,7 +55,10 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		background: linear-gradient(0deg, #bf274d00 0%, #89626c00 0%);
+		background: linear-gradient(0deg, rgb(191, 39, 77) 3.03%, rgba(137, 98, 108, 0) 50%);
+		@media (any-hover: hover) and (pointer: fine) {
+			// background: linear-gradient(0deg, #bf274d00 0%, #89626c00 0%);
+		}
 		border-radius: 100%;
 		border: 3.19px solid $white;
 		box-shadow: 0px 4.26px 18.42px 0px rgba(58, 69, 89, 0.34);
@@ -88,7 +91,9 @@
 			width: 100%; //TODO проверить: ихменил с max-width на width. для совместимости с page-cases
 			height: 100%;
 			object-fit: cover;
-			filter: grayscale(1);
+			@media (any-hover: hover) and (pointer: fine) {
+				// filter: grayscale(1);
+			}
 			.swiper-slide-active & {
 				// filter: grayscale(0);
 			}
@@ -114,7 +119,9 @@
 		margin-inline: auto;
 		font-weight: 500;
 		margin-bottom: rem(8);
-		translate: 0px 400px;
+		@media (any-hover: hover) and (pointer: fine) {
+			// translate: 0px 400px;
+		}
 		.swiper-slide-active & {
 			// translate: 0px 0px;
 		}
@@ -126,7 +133,9 @@
 		max-width: 60%;
 		margin-inline: auto;
 		font-weight: 500;
-		translate: 0px 400px;
+		@media (any-hover: hover) and (pointer: fine) {
+			// translate: 0px 400px;
+		}
 		.swiper-slide-active & {
 			// translate: 0px 0px;
 		}

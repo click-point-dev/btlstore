@@ -1,6 +1,20 @@
 import gsap from 'gsap';
+import { isHoverableDevice } from '../../shared';
 
 export function cardCircle(): void {
+   const allCircles: Element[] = Array.from(
+      document.querySelectorAll('.card-circle'),
+   );
+   if (!allCircles.length) return;
+
+   if (isHoverableDevice()) {
+      allCircles.forEach(
+         item =>
+            !item.classList.contains('card-circle--animated') &&
+            item.classList.add('card-circle--animated'),
+      );
+   }
+
    const circles: Element[] = gsap.utils.toArray('.card-circle--animated');
    if (!circles.length) return;
 
@@ -13,12 +27,21 @@ export function cardCircle(): void {
       const title = circle.querySelector('.card-circle__title');
 
       hoverAnimation
-         .to(gradient, {
-            background:
-               'linear-gradient(0.00deg, rgb(191, 39, 77) 3.03%,rgba(137, 98, 108, 0) 50%)',
-         })
-         .to(
+         .fromTo(
+            gradient,
+            { background: 'linear-gradient(0deg, #bf274d00 0%, #89626c00 0%)' },
+            {
+               background:
+                  'linear-gradient(0.00deg, rgb(191, 39, 77) 3.03%,rgba(137, 98, 108, 0) 50%)',
+            },
+         )
+         .fromTo(
             image,
+            {
+               css: {
+                  filter: 'grayscale(1)',
+               },
+            },
             {
                duration: 0.3,
                css: {
@@ -27,9 +50,10 @@ export function cardCircle(): void {
             },
             0,
          )
-         .to(title, { y: 0 }, '-=0.2')
-         .to(
+         .fromTo(title, { y: 400 }, { y: 0 }, '-=0.2')
+         .fromTo(
             description,
+            { y: 400 },
             { y: 0, ease: 'back.out(0.7)', duration: 0.7 },
             '-=0.4',
          );
@@ -62,8 +86,9 @@ export function cardCircle(): void {
       );
 
       observer.observe(circle, configObserver);
-
-      circle.addEventListener('mouseover', handleHoverAnimationStart);
-      circle.addEventListener('mouseout', handleHoverAnimationRevers);
+      if (isHoverableDevice()) {
+         circle.addEventListener('mouseover', handleHoverAnimationStart);
+         circle.addEventListener('mouseout', handleHoverAnimationRevers);
+      }
    });
 }
