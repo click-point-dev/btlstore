@@ -3,11 +3,9 @@
 	align-items: center;
 	justify-content: center;
 	@include adaptiveValue("column-gap", 31.5, 20);
-	@include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
-	@include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
-	@include adaptiveValue("font-size", 23, 15);
-	font-weight: 500;
-	line-height: 92%;
+	// @include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
+	// @include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
+	// line-height: 92%;
 	border-radius: $radius;
 	cursor: pointer;
 	text-align: center;
@@ -22,7 +20,13 @@
 		}
 	}
 
-	a {
+	a,
+	button {
+		display: inline-block;
+		@include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
+		@include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
+		@include adaptiveValue("font-size", 23, 15);
+		font-weight: 500;
 		span {
 			@include adaptiveValue("padding-left", 32, 20);
 		}
