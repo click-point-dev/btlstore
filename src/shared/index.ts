@@ -31,3 +31,4 @@ export * from './buttonS';
 export * from './textarea';
 export * from './textL';
 export * from './changeElements';
+export * from './getVacancyName';
