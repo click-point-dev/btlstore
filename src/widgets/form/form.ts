@@ -1,6 +1,11 @@
 import Inputmask from 'inputmask';
 import JustValidate, { Rules } from 'just-validate';
-import { addClass, changeElements, removeClass } from '../../shared';
+import {
+   addClass,
+   changeElements,
+   getVacancyName,
+   removeClass,
+} from '../../shared';
 import gsap from 'gsap';
 
 export function form(): void {
@@ -11,7 +16,7 @@ export function form(): void {
    forms.forEach(form => {
       // console.log(form);
       //+ обработка input name=fn
-      const fn = form.querySelector('input[required]');
+      const fn = form.querySelector('#fn');
       if (fn) {
          setTimeout(function () {
             if (fn.hasAttribute('required')) fn.removeAttribute('required');
@@ -94,47 +99,26 @@ export function form(): void {
             },
          ]);
       }
-
-      // if (form['file[]']) {
-      //    validate.addField('#filesInput', [
-      //       {
-      //          rule: 'files',
-      //          errorMessage: 'Файлы не более 15 Мб',
-      //          value: {
-      //             files: {
-      //                maxSize: 15000000,
-      //             },
-      //          },
-      //       },
-      //       {
-      //          rule: 'maxFilesCount',
-      //          value: 3,
-      //          errorMessage: 'Не более 3 файлов',
-      //       },
-      //    ]);
-      // }
    }
 
-   // get vacancy name
-   // function getVacancyName(form: HTMLFormElement) {
-   //    const parentBlock = form.closest('.full-width-form');
-   //    const vacancy =
-   //       parentBlock &&
-   //       parentBlock.querySelector('.full-width-form__vacancy-title')
-   //          .textContent;
-
-   //    if (vacancy) return vacancy;
-   // }
-
    async function submitForm(form: HTMLFormElement) {
-      // const vacancy = getVacancyName(form);
       const formData = new FormData(form);
       const method = form.getAttribute('method');
       const loader = form.querySelector('.form__loader') as HTMLElement;
+      const { isVacancy, vacancyTitle } = getVacancyName(form);
 
-      // formData.set('Title', `Заявка с сайта probtl.ru`);
-      formData.set('title', `Заявка с сайта ${window.location.hostname}`);
-      // if (vacancy) formData.set('Title', `Отклик на вакансию: ${vacancy}`);
+      formData.set(
+         'title',
+         `${isVacancy ? `Отклик на вакансию: ${vacancyTitle}` : `Заявка с сайта ${window.location.hostname}`}`,
+      );
+      if (isVacancy) formData.set('type', 'vacancy');
+
+      // console.log(
+      //    isVacancy,
+      //    vacancyTitle,
+      //    formData.get('title'),
+      //    formData.get('type'),
+      // );
 
       // for (const item of formData.entries()) {
       //    console.log(item);
