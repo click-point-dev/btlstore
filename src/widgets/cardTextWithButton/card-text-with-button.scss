@@ -1,0 +1,42 @@
+.card-text-with-button {
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 80, 50);
+	}
+
+	&__content {
+		max-width: 1230px;
+	}
+
+	&__head {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		@include adaptiveValue("margin-bottom", 50, 30);
+		@media (max-width: $mobile) {
+			flex-wrap: wrap;
+			gap: 0;
+		}
+	}
+
+	&__subtitle {
+		font-style: italic;
+	}
+
+	&__body {
+		@include adaptiveValue("margin-bottom", 55, 20);
+		font-weight: 500;
+	}
+
+	&__cta {
+		@media (min-width: $mobile) {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.button {
+			a {
+				@include adaptiveValue("min-width", 360, 247);
+			}
+		}
+	}
+}

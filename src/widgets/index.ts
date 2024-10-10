@@ -18,3 +18,5 @@ export * from './navPrevNext';
 export * from './popup';
 export * from './plateWithText';
 export * from './cardCirclePlate';
+export * from './cardTextWithButton';
+export * from './rowWithImage';

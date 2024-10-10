@@ -1,0 +1,10 @@
+.quote {
+	font-style: italic;
+	@media (max-width: $tablet) {
+		border-left: 6px solid $accent1;
+		padding-left: 20px;
+	}
+	span:first-child {
+		font-weight: 600;
+	}
+}
