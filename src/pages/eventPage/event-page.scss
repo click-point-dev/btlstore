@@ -21,6 +21,7 @@
 	}
 	.services {
 		border-radius: unset;
+		@include adaptiveValue("padding-top", 200, 150);
 		// .services__container
 
 		&__container {
@@ -30,10 +31,11 @@
 
 		&__row {
 			display: flex;
-			gap: 30px;
-
+			align-items: center;
+			@include adaptiveValue("gap", 160, 20, 1380, 980);
 			@media (max-width: $tablet) {
-				flex-direction: column;
+				flex-direction: column-reverse;
+				gap: 30px;
 			}
 		}
 
@@ -41,13 +43,11 @@
 
 		&__column {
 			&:last-child {
-				display: flex;
-				flex-direction: column;
-				@media (min-width: $tablet) {
-					flex: 0 0 360px;
-					// display: flex;
-					// flex-direction: column;
-				}
+				flex: 1 0 30%;
+			}
+
+			.params-circl {
+				min-width: 303px;
 			}
 		}
 
