@@ -9,3 +9,4 @@ export * from './documentLock';
 export * from './insertContent';
 export * from './addClass';
 export * from './rundomInt';
+export * from './isAvaliableURI';
