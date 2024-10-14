@@ -221,6 +221,9 @@ const config = (env: EnvVariables): Configuration => {
             'cases/sovkombank',
             'cases/tele2',
             'cases/za-rodinu',
+            'cases/glazka',
+            'cases/trakresurs',
+            'cases/novie-metallurgicheskie-tehnologii',
          ].map(
             page =>
                new HtmlWebpackPlugin({
