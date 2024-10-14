@@ -1,0 +1,29 @@
+.trakresurs {
+	.section {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 100, 55);
+		}
+	}
+	// .two-rows-fw-image__block {
+	// 	@include adaptiveValue("margin-bottom", 40, 32);
+	// }
+
+	.two-rows-fw-image__block {
+		background-color: #016cc4 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #016cc4 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #016cc4;
+		stroke-opacity: 0.5;
+	}
+
+	.video {
+		background-color: $accent3;
+	}
+}

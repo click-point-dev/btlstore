@@ -34,3 +34,6 @@ export * from './rosselhozbank2';
 export * from './sovkombank';
 export * from './tele2';
 export * from './zaRodinu';
+export * from './glazka';
+export * from './trakresurs';
+export * from './novieMetallurgicheskieTehnologii';

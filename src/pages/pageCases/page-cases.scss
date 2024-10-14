@@ -49,9 +49,14 @@
 	.two-rows-fw-image {
 		// .two-rows-fw-image__block
 
+		&:has(> .two-rows-fw-image__block + .two-rows-fw-image__text) {
+			@include adaptiveValue("margin-bottom", 40, 32);
+		}
+
 		&__block {
 			display: flex;
 			background-color: $accent2;
+
 			@media (max-width: $tablet) {
 				display: block;
 			}
