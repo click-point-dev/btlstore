@@ -1,5 +1,10 @@
+import gsap from 'gsap';
 import { renderCitiesList, renderCityTitle } from '../../features';
-import { checkViewportWidth, isAvailableUrl } from '../../shared';
+import {
+   checkViewportWidth,
+   dataMediaQueries,
+   isAvailableUrl,
+} from '../../shared';
 import { sliderCases } from '../../widgets';
 
 const citiesBtlData = [
@@ -102,4 +107,55 @@ export function btlPage(): void {
       '[data-city-title]',
    ) as HTMLElement;
    cityTitlePlaceholder && renderCityTitle(cityTitlePlaceholder, citiesBtlData);
+
+   // view all servicies
+   function showAllBtlServices() {
+      const services = document.querySelectorAll('[data-btl-service]');
+      const parentElement =
+         document.querySelector('[data-btl-service]').parentElement;
+      const firstRow = document.createElement('div');
+      const secondRow = document.createElement('div');
+
+      if (!services.length || !parentElement) return;
+
+      services.forEach((service: HTMLElement, index: number) => {
+         index < 3
+            ? firstRow.insertAdjacentElement('beforeend', service)
+            : secondRow.insertAdjacentElement('beforeend', service);
+      });
+
+      [firstRow, secondRow].forEach(item => {
+         parentElement.insertAdjacentElement('beforeend', item);
+         item.style.cssText = /*style*/ `
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+
+   `;
+      });
+      const heigth = secondRow.getBoundingClientRect().height;
+      console.log(heigth);
+      secondRow.style.height = '0';
+
+      const timeline = gsap.timeline({ paused: true });
+      timeline.fromTo(
+         secondRow,
+         { height: 0, marginTop: 0 },
+         { height: heigth, marginTop: '20px' },
+      );
+
+      parentElement.insertAdjacentHTML(
+         'afterend',
+         /*html*/ `
+         <div class="button button-color button-xl" style="display:flex; margin-top: 40px;">
+            <button>Показать все услуги</button>
+         </div>`,
+      );
+      parentElement.nextElementSibling.addEventListener('click', () =>
+         secondRow.getBoundingClientRect().height === 0
+            ? timeline.play()
+            : timeline.reverse(),
+      );
+   }
+   checkViewportWidth('(max-width: 700px)') && showAllBtlServices();
 }

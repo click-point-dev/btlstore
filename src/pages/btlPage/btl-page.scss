@@ -1,49 +1,57 @@
 .btl-page {
    .servicies-btl {
       // .servicies-btl__row
+      --gap: 20px;
 
       &__row {
-         --grid-gap: 20px;
-         display: flex;
-         flex-wrap: wrap;
-         gap: var(--grid-gap);
-         justify-content: center;
+         :nth-child(2) {
+            overflow: hidden;
+         }
       }
 
-      // .servicies-btl__column
-
-      &__column {
-         min-width: 320px;
-         max-width: min(100%, 447px);
-         flex: 1 0 calc((100% - var(--grid-gap) * 3) / 4);
-
-         &:nth-last-child(-n + 3) {
+      @media (min-width: 700.98px) {
+         &__row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+            justify-content: center;
          }
 
-         display: flex;
-         flex-direction: column;
-      }
-   }
-   .card-servicies {
-      flex: 1 0 100%;
-      // .card-servicies__image
+         // .servicies-btl__column
 
-      &__image {
-      }
+         &__column {
+            min-width: 320px;
+            max-width: min(100%, 447px);
+            flex: 1 0 calc((100% - var(--gap) * 3) / 4);
 
-      // .card-servicies__content
+            &:nth-last-child(-n + 3) {
+            }
 
-      &__content {
-      }
+            display: flex;
+            flex-direction: column;
+         }
+         .card-servicies {
+            flex: 1 0 100%;
+            // .card-servicies__image
 
-      // .card-servicies__accent
+            &__image {
+            }
 
-      &__accent {
-      }
+            // .card-servicies__content
 
-      // .card-servicies__title
+            &__content {
+            }
 
-      &__title {
+            // .card-servicies__accent
+
+            &__accent {
+            }
+
+            // .card-servicies__title
+
+            &__title {
+            }
+         }
       }
    }
    .align-center {
