@@ -1,0 +1,88 @@
+.mb-0 {
+   margin-bottom: 0 !important;
+}
+
+.mb-12 {
+   @include adaptiveValue('margin-bottom', 12, 9);
+}
+
+.mb-15 {
+   @include adaptiveValue('margin-bottom', 15, 10);
+}
+
+//!+ выбирай любой: выше или ниже
+.mb-20 {
+   @include adaptiveValue('margin-bottom', 20, 10);
+}
+
+.mb-30 {
+   @include adaptiveValue('margin-bottom', 30, 10);
+}
+
+//!+ может обойдемся тем, что выше????
+.mb-40 {
+   @include adaptiveValue('margin-bottom', 40, 10);
+}
+
+.mb-30-all {
+   margin-bottom: 30px;
+}
+
+.mb-80 {
+   @include adaptiveValue('margin-bottom', 80, 30);
+}
+
+.mb-140 {
+   @include adaptiveValue('margin-bottom', 140, 41);
+}
+
+//!+ .mb-154{
+// 	@include adaptiveValue("margin-bottom", 154, 40);
+// }
+
+.mb-146 {
+   @include adaptiveValue(
+      'margin-bottom',
+      146,
+      103
+   ); //заголовок в портволио, чтобы не перекрывал декор от кругов-кейсов
+}
+
+.mb-200 {
+   @include adaptiveValue('margin-bottom', 200, 82);
+}
+
+//+ paddinds (добавляю, из технических соображений- пока безсистемно)
+.pbl-50 {
+   @include adaptiveValue('padding-block', 50, 30);
+}
+
+.pinl-96 {
+   @include adaptiveValue('padding-inline', 96, 20);
+}
+
+.pb-140 {
+   @include adaptiveValue('padding-bottom', 140, 41);
+}
+
+.pb-200 {
+   @include adaptiveValue('padding-bottom', 200, 82);
+}
+.pt-200 {
+   @include adaptiveValue('padding-top', 200, 82);
+}
+
+.pbl-200 {
+   @include adaptiveValue('padding-block', 200, 82);
+}
+
+//+ gaps
+
+.gap-20 {
+   gap: 20px;
+}
+
+//+ modificators
+.width-full {
+   width: 100% !important;
+}

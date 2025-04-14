@@ -110,6 +110,8 @@
 		justify-content: flex-end;
 		@include adaptiveValue("padding-bottom", 30, 25);
 		text-align: center;
+		// word-break: break-all;
+		white-space: normal;
 	}
 
 	// .card-circle__title

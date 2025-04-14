@@ -1,0 +1,26 @@
+.card-with-image-and-text {
+	border-radius: 10px;
+	border: 1px solid $accent3;
+	overflow: hidden;
+	// .card-with-image-and-text__image
+
+	&__image {
+		img {
+			@include adaptiveValue("max-height", 250, 200);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .card-with-image-and-text__content
+
+	&__content {
+		padding: 20px 20px 30px;
+	}
+
+	// .card-with-image-and-text__title
+
+	&__title {
+	}
+}

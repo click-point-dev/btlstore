@@ -2,8 +2,8 @@
 	a,
 	button {
 		display: inline-block;
-		@include adaptiveValue("padding-block", 15, 9);
-		@include adaptiveValue("padding-inline", 32, 23);
+		@include adaptiveValue("padding-block", 12, 9);
+		@include adaptiveValue("padding-inline", 60, 48);
 		@include adaptiveValue("font-size", 23, 16);
 		// font-size: unset;
 		span {

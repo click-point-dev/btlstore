@@ -1,17 +1,38 @@
 import { hideLoader } from './app';
-import { tabs } from './features';
+import { tabs, spollers } from './features';
+// import { spollers } from './features/spollers';
 import './index.scss';
-import { mainPage, page404, pageCases, vacanciesPage } from './pages';
-import { checkbox, documentLock, input, paramsCircl, textarea } from './shared';
+import {
+   btlPage,
+   corporateEvents,
+   eventMarketing,
+   findPromoter,
+   mainPage,
+   page404,
+   pageCases,
+   prPage,
+   vacanciesPage,
+} from './pages';
+import {
+   checkbox,
+   documentLock,
+   hideShowElement,
+   input,
+   paramsCircl,
+   spoller2,
+   textarea,
+} from './shared';
 import {
    cardCircle,
    clientsSlider,
+   footer,
    form,
    headerMenu,
    person,
    popup,
    sliderCases,
    sliderParams,
+   sliderThesis,
    subList,
 } from './widgets';
 
@@ -24,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
    headerMenu();
    subList();
    tabs();
+   spollers();
    input();
    checkbox();
    textarea();
@@ -32,12 +54,20 @@ document.addEventListener('DOMContentLoaded', function () {
    if (screenWidth <= 1280) {
       sliderParams();
    }
-   sliderCases();
+   // sliderCases(); // перенес запуск функции в страницу
    cardCircle();
    pageCases();
    form();
    popup();
    vacanciesPage();
+   sliderThesis();
+   corporateEvents();
+   // spoller2();
+   findPromoter();
+   eventMarketing();
+   hideShowElement();
+   btlPage();
+   prPage();
 });
 
 window.addEventListener('load', function () {

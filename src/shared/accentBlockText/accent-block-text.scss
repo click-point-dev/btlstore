@@ -1,0 +1,24 @@
+.accent-block-text {
+	@include adaptiveValue("padding-inline", 40, 20);
+	@include adaptiveValue("padding-block", 50, 20);
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: $accent1;
+
+	&--bordered {
+		border-left: solid 1px $accent1;
+		border-radius: unset;
+		background-color: unset;
+		padding-block: 0;
+	}
+
+	// .accent-block-text__title
+
+	&__title {
+	}
+
+	// .accent-block-text__content
+
+	&__content {
+	}
+}

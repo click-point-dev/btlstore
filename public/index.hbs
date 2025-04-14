@@ -131,7 +131,7 @@
 							<div class='card-text-with-button__content'>
 								<div class="card-text-with-button__head">
 									<div class="card-text-with-button__title">
-										<h2><span>.</span>EVENT</h2>
+										<h2 class='h2 text-with-dot'><span>.</span>EVENT</h2>
 									</div>
 									<div class="card-text-with-button__subtitle">
 										<p>— то, на чем держится эмоциональная связь с брендом.</p>
@@ -143,7 +143,7 @@
 							</div>
 							<div class="card-text-with-button__cta">
 								<div class="button button-color bordered button-xl shadow">
-									<a href="/event" class="">Подробнее</a>
+									<a href="/event-marketing" class="">Подробнее</a>
 								</div>
 							</div>
 						</div>
@@ -151,7 +151,7 @@
 							<div class='card-text-with-button__content'>
 								<div class="card-text-with-button__head">
 									<div class="card-text-with-button__title">
-										<h2><span>.</span>PR</h2>
+										<h2 class='h2 text-with-dot'><span>.</span>PR</h2>
 									</div>
 									<div class="card-text-with-button__subtitle">
 										<p>— опора в ваших отношениях с аудиторией.</p>
@@ -171,7 +171,7 @@
 							<div class='card-text-with-button__content'>
 								<div class="card-text-with-button__head">
 									<div class="card-text-with-button__title">
-										<h2><span>.</span>BTL</h2>
+										<h2 class='h2 text-with-dot'><span>.</span>BTL</h2>
 									</div>
 									<div class="card-text-with-button__subtitle">
 										<p>— фундамент взаимодействия с потребителем здесь и сейчас</p>
@@ -281,47 +281,64 @@
 					</div>
 				</div>
 
-				<div>
+				<div class='pb-200'>
 					<div class='bg-rotate'>
 						<div class='bg-unrotate'>
-							<div class="main__form-with-image main-form-with-image text-white" id='main-form'>
+							<div class="main__form-with-image main-form-with-image" id='main-form'>
 								<div class='main-form-with-image__container'>
-									<div class='main-form-with-image__head'>
-										<h5><span class='text-white'>.</span>Узнайте, сколько будет стоить ваше мероприятие</h5>
+									<div class='main-form-with-image__head  text-white'>
+										<h5 class='h5'><span class='text-white'>.</span>Узнайте, сколько будет стоить ваше мероприятие</h5>
 									</div>
 									<div class="main-form-with-image__body">
 										<form class="full-width-form__form form dark-bg" method='post'>
 											<div class="form__loader">
 												<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
 											</div>
-											<div class="form__row">
+											<div class="form__row  text-white">
 												<div class='input-block'>
 													<input class="input" name="name" id="name" type="text" placeholder="" />
 													<label for="name">Имя</label>
 												</div>
 											</div>
 											<div class="form__row">
-												<div class='input-block'>
+												{{!-- <div class='input-block'>
 													<input class="input" name="city" id="city" type="text" placeholder="" />
 													<label for="city">Город</label>
+												</div> --}}
+												<div class='input-block'>
+													<div class='search-with-dropdown' data-search-block>
+														<div class="search-input dropdown-initializer  text-white" data-search-input>
+															<input class="input" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
+															<label for="city">Город</label>
+															<input class='hide' type="text" name='city_id'>
+														</div>
+														<div class="search-results hide " data-search-results>
+															<div class='dropdown-container' data-dropdown-list>
+																<ul class="dropdown-list text-xxs">
+																</ul>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="form__row">
+											<div class="form__row  text-white">
 												<div class='input-block'>
 													<input class="input" name="phone" id="phone" type="tel" placeholder="" required />
 													<label for="phone">Телефон</label>
 												</div>
 											</div>
-											<div class="form__row">
+											<div class="form__row  text-white">
 												<div class='input-block'>
 													<textarea class="input" name="comment" id="message" rows="1"></textarea>
 													<label for="message">Опишите, что вам требуется организовать</label>
 												</div>
 											</div>
-											<div class="form__row">
+											<div class="form__row  text-white">
 												<div class='input-block checkbox'>
-													<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-													<label class='checkbox__label text-xs' for="agreement">Согласен на обработку персональных данных</label>
+													<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+													<label class='checkbox__label text-xxs text-white' for="agreement">
+														<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+													</label>
 												</div>
 											</div>
 											<div class="form__row">
@@ -351,6 +368,17 @@
 					</div>
 				</div>
 
+				<section class="corporate-events__cities cities pb-200">
+					<div class="corporate-events__head mb-140 pinl-96">
+						<h2 class="corporate-events__title h2"><span>.</span>Организовываем мероприятия по всей России:</h2>
+					</div>
+					<div class="corporate-events__body">
+						<div class="corporate-events__container">
+							<ul class="cities__list text-gray text-s" data-links-list></ul>
+						</div>
+					</div>
+				</section>
+
 
 			</main>
 			{{> widgets/footer/footer}}
@@ -359,7 +387,7 @@
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Закажите услугу</h5>
+								<h5 class='h5 text-white'>Закажите услугу</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
@@ -376,9 +404,20 @@
 										<label for="name">Имя</label>
 										<input class="input fn" name="fn" id="fn" type="text" required />
 									</div>
-									<div class='input-block text-white'>
-										<input class="input" name="city" id="city" type="text" placeholder="" />
-										<label for="city">Город</label>
+									<div class='input-block'>
+										<div class='search-with-dropdown' data-search-block>
+											<div class="search-input dropdown-initializer text-white" data-search-input>
+												<input class="input" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
+												<label for="city">Укажите город</label>
+												<input class='hide' type="text" name='city_id'>
+											</div>
+											<div class="search-results hide " data-search-results>
+												<div class='dropdown-container' data-dropdown-list>
+													<ul class="dropdown-list text-xxs">
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div class='input-block text-white'>
 										<input class="input" name="phone" id="phone" type="tel" placeholder="" required />
@@ -396,8 +435,10 @@
 										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -405,10 +446,6 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!✅</h3>
-			</div>
-			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
 		</div>
 	</body>
 

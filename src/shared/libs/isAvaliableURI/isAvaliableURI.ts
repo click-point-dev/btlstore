@@ -4,6 +4,6 @@ export function isAvaliableURI(
    const isAvaliableURI = !inaccessiblePages.some(href =>
       location.href.includes(href),
    );
-   console.log(isAvaliableURI);
+   // console.log(isAvaliableURI);
    return isAvaliableURI;
 }

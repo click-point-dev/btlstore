@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+	<head>
+		{{> app/head canonical='https://probtl.ru/anketa-promoter' title='Агентство событий “ПРОБТЛ”. Организация мероприятий любой сложности' description='Полный спектр услуг в сфере BTL и Event. Организация мероприятий под ключ. Корпоративы. Бизнес-события. Праздники. Реализация промоакций в городах РФ. Собственный штат промоутеров. Оставить заявку' ogImage='https://probtl.ru/images/main-page/01.webp'}}
+	</head>
+
+	<body>
+		<div class='page corporate-events find-promoter wrapper'>
+
+			{{> app/loader/loader}}
+
+
+			{{> widgets/header/header}}
+
+			<main class='corporate-events'>
+
+				<section class="corporate-events__advantages section">
+					<div class="corporate-events__head mb-140">
+						<div class="big-decorate-title text-bordered">Хочешь работать</div>
+						<div class='corporate-events__container'>
+							<h2 class="corporate-events__title h2"><span>.</span>Хочешь работать промоутером на промоакциях?</h2>
+						</div>
+					</div>
+				</section>
+				{{!-- <select id='form-2-city' name='city_id' placeholder=''>
+				</select> --}}
+
+				<div class="corporate-events__form-2-widget form-2-widget">
+					<div class="form-2-widget__container">
+						<div class="form-2-widget__body">
+							<div class="form-2-widget__form-2 form-2 ">
+								<div class="form-2__head">
+									<h5 class="h5">Заполняй анкету!</h5>
+								</div>
+								<form class="form-2__form text-gray form" id='find-promoter-form' method='POST' data-toGoogleSheets data-vacancy='промоутер'>
+									<div class="form__loader">
+										<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
+									</div>
+									<div class='form-2__row'>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-name' type="text" name='name' placeholder=''>
+										<label for="form-2-name">Имя</label>
+										<input class='input fn' name='fn' id='fn' type='text' required />
+									</div>
+									<div class='form-2__row'>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-surname' type="text" name='surname' placeholder=''>
+										<label for="form-2-surname">Фамилия</label>
+									</div>
+									<div class='form-2__row'>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-birthdate' type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name='bdate' placeholder=''>
+										<label for="form-2-birthdate">Дата рождения (дд.мм.гггг)</label>
+									</div>
+									<div class='form-2__row'>
+										<select class="input form-2__input form-2-input text-gray" id='form-2-gender' name='sex' placeholder=''>
+											<option value=""></option>
+											<option value="1">Мужской</option>
+											<option value="2">Женский</option>
+										</select>
+										<label for="form-2-name">Пол</label>
+									</div>
+									<div class='form-2__row'>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-phone' type="tel" name='phone' placeholder=''>
+										<label for="form-2-phone">Телефон</label>
+									</div>
+									<div class='form-2__row'>
+										<div class='search-with-dropdown' data-search-block>
+											<div class="search-input dropdown-initializer form-2__row" data-search-input>
+												<input class="input form-2__input form-2-input text-gray" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
+												<label for="city">Укажите город</label>
+												<input class='hide' type="text" name='city_id'>
+											</div>
+											<div class="search-results hide" data-search-results>
+												<div class='dropdown-container' data-dropdown-list>
+													<ul class="dropdown-list text-xxs">
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class='form-2__row'>
+										<div class='form-2__row'>
+											<div class='form-2__checkbox'>
+												<input class="input form-2__input form-2-input" id='form-2-agreement' type="checkbox" name='agreement' required>
+												<label for="form-2-agreement">
+													<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+												</label>
+
+											</div>
+										</div>
+									</div>
+									<div class='form-2__action'>
+										<div class="button button-color button-xl">
+											<button type="submit" class="" id="submit-btn">Оставить заявку</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="form-2-widget__image">
+								<div class="circl-with-image">
+									<div class="circl-with-image__image"><img src="/images/find-promoter/01.webp" alt="">
+									</div>
+									<div class="circl-with-image__content">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			{{> widgets/footer/footer}}
+			{{#> widgets/popup/popup type='request-popup'}}
+				<div class="main__full-width-form full-width-form">
+					<div class="full-width-form__container">
+						<div class="full-width-form__head">
+							<div class="full-width-form__title">
+								<h5 class='h5 text-white'>Закажите услугу</h5>
+							</div>
+							<div class="full-width-form__sub-title">
+								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
+							</div>
+						</div>
+						<div class="full-width-form__body">
+							<form class="full-width-form__form form" method='post'>
+								<div class="form__loader">
+									<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
+								</div>
+								<div class="form__row">
+									<div class='input-block text-white'>
+										<input class="input" name="name" id="name" type="text" placeholder="" />
+										<label for="name">Имя</label>
+										<input class="input fn" name="fn" id="fn" type="text" required />
+									</div>
+									<div class='input-block'>
+										{{!-- <input class="input" name="city" id="city" type="text" placeholder="" />
+										<label for="city">Город</label> --}}
+										<div class='search-with-dropdown' data-search-block>
+											<div class="search-input dropdown-initializer text-white" data-search-input>
+												<input class="input" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
+												<label for="city">Укажите город</label>
+												<input class='hide' type="text" name='city_id'>
+											</div>
+											<div class="search-results hide " data-search-results>
+												<div class='dropdown-container' data-dropdown-list>
+													<ul class="dropdown-list text-xxs">
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class='input-block text-white'>
+										<input class="input" name="phone" id="phone" type="tel" placeholder="" required />
+										<label for="phone">Телефон</label>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class='input-block text-white'>
+										<textarea class="input" name="comment" id="message" rows="1"></textarea>
+										<label for="message">Опишите, что вам требуется организовать</label>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class="button button-light button-xl">
+										<button>Оставить заявку</button>
+									</div>
+									<div class='input-block checkbox text-white'>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			{{/widgets/popup/popup}}
+		</div>
+	</body>
+
+</html>

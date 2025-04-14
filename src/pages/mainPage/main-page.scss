@@ -784,9 +784,8 @@ div:has(> .bg-rotate) {
 	// .main__form-with-image
 
 	&__form-with-image {
-		@include adaptiveValue("padding-top", 100, 55);
+		// @include adaptiveValue("padding-top", 100, 55);
 		// background-color: $white;
-		margin-bottom: -2px;
 		// overflow: hidden;
 
 		// label:not(.checkbox__label) {
@@ -812,11 +811,10 @@ div:has(> .bg-rotate) {
 		// .checkbox__label:after {
 		// 	color: $mainColor;
 		// }
+	}
 
-		.success {
-			h3 {
-				color: white !important;
-			}
-		}
+	///====================cities======================
+	.cities {
+		background-color: white;
 	}
 }

@@ -26,6 +26,11 @@
 			flex-direction: column;
 			gap: 50px;
 		}
+		div:has(&) {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 150, 50);
+			}
+		}
 	}
 
 	// .contacts__column

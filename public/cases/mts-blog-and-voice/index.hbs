@@ -49,7 +49,7 @@
 							<div class="two-rows-fw-image__container">
 								<div class="two-rows-fw-image__content">
 									<div class="two-rows-fw-image__head">
-										<h2><span>.</span>MTC</h2>
+										<h2 class='h2 text-with-dot'><span>.</span>MTC</h2>
 										<p class='subtitle'>Оператор связи</p>
 									</div>
 									<div class="two-rows-fw-image__body">
@@ -141,7 +141,7 @@
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Закажите услугу</h5>
+								<h5 class='h5 text-white'>Закажите услугу</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
@@ -178,8 +178,10 @@
 										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -187,10 +189,7 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!</h3>
-			</div>
-			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
+
 		</div>
 	</body>
 

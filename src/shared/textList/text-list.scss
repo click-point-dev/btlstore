@@ -1,0 +1,14 @@
+.text-list {
+	p {
+		display: flex;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	p:before {
+		content: "•";
+		display: block;
+		padding-right: 15px;
+	}
+}

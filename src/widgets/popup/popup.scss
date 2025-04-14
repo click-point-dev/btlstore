@@ -2,24 +2,25 @@
 	.main__full-width-form {
 		padding-block: 0;
 		@include adaptiveValue("padding-bottom", 50, 30);
+		@media (max-width: $mobile) {
+			padding-top: 80px;
+		}
 	}
 
 	position: fixed;
 	top: 0;
 	z-index: 200;
 	height: 100vh;
-	min-height: max-content;
 	width: 100vw;
 	padding-block: 10vh;
 	background-color: $accent1-l;
-	// background-color: rgba(172, 255, 47, 0.705);
 	backdrop-filter: blur(5px);
 	display: none;
 	align-items: center;
 	visibility: hidden;
 	pointer-events: none;
-	overflow-y: auto;
 	scrollbar-width: none;
+	overflow-y: auto;
 	&::-webkit-scrollbar {
 		display: none;
 		width: 0;

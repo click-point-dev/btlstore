@@ -1,7 +1,14 @@
+//todo избавиться от тэга в селекторе
 .h4,
 h4 {
 	@include adaptiveValue("font-size", 36, 26);
 	font-weight: 500;
 	line-height: 130%;
 	text-transform: uppercase;
+}
+
+.newstyles .h4 {
+	@include adaptiveValue("font-size", 50, 20);
+	@include adaptiveValue("font-weight", 700, 800);
+	@include adaptiveValue("line-height", 55, 22);
 }

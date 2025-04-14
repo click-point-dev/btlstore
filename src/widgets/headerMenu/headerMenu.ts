@@ -13,22 +13,26 @@ export function headerMenu(): void {
 }
 
 function replaceSubList(header: Element) {
-   const sublist = header.querySelector('.sub-list');
-   const subListItems = sublist.querySelectorAll('.sub-list__item');
-   const listItems = header.querySelector('.header-menu__list');
+   const sublist = header.querySelectorAll('.sub-list');
 
-   if (!sublist || !subListItems.length || !listItems) return;
+   if (!sublist) return;
+   sublist.forEach(list => {
+      const subListItems = list.querySelectorAll('.sub-list__item');
+      const listItems = header.querySelector('.header-menu__list');
 
-   sublist.closest('.header-menu__item').remove();
-   sublist.remove();
+      if (!list || !subListItems.length || !listItems) return;
 
-   Array.from(subListItems)
-      .reverse()
-      .forEach(item => {
-         item.className = 'header-menu__item';
-         item.firstElementChild.className = 'header-menu__link link-header';
-         listItems.prepend(item);
-      });
+      list.closest('.header-menu__item').remove();
+      list.remove();
+
+      Array.from(subListItems)
+         .reverse()
+         .forEach(item => {
+            item.className = 'header-menu__item';
+            item.firstElementChild.className = 'header-menu__link link-header';
+            listItems.prepend(item);
+         });
+   });
 }
 
 function openBurger(header: Element, burgerIcon: Element) {
@@ -48,7 +52,7 @@ function openBurger(header: Element, burgerIcon: Element) {
       // .add('opacity+0.1', '+=0.1')
       .from('.header-menu__item', {
          stagger: 0.1,
-         x: '-120%',
+         x: '-150%',
          duration: 0.3,
          ease: 'power4.inOut',
          delay: -0.4,

@@ -20,3 +20,6 @@ export * from './plateWithText';
 export * from './cardCirclePlate';
 export * from './cardTextWithButton';
 export * from './rowWithImage';
+export * from './sliderThesis';
+export * from './searchWidget';
+export * from './cardServicies';

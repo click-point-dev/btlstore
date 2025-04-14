@@ -5,6 +5,7 @@ import {
    changeElements,
    getVacancyName,
    removeClass,
+   showOverlay,
 } from '../../shared';
 import gsap from 'gsap';
 
@@ -25,7 +26,9 @@ export function form(): void {
 
       // phone mask
       const telInput = form.querySelector('input[type="tel"]') as HTMLElement;
-      const inputMask = new Inputmask('+7 (999)-999-99-99');
+      const inputMask = new Inputmask('+7 (999)-999-99-99', {
+         showMaskOnHover: false,
+      });
       if (telInput) {
          inputMask.mask(telInput);
       }
@@ -71,7 +74,33 @@ export function form(): void {
             },
          ]);
       }
-
+      if (form.brand) {
+         validate.addField(form.brand, [
+            {
+               rule: Rules.CustomRegexp,
+               value: /^[-А-Яа-яЁё A-Za-z]*$/,
+               errorMessage: 'Только буквы, тире, пробел',
+            },
+            {
+               rule: Rules.Required,
+               errorMessage: 'Укажите компанию',
+            },
+         ]);
+      }
+      if (form.comment) {
+         validate.addField(form.comment, [
+            {
+               rule: Rules.CustomRegexp,
+               value: /^[-А-Яа-яЁё A-Za-z0-9]*$/,
+               errorMessage: 'Только буквы, цифры, тире, пробел',
+            },
+            {
+               rule: Rules.MaxLength,
+               value: 115,
+               errorMessage: 'Не более 115 символов',
+            },
+         ]);
+      }
       if (form.phone) {
          validate.addField(form.phone, [
             {
@@ -99,6 +128,63 @@ export function form(): void {
             },
          ]);
       }
+      if (form.surname) {
+         validate.addField(form.surname, [
+            {
+               rule: Rules.CustomRegexp,
+               value: /^[-А-Яа-яЁё A-Za-z]*$/,
+               errorMessage: 'Только буквы, тире, пробел',
+            },
+            {
+               rule: Rules.Required,
+               errorMessage: 'Введите фамилию',
+            },
+            {
+               rule: Rules.MinLength,
+               value: 2,
+               errorMessage: 'Минимум 2 символа',
+            },
+            {
+               rule: Rules.MaxLength,
+               value: 50,
+               errorMessage: 'Не более 50 символов',
+            },
+         ]);
+      }
+      if (form.bdate) {
+         validate.addField(form.bdate, [
+            {
+               rule: Rules.Required,
+               errorMessage: 'Укажите дату рождения',
+            },
+         ]);
+      }
+      if (form.sex) {
+         validate.addField(form.sex, [
+            {
+               rule: Rules.Required,
+               errorMessage: 'Укажите ваш пол',
+            },
+         ]);
+      }
+      if (form.city) {
+         validate.addField(form.city, [
+            {
+               rule: Rules.Required,
+               errorMessage: 'Укажите город',
+            },
+            {
+               rule: Rules.MinLength,
+               value: 2,
+               errorMessage: 'Минимум 2 символа',
+            },
+            {
+               rule: Rules.MaxLength,
+               value: 50,
+               errorMessage: 'Не более 50 символов',
+            },
+         ]);
+      }
    }
 
    async function submitForm(form: HTMLFormElement) {
@@ -106,6 +192,7 @@ export function form(): void {
       const method = form.getAttribute('method');
       const loader = form.querySelector('.form__loader') as HTMLElement;
       const { isVacancy, vacancyTitle } = getVacancyName(form);
+      let message: string;
 
       formData.set(
          'title',
@@ -113,43 +200,54 @@ export function form(): void {
       );
       if (isVacancy) formData.set('type', 'vacancy');
 
-      // console.log(
-      //    isVacancy,
-      //    vacancyTitle,
-      //    formData.get('title'),
-      //    formData.get('type'),
-      // );
-
-      // for (const item of formData.entries()) {
-      //    console.log(item);
-      // }
+      for (let [key, value] of formData.entries()) {
+         if (typeof value === 'string') {
+            formData.set(key, value.trim());
+            console.log(key, value.trim());
+         }
+      }
 
       addClass(loader, 'visible');
 
+      if (form.hasAttribute('data-toGoogleSheets')) {
+         const URL_APP =
+            'https://script.google.com/macros/s/AKfycbzX-cwKi85qLtIopz5XGxIzWtsoDKlgJZNZD2y45omlcgnFzyJYsywrQFooRNH38leu/exec';
+
+         const phone = formData.get('phone').slice(1);
+         formData.set('phone', phone);
+
+         try {
+            const res = await fetch(URL_APP, {
+               method: method,
+               mode: 'no-cors',
+               body: formData,
+            });
+            console.log(res);
+         } catch (error) {
+            console.error('Ошибка при отправке данных в google sheet:', error);
+         }
+      }
+
       try {
-         const res = await fetch('/request.php', {
+         const res = await fetch('/api/request.php', {
             method: method,
             body: formData,
          });
-
          // console.log(res);
-
          if (res.status !== 200) {
-            throw new Error(`❌ Что-то пошло не так. Код ответа ${res.status}`);
+            throw new Error(
+               `❌\n Что-то пошло не так. Код ответа ${res.status}`,
+            );
          }
-         const success = document.querySelector('.success') as HTMLElement;
-         changeElements(form, success, 2000);
+
+         message = '✅ Заявка отправлена!';
+         form.reset();
       } catch (error) {
          console.error(error);
-         const errorBlock = document.createElement('div');
-         errorBlock.className = 'text text-white';
-         errorBlock.style.paddingBlock = '50px';
-         errorBlock.style.textAlign = 'center';
-         errorBlock.textContent = error;
-         form.insertAdjacentElement('afterbegin', errorBlock);
+         message = error;
       } finally {
          removeClass(loader, 'visible');
-         form.reset();
+         showOverlay(form, message, null, 3000);
       }
    }
 }

@@ -1,0 +1,27 @@
+.cities__list {
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: repeat(4, minmax(min-content, max-content));
+	gap: 20px;
+
+	@media (max-width: $mobile) {
+		justify-content: space-around;
+		grid-template-columns: repeat(2, minmax(min-content, max-content));
+	}
+}
+
+// .cities__item
+
+.cities__item {
+}
+
+// .cities__link
+
+.cities__link {
+	display: inline-block;
+	@include adaptiveValue("padding-block", 10, 5);
+	transition: color 0.3s ease;
+	&:hover {
+		color: $accent1;
+	}
+}

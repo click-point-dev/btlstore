@@ -1,6 +1,7 @@
 .checkbox {
 	position: relative;
 	cursor: pointer;
+	flex: 1 1 100%;
 	display: flex;
 	align-items: center;
 	&:not(:last-child) {
@@ -12,6 +13,7 @@
 		width: 0;
 		height: 0;
 		opacity: 0;
+		font-size: 0;
 
 		&:focus + .checkbox__label:before {
 		}
@@ -25,15 +27,21 @@
 	// .checkbox__label
 	&__label {
 		position: relative;
-		display: inline-flex;
-		margin-inline: auto;
-		align-items: center;
-		gap: 10px;
-		max-width: 325px;
+		// display: inline-flex;
+		// margin-inline: auto;
+		// align-items: center;
+		// gap: 10px;
+		// max-width: 325px;
+		cursor: pointer;
+		p {
+			padding-left: 25px;
+		}
+
 		&:before {
+			position: absolute;
 			content: "";
-			align-self: center;
-			flex: 0 0 20px;
+			top: 0;
+			left: 0;
 			width: 20px;
 			height: 20px;
 			border: 1px solid currentColor;
@@ -44,16 +52,23 @@
 		&:after {
 			position: absolute;
 			content: "\e901";
-			translate: 1px 0;
+			width: 20px;
+			height: 20px;
+			top: 3px;
+			left: 4px;
 			font-family: "iconfont";
 			font-size: 0.8em;
-
 			color: $accent1;
 			opacity: 0;
+			pointer-events: none;
 			transition: opacity $anim;
 		}
 	}
 	// .checkbox__text
 	&__text {
 	}
+}
+
+[type="checkbox"] + * a {
+	text-decoration: underline;
 }

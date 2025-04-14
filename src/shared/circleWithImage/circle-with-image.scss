@@ -1,5 +1,6 @@
 .circl-with-image {
 	position: relative;
+	z-index: 1;
 	max-width: 330px;
 	aspect-ratio: 1;
 	border-radius: 100%;
@@ -74,6 +75,7 @@
 		translate: -50% -49.5%;
 		opacity: 0;
 		scale: 0.4;
+		pointer-events: none;
 		svg path {
 			stroke: red;
 		}
@@ -102,5 +104,12 @@
 			scale $anim 0.1s;
 		opacity: 1;
 		scale: 0.9;
+	}
+}
+
+.form-2-widget__image {
+	.circl-with-image__decor {
+		opacity: 1;
+		scale: 1;
 	}
 }

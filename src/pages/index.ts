@@ -37,3 +37,7 @@ export * from './zaRodinu';
 export * from './glazka';
 export * from './trakresurs';
 export * from './novieMetallurgicheskieTehnologii';
+export * from './corporateEvents';
+export * from './privacy';
+export * from './findPromoter';
+export * from './eventMarketing';

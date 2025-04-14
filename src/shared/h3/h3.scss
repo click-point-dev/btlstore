@@ -1,10 +1,26 @@
+//todo избавиться от тэга в селекторе
 .h3,
 h3 {
 	@include adaptiveValue("font-size", 43, 24);
 	font-weight: 700;
 	line-height: 130%; /* 55.9px */
 
-	&:not(:last-child) {
-		@include adaptiveValue("margin-bottom", 15, 10);
+	// &:not(:last-child) {
+	// @include adaptiveValue("margin-bottom", 15, 10); //++ заменил на mb-15
+	// }
+	> span:first-child {
+		font-size: 1.3em;
+		color: $accent1;
+		margin-right: 10px;
 	}
+}
+
+.newstyles .h3 {
+	@include adaptiveValue("font-size", 68, 24);
+	font-weight: 800;
+
+	@media (max-width: $mobile) {
+		font-weight: 700;
+	}
+	@include adaptiveValue("line-height", 75, 29);
 }
