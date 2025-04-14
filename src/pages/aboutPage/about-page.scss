@@ -21,4 +21,14 @@
 		max-width: 467px;
 		margin-left: auto;
 	}
+
+	.about__body {
+		&:not(:last-child) {
+			@include adaptiveValue("padding-bottom", 100, 70);
+		}
+	}
+
+	.main__about {
+		padding-block: unset;
+	}
 }

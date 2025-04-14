@@ -18,7 +18,7 @@
 					<div class="vacancies__container">
 						<div class="vacancies__head">
 							<div class="vacancies__title">
-								<h5><span>5</span> открытых вакансий</h5>
+								<h5 class='h5'><span>5</span> открытых вакансий</h5>
 							</div>
 						</div>
 						<div class="vacancies__body">
@@ -58,14 +58,13 @@
 									</li>
 								</ul>
 
-								<section data-tabs-body class="spollers__content">
+								<section data-tabs-body class="spollers__content pb-200">
 									<article class="spollers__body vacancy">
 										<div class="vacancy__head">
 											<div class="vacancy__description">Мы предлагаем тебе стать частью нашей команды и вместе с нами создавать яркие и запоминающиеся мероприятия, которые будут радовать и удивлять твоих клиентов.</div>
 										</div>
-										<div class="vacancy__body">
+										<div class="vacancy__body" data-vacancy-title="Менеджер по продажам">
 											<div class="vacancy__content">
-												<div class="vacancy__name" style='display: none;'>Менеджер по подбору промо-персонала</div>
 												<div class="vacancy__row">
 													<div class="vacancy__column">
 														<div class="vacancy_esection-title text-l text-bold">Что ты будешь делать:</div>
@@ -160,13 +159,12 @@
 										</div>
 									</article>
 
-									<article class="spollers__body vacancy">
+									<article class="spollers__body vacancy" data-vacancy-title="Event-менеджер">
 										<div class="vacancy__head">
 											<div class="vacancy__description">— это творец и организатор незабываемых событий. Если ты коммуникабельный, креативный, умеешь работать в&nbsp;режиме многозадачности и&nbsp;стремишься к&nbsp;постоянному развитию, то&nbsp;эта вакансия именно для&nbsp;тебя!</div>
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
-												<div class="vacancy__name" style='display: none;'>Event-менеджер</div>
 												<div class="vacancy__row">
 													<div class="vacancy__column">
 														<div class="vacancy_esection-title text-l text-bold">Что ты будешь делать:</div>
@@ -296,7 +294,7 @@
 										</div>
 									</article>
 
-									<article class="spollers__body vacancy">
+									<article class="spollers__body vacancy" data-vacancy-title="Специалист по креативным разработкам">
 										<div class="vacancy__head">
 											<div class="vacancy__description">
 												<div class='text'>
@@ -307,7 +305,6 @@
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
-												<div class="vacancy__name" style='display: none;'>Специалист по креативным разработкам</div>
 												<div class="vacancy__row">
 													<div class="vacancy__column">
 														<div class="vacancy_esection-title text-l text-bold">Что ты будешь делать:</div>
@@ -395,7 +392,7 @@
 										</div>
 									</article>
 
-									<article class="spollers__body vacancy">
+									<article class="spollers__body vacancy" data-vacancy-title="BTL-менеджер">
 										<div class="vacancy__head">
 											<div class="vacancy__description">BTL-проекты — лифлетинг, дегустации, консультации, праздничные открытия салонов, торговых точек, офисов на территории РФ, Белоруссии, Казахстана. А также воплощение в жизнь множества нестандартных и интересных запросов и задач.</div>
 										</div>
@@ -515,13 +512,12 @@
 										</div>
 									</article>
 
-									<article class="spollers__body vacancy">
+									<article class="spollers__body vacancy" data-vacancy-title="Менеджер по подбору промоперсонала">
 										<div class="vacancy__head">
 											<div class="vacancy__description">В связи с расширением штата ищем в команду менеджера по набору промоперсонала (с возможностью удаленной работы).</div>
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
-												<div class="vacancy__name" style='display: none;'>Менеджер по подбору промоперсонала</div>
 												<div class="vacancy__row">
 													<div class="vacancy__column">
 														<div class="vacancy_esection-title text-l text-bold">Что ты будешь делать:</div>
@@ -624,7 +620,7 @@
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Закажите услугу</h5>
+								<h5 class='h5 text-white'>Закажите услугу</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
@@ -661,8 +657,10 @@
 										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -670,23 +668,20 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!</h3>
-			</div>
 			{{#> widgets/popup/popup type='popup-vacancy'}}
 				<div class="main__full-width-form full-width-form">
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Отклик на вакансию</h5>
+								<h5 class='h5 text-white'>Отклик на вакансию</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Вы откликаетесь на вакансию</p>
-								<p class="text-s text-white full-width-form__vacancy-title"></p>
+								<p class="text-s text-white full-width-form__vacancy-title" data-vacancy-title-placeholder></p>
 							</div>
 						</div>
 						<div class="full-width-form__body full-width-form__body--s">
-							<form class="full-width-form__form form" method='post'>
+							<form class="full-width-form__form form" method='post' data-vacancy=''>
 								<div class="form__loader">
 									<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
 								</div>
@@ -712,8 +707,10 @@
 										<button type="submit" class="" id="submit-btn">Откликнуться</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -721,10 +718,7 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!</h3>
-			</div>
-			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
+
 		</div>
 	</body>
 

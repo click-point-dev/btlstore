@@ -1,0 +1,16 @@
+.red-bull {
+	.two-rows-fw-image__block {
+		background-color: #e3144c !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #e3144c !important;
+		}
+	}
+
+	svg circle {
+		stroke: #e3144c;
+		stroke-opacity: 0.5;
+	}
+}

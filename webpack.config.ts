@@ -70,20 +70,13 @@ const config = (env: EnvVariables): Configuration => {
          filename: 'bundle-[contenthash].js',
          path: path.resolve(__dirname, 'build'),
          clean: true,
-         // publicPath: `${__dirname}/build`,
+         // publicPath: `/`,
       },
       module: {
          rules: [
             {
                test: /\.s[ac]ss$/i,
-               // use: [
-               //    // Creates `style` nodes from JS strings
-               //    isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-               //    // Translates CSS into CommonJS
-               //    'css-loader',
-               //    // Compiles Sass to CSS
-               //    'sass-loader',
-               // ],
+               exclude: /node_modules/,
                use: isProd
                   ? [
                        MiniCssExtractPlugin.loader,
@@ -102,11 +95,17 @@ const config = (env: EnvVariables): Configuration => {
                           options: { importLoaders: 2 },
                        },
                        //   'postcss-loader',
-                       'sass-loader',
+                       {
+                          loader: 'sass-loader',
+                          options: {
+                             sourceMap: true, // <-- !!IMPORTANT!!
+                          },
+                       },
                     ],
             },
             {
                test: /\.css$/i,
+               exclude: /node_modules/,
                use: isProd
                   ? [
                        MiniCssExtractPlugin.loader,
@@ -147,10 +146,20 @@ const config = (env: EnvVariables): Configuration => {
                   rootRelative: [__dirname + '/src/'],
                },
             },
-            // {
-            //    test: /\.(png|svg|jpg|jpeg|gif|webp|pdf)$/i,
-            //    type: 'asset/resource',
-            // },
+            {
+               test: /\.(png|jpe?g|gif|webp|svg)$/i,
+               type: 'asset/resource',
+               generator: {
+                  filename: './images/[base]',
+               },
+            },
+            {
+               test: /\.(eot|ttf|woff)$/i,
+               type: 'asset/resource',
+               generator: {
+                  filename: './fonts/[base]',
+               },
+            },
          ],
       },
       resolve: {
@@ -207,7 +216,72 @@ const config = (env: EnvVariables): Configuration => {
             'event',
             'pr',
             'btl',
+            'btl/chelyabinsk',
+            'btl/ekaterinburg',
+            'btl/irkutsk',
+            'btl/krasnodar',
+            'btl/krasnoyarsk',
+            'btl/nizhnii-novgorod',
+            'btl/novosibirsk',
+            'btl/omsk',
+            'btl/perm',
+            'btl/samara',
+            'btl/saratov',
+            'btl/tomsk',
+            'btl/ufa',
+            'btl/volgograd',
+            'btl/voronezh',
             'promotional-staff',
+            'cases/alfabank',
+            'cases/bochkarev',
+            'cases/burger-king',
+            'cases/heineken',
+            'cases/jagermaster',
+            'cases/komandor',
+            'cases/megafon',
+            'cases/red-bull',
+            'cases/rosselhozbank',
+            'cases/rosselhozbank-2',
+            'cases/sovkombank',
+            'cases/tele2',
+            'cases/za-rodinu',
+            'cases/glazka',
+            'cases/trakresurs',
+            'cases/novie-metallurgicheskie-tehnologii',
+            'corporate-events',
+            'corporate-events/chelyabinsk',
+            'corporate-events/ekaterinburg',
+            'corporate-events/irkutsk',
+            'corporate-events/krasnodar',
+            'corporate-events/krasnoyarsk',
+            'corporate-events/nizhnii-novgorod',
+            'corporate-events/novosibirsk',
+            'corporate-events/omsk',
+            'corporate-events/perm',
+            'corporate-events/samara',
+            'corporate-events/saratov',
+            'corporate-events/tomsk',
+            'corporate-events/ufa',
+            'corporate-events/volgograd',
+            'corporate-events/voronezh',
+            'privacy',
+            'anketa-promoter',
+            'event-marketing',
+            'event-marketing/chelyabinsk',
+            'event-marketing/ekaterinburg',
+            'event-marketing/irkutsk',
+            'event-marketing/krasnodar',
+            'event-marketing/krasnoyarsk',
+            'event-marketing/nizhnii-novgorod',
+            'event-marketing/novosibirsk',
+            'event-marketing/omsk',
+            'event-marketing/perm',
+            'event-marketing/samara',
+            'event-marketing/saratov',
+            'event-marketing/tomsk',
+            'event-marketing/ufa',
+            'event-marketing/volgograd',
+            'event-marketing/voronezh',
          ].map(
             page =>
                new HtmlWebpackPlugin({
@@ -247,6 +321,11 @@ const config = (env: EnvVariables): Configuration => {
                   to: path.resolve(__dirname, 'build', 'assets'),
                   noErrorOnMissing: true,
                },
+               {
+                  from: path.resolve(__dirname, 'api'),
+                  to: path.resolve(__dirname, 'build', 'api'),
+                  noErrorOnMissing: true,
+               },
             ],
          }),
       ],
@@ -269,7 +348,7 @@ const config = (env: EnvVariables): Configuration => {
               hot: true,
               static: {
                  directory: path.resolve(__dirname, 'public'),
-                 publicPath: '/',
+                 //   publicPath: '/',
               },
            }
          : undefined,

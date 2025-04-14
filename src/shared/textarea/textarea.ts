@@ -4,6 +4,9 @@ export function textarea(): void {
    if (!textareas.length) return;
 
    textareas.forEach(el => {
+      // console.log(el.scrollHeight);
+      const elHeight = el.scrollHeight ? `${el.scrollHeight}px` : 'auto';
+
       el.style.height = <any>(
          el.setAttribute('style', 'height: ' + el.scrollHeight + 'px')
       );

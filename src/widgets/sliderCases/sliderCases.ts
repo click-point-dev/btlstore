@@ -1,4 +1,6 @@
 import Swiper from 'swiper';
+import { checkViewportWidth } from '../../shared';
+import { Keyboard } from 'swiper/modules';
 // import 'swiper/css';
 
 export function sliderCases(): void {
@@ -9,14 +11,22 @@ export function sliderCases(): void {
    if (!cases.length) return;
 
    cases.forEach(item => {
+      console.log('start sliderCases');
+      const centralSlideNumber = Math.floor(
+         Array.from(item.querySelectorAll('.swiper-slide')).length / 2 - 1,
+      );
       const sliderCases = new Swiper(item, {
+         modules: [Keyboard],
          spaceBetween: 30,
          speed: 500,
-         initialSlide: 6,
+         initialSlide: centralSlideNumber,
          slidesPerView: 'auto',
          slideToClickedSlide: true,
          centeredSlides: true,
          loop: true,
+         keyboard: {
+            enabled: true,
+         },
          breakpoints: {
             360: {
                spaceBetween: 10,

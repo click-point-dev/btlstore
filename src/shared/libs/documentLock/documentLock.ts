@@ -1,4 +1,8 @@
+import { isAvaliableURI } from '../isAvaliableURI';
+
 export function documentLock(): void {
+   if (!isAvaliableURI()) return;
+
    const element = document.documentElement;
    if (!element) return;
 

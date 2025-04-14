@@ -1,0 +1,17 @@
+.rosselhozbank,
+.rosselhozbank-2 {
+	.two-rows-fw-image__block {
+		background-color: #278040 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #278040 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #278040;
+		stroke-opacity: 0.5;
+	}
+}

@@ -1,0 +1,16 @@
+.glazka {
+	.two-rows-fw-image__block {
+		background-color: #60b483 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #60b483 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #60b483;
+		stroke-opacity: 0.5;
+	}
+}

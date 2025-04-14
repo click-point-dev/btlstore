@@ -1,53 +1,73 @@
 .footer {
-	// .footer__container
-	background-color: $white;
-	border-radius: 0 0 87px 87px;
-	@include adaptiveValue("padding-top", 187, 50);
-	@include adaptiveValue("padding-bottom", 44, 48);
+   // .footer__container
+   background-color: $white;
+   // border-radius: 0 0 87px 87px;
+   // @include adaptiveValue('padding-top', 187, 50);
+   @include adaptiveValue('padding-bottom', 44, 48);
 
-	&__container {
-	}
+   &__container {
+   }
 
-	// .footer__body
+   // .footer__body
 
-	&__body {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		@include adaptiveValue("column-gap", 28, 12);
-		@include adaptiveValue("row-gap", 42, 13);
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      @include adaptiveValue('column-gap', 28, 12);
+      @include adaptiveValue('row-gap', 42, 13);
 
-		@media (max-width: $tablet) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+   div:has(> .contacts-card) {
+      display: flex;
+      border: 2px solid $accent1;
+      border-radius: $radius;
+      background-color: $white;
+      transition:
+         background-color $anim,
+         border-color $anim;
+   }
+
+   div:has(> .contacts-card--w2) {
+      grid-column: span 2;
+   }
+
+   @media (min-width: $tablet) {
+      div:has(> .contacts-card--w2) {
+         grid-column: span 3;
+      }
+      div:has(> .contacts-card--w2:last-child) {
+         grid-column: span 4;
+      }
+   }
 }
+
 .contacts-card {
-	// .contacts-card__body
+   // .contacts-card__body
 
-	&__body {
-	}
+   &__body {
+   }
 
-	// .contacts-card__icon
+   // .contacts-card__icon
 
-	&__icon {
-	}
+   &__icon {
+   }
 
-	// .contacts-card__title
+   // .contacts-card__title
 
-	&__title {
-	}
+   &__title {
+   }
 
-	// .contacts-card__decor
+   // .contacts-card__decor
 
-	&__decor {
-	}
+   &__decor {
+   }
 
-	// .contacts-card__address
+   // .contacts-card__address
 
-	&__address {
-	}
-}
-
-.contacts-card--w2 {
-	grid-column: span 2;
+   &__address {
+   }
 }

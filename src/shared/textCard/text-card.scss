@@ -1,0 +1,40 @@
+.text-card {
+	&:nth-child(even) {
+		// min-width: 60%;
+	}
+	@include adaptiveValue("padding-block", 50, 26);
+	@include adaptiveValue("padding-inline", 40, 24);
+	border: solid 1px $accent3;
+	border-radius: 10px;
+
+	.text-card__title,
+	.text-card__text {
+		transition: color 0.3s ease;
+	}
+
+	// .text-card__title
+
+	&__title {
+	}
+
+	// .text-card__text
+
+	&__text {
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: 160%;
+		p:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&:hover {
+		border: solid 1px $accent1;
+		.text-card__title {
+			color: $accent1 !important;
+		}
+
+		.text-card__text {
+			color: unset !important;
+		}
+	}
+}

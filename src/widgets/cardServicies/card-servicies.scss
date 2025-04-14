@@ -1,0 +1,44 @@
+.card-servicies {
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   @include adaptiveValue('border-radius', 20, 10);
+   box-shadow: 0px 3.613px 15.626px 0px rgba(58, 69, 89, 0.34);
+
+   // .card-servicies__image
+
+   &__image {
+      position: relative;
+      @include adaptiveValue('flex-basis', 250, 155);
+      flex-grow: 0;
+      img {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .card-servicies__content
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .card-servicies__accent
+
+   &__accent {
+      padding-inline: 20px;
+      padding-block: 10px;
+      background-color: $accent1;
+   }
+
+   // .card-servicies__title
+
+   &__title {
+      padding-inline: 20px;
+      @include adaptiveValue('padding-block', 30, 20);
+      flex: 1 0 100%;
+   }
+}

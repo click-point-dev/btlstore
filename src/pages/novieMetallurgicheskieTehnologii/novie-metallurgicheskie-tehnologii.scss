@@ -1,0 +1,16 @@
+.novie-metallurgicheskie-tehnologii {
+	.two-rows-fw-image__block {
+		background-color: #efa616 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #efa616 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #efa616;
+		stroke-opacity: 0.5;
+	}
+}

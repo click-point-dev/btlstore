@@ -1,12 +1,5 @@
-.h5,
-h5 {
-	@include adaptiveValue("font-size", 68, 32);
-	font-weight: 800;
-	line-height: 110%;
-
-	span {
-		font-size: 1.1em;
-		color: #bf274d;
-		margin-right: 10px;
-	}
-}
+// .h5 {
+//    @include adaptiveValue('font-size', 68, 30);
+//    font-weight: 800;
+//    line-height: 110%;
+// }

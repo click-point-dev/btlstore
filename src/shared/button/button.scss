@@ -3,14 +3,14 @@
 	align-items: center;
 	justify-content: center;
 	@include adaptiveValue("column-gap", 31.5, 20);
-	@include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
-	@include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
-	@include adaptiveValue("font-size", 23, 15);
-	font-weight: 500;
-	line-height: 92%;
-	border-radius: $radius;
+	// @include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
+	// @include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
+	// line-height: 92%;
+	@include adaptiveValue("border-radius", 10, 5);
+	overflow: hidden;
 	cursor: pointer;
 	text-align: center;
+	white-space: nowrap;
 
 	span {
 		display: inline-flex;
@@ -18,11 +18,19 @@
 		align-items: center;
 		justify-content: center;
 		&:before {
-			translate: 0 0.2em;
+			translate: 0 0.3em;
+			font-size: 1.5em;
 		}
 	}
 
-	a {
+	a,
+	button {
+		display: inline-block;
+		line-height: 2;
+		@include adaptiveValue("padding-block", 10, 7, 1440, 1100, 1);
+		@include adaptiveValue("padding-inline", 18, 10, 1440, 1100, 1);
+		@include adaptiveValue("font-size", 23, 11);
+		font-weight: 500;
 		span {
 			@include adaptiveValue("padding-left", 32, 20);
 		}

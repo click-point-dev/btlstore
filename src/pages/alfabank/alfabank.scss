@@ -1,0 +1,16 @@
+.alfabank {
+	.two-rows-fw-image__block {
+		background-color: #ee3523 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #ee3523 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #ee3523;
+		stroke-opacity: 0.5;
+	}
+}

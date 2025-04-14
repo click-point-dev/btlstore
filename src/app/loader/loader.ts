@@ -1,7 +1,9 @@
 import gsap from 'gsap';
-import { documentUnlock } from '../../shared';
+import { documentUnlock, isAvaliableURI } from '../../shared';
 
 export function hideLoader(): void {
+   if (!isAvaliableURI()) return;
+
    const point = document.querySelector('.first-screen__logo');
    const cords = point && point.getBoundingClientRect();
    const loader: HTMLElement = document.querySelector('.loader');

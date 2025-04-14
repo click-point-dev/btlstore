@@ -1,3 +1,1 @@
-export function footer(): null {
-	return null;
-}
+export function footer(): void {}

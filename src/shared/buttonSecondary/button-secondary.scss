@@ -1,0 +1,16 @@
+.button-secondary {
+	// position: relative;
+	background-color: $white;
+	color: $accent1;
+	border: 2px solid $accent1;
+
+	@media (any-hover: hover) and (pointer: fine) {
+		transition:
+			border $anim,
+			color $anim;
+		&:hover {
+			border: 2px solid $accent1-hover;
+			color: $accent1-hover;
+		}
+	}
+}

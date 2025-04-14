@@ -1,0 +1,16 @@
+.heineken {
+	.two-rows-fw-image__block {
+		background-color: #008845 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #008845 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #008845;
+		stroke-opacity: 0.5;
+	}
+}

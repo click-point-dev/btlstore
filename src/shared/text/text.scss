@@ -1,5 +1,104 @@
+//+ titles and headers
+
+.h1 {
+   font-weight: 800;
+   @include adaptiveValue('font-size', 143, 32);
+   @include adaptiveValue('line-height', 157, 42);
+}
+
+.h2 {
+   @include adaptiveValue('font-size', 102, 30);
+   font-weight: 800;
+   @media (max-width: $mobile) {
+      font-weight: 900;
+   }
+   @include adaptiveValue('line-height', 102, 33);
+}
+
+.h5 {
+   @include adaptiveValue('font-size', 68, 30);
+   font-weight: 800;
+   line-height: 110%;
+}
+
+.big-decorate-title {
+   @include adaptiveValue('margin-left', -35, -7);
+   @include adaptiveValue('font-size', 230, 50);
+   text-transform: uppercase;
+   font-weight: 800;
+   white-space: nowrap;
+   text-shadow: none;
+   color: $buttonPressed;
+   opacity: 30%;
+
+   & + * {
+      position: relative;
+      z-index: 1;
+      @include adaptiveValue('margin-top', -130, -35);
+   }
+}
+
+.subtitle-h1 {
+   @include adaptiveValue('font-size', 57, 12);
+   font-weight: 800;
+   line-height: 130%;
+   color: $accent3 !important;
+}
+
+//+ plain text
+
 .text {
-	& > p:not(:last-child) {
-		@include adaptiveValue("padding-bottom", 20, 10);
-	}
+   p:not(:last-child) {
+      @include adaptiveValue('padding-bottom', 20, 10);
+   }
+}
+.text-p1 {
+   @include adaptiveValue('margin-bottom', 30, 10);
+   @include adaptiveValue('font-size', 36, 22);
+   font-weight: 700;
+   line-height: 130%;
+}
+
+.text-p2 {
+   @include adaptiveValue('font-size', 24, 16);
+   @include adaptiveValue('line-height', 31.2, 22.4);
+}
+
+.text-xs {
+   @include adaptiveValue('font-size', 20, 12);
+   line-height: 130%;
+}
+
+//+ text decorations
+
+.uppercase {
+   text-transform: uppercase !important;
+}
+.align-center {
+   text-align: center !important;
+}
+
+.text-gray {
+   color: $accent3 !important;
+}
+
+.text-bordered {
+   color: white;
+   text-shadow:
+      -0 -1px 0 rgba(24, 37, 47, 0.05),
+      0 -1px 0 rgba(24, 37, 47, 0.05),
+      -0 1px 0 rgba(24, 37, 47, 0.05),
+      0 1px 0 rgba(24, 37, 47, 0.05),
+      -1px -0 0 rgba(24, 37, 47, 0.05),
+      1px -0 0 rgba(24, 37, 47, 0.05),
+      -1px 0 0 rgba(24, 37, 47, 0.05),
+      1px 0 0 rgba(24, 37, 47, 0.05),
+      -1px -1px 0 rgba(24, 37, 47, 0.05),
+      1px -1px 0 rgba(24, 37, 47, 0.05),
+      -1px 1px 0 rgba(24, 37, 47, 0.05),
+      1px 1px 0 rgba(24, 37, 47, 0.05),
+      -1px -1px 0 rgba(24, 37, 47, 0.05),
+      1px -1px 0 rgba(24, 37, 47, 0.05),
+      -1px 1px 0 rgba(24, 37, 47, 0.05),
+      1px 1px 0 rgba(24, 37, 47, 0.05);
 }

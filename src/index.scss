@@ -1,11 +1,11 @@
-@use "sass:math";
+@use 'sass:math';
 
 // Подключение миксинов ===========================================================================================================================================================================================================================================================================
-@import "app/mixins";
+@import 'app/mixins';
 
 // Подключение шрифтов ===========================================================================================================================================================================================================================================================================
 //&display=swap - добавить при подключении через плагин
-@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,300italic,600italic,700italic&display=swap);
 // Подключить если есть локальные файлы шрифтов
 //@import "fonts/fonts";
 
@@ -26,13 +26,14 @@ $mainColor: #120005; // Цвет шрифта по умолчанию
 $bg: #f1f8ffee;
 $white: #ffffff;
 $accent1: #bf274d;
+$accent1-hover: #901836;
 $accent1-l: #bf274d89;
 $accent1-xl: #be274d33;
 $accent2: #ff0032;
-$accent3: #848183;
+$accent3: #2b2a2b;
 $error: #d70000;
 $success: #038e3b;
-$buttonPressed: #f1f8ff3e;
+$buttonPressed: #c1cad1;
 $green: #068b59;
 $blue: #0055b0;
 $accent-gp: #0277fb;
@@ -56,8 +57,10 @@ $containerPadding: 60;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
-$burger: em(1100); // Планшеты, некоторые телефоны в горизонтальном положении
+$pc: em(
+   $containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$burger: em(1099.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
@@ -71,42 +74,42 @@ $responsiveType: 1;
 // ============================================================================================================================================================================================================================================================================================================================================================================================
 
 // Обнуление ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
-@import "app/null";
+@import 'app/null';
 
 // Стили тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 
 body {
-	position: relative;
-	z-index: -100;
-	background-color: $accent1;
+   position: relative;
+   z-index: -100;
+   background-color: $accent1;
 
-	// Скролл заблокирован
-	.lock &,
-	.popup-shown & {
-		overflow: hidden;
-		touch-action: none;
-		overscroll-behavior: none;
-	}
-	// Сайт загружен
-	.loaded & {
-	}
+   // Скролл заблокирован
+   .lock &,
+   .popup-shown & {
+      overflow: hidden;
+      touch-action: none;
+      overscroll-behavior: contain;
+   }
+   // Сайт загружен
+   .loaded & {
+   }
 }
 
 // Оболочка wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-	// position: relative;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	// Прижимаем footer
-	> main {
-		flex: 1 1 auto;
-	}
-	// Фикс для слайдеров
-	> * {
-		min-width: 0;
-	}
+   // position: relative;
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   // Прижимаем footer
+   > main {
+      flex: 1 1 auto;
+   }
+   // Фикс для слайдеров
+   > * {
+      min-width: 0;
+   }
 }
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
@@ -117,49 +120,51 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
-	// Отзывчивая
-	[class*="__container"] {
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-			margin: 0 auto;
-		}
-		@if ($containerPadding>0) {
-			padding: 0 30px;
+   // Отзывчивая
+   [class*='__container'] {
+      @if ($maxWidthContainer>0) {
+         max-width: rem($maxWidthContainer);
+         box-sizing: content-box;
+         margin: 0 auto;
+      }
+      @if ($containerPadding>0) {
+         padding: 0 30px;
 
-			@media (max-width: $mobile) {
-				padding: 0 18px;
-			}
-		}
-	}
+         @media (max-width: $mobile) {
+            padding: 0 18px;
+         }
+      }
+   }
 } @else {
-	// По брейк-поинтам
-	[class*="__container"] {
-		margin: 0 auto;
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-		} @else {
-			@if ($containerPadding>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-		@media (max-width: $pc) {
-			max-width: rem(970);
-		}
-		@media (max-width: $tablet) {
-			max-width: rem(750);
-		}
-		@media (max-width: $mobile) {
-			max-width: none;
-			@if ($containerPadding>0 and $maxWidthContainer>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-	}
+   // По брейк-поинтам
+   [class*='__container'] {
+      margin: 0 auto;
+      @if ($maxWidthContainer>0) {
+         max-width: rem($maxWidthContainer);
+         box-sizing: content-box;
+      } @else {
+         @if ($containerPadding>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         }
+      }
+      @media (max-width: $pc) {
+         max-width: rem(970);
+      }
+      @media (max-width: $tablet) {
+         max-width: rem(750);
+      }
+      @media (max-width: $mobile) {
+         max-width: none;
+         @if ($containerPadding>0 and $maxWidthContainer>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         }
+      }
+   }
 }
 
-@import "widgets";
-@import "shared";
-@import "pages";
-@import "app";
+@import 'widgets';
+@import 'features';
+@import 'entities';
+@import 'shared';
+@import 'pages';
+@import 'app';

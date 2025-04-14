@@ -1,0 +1,55 @@
+.event-marketing {
+   // .h1 span:not(:first-child) {
+   // 	color: unset;
+   // }
+   &__first-screen {
+      .corporate-events__title {
+         // padding-inline: 15px;
+      }
+   }
+
+   .card-with-image-and-text {
+      &__image {
+         height: 250px;
+      }
+   }
+
+   &__card-with-image-and-text-grid {
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+      // @media (min-width: $mobile) {
+      // 	:first-child {
+      // 		// grid-column: span 2;
+      // 	}
+      // }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @media (min-width: ($maxWidthContainer + $containerPadding + px)) {
+         :first-child {
+            flex: 1 0 min(563px, 100%);
+         }
+      }
+
+      > * {
+         flex: 1 1 min(388px, 100%);
+         max-width: 763px;
+      }
+   }
+
+   .team__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 20px;
+      @include adaptiveValue('column-gap', 85, 0);
+   }
+
+   .team__column {
+      flex: 0 1 20%;
+      min-width: 280px;
+      @media (max-width: $mobile) {
+         flex: 1 1 100%;
+      }
+   }
+}

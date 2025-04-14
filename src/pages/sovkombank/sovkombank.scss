@@ -1,0 +1,16 @@
+.sovkombank {
+	.two-rows-fw-image__block {
+		background-color: #fb5055 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #fb5055 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #fb5055;
+		stroke-opacity: 0.5;
+	}
+}

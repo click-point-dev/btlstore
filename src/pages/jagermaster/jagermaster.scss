@@ -1,0 +1,16 @@
+.jagermeister {
+	.two-rows-fw-image__block {
+		background-color: #dd5a12 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #dd5a12 !important;
+		}
+	}
+
+	svg circle {
+		stroke: #dd5a12;
+		stroke-opacity: 0.5;
+	}
+}

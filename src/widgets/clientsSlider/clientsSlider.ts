@@ -15,7 +15,7 @@ export function clientsSlider(): void {
       breakpoints: {
          340: {
             slidesPerView: 3,
-            spaceBetween: 55,
+            spaceBetween: 50,
             speed: 5000,
             // autoplay: false,
             // freeMode: {
@@ -24,15 +24,15 @@ export function clientsSlider(): void {
             // 	minimumVelocity: 1,
             // },
          },
-         450: {
-            slidesPerView: 6,
-            spaceBetween: 50,
-            speed: 5000,
-            // freeMode: {
-            // 	enabled: true,
-            // 	momentum: true,
-            // },
-         },
+         // 450: {
+         //    slidesPerView: 3,
+         //    spaceBetween: 50,
+         //    speed: 5000,
+         //    // freeMode: {
+         //    // 	enabled: true,
+         //    // 	momentum: true,
+         //    // },
+         // },
          600: {
             slidesPerView: 5,
             spaceBetween: 70,
@@ -51,18 +51,9 @@ export function clientsSlider(): void {
             // 	momentum: true,
             // },
          },
-         1280: {
-            slidesPerView: 10,
-            spaceBetween: 70,
-            speed: 4000,
-            // freeMode: {
-            // 	enabled: true,
-            // 	momentum: true,
-            // },
-         },
          1372: {
-            slidesPerView: 7,
-            spaceBetween: 116,
+            slidesPerView: 8,
+            spaceBetween: 80,
             speed: 5000,
             // freeMode: {
             // 	enabled: true,

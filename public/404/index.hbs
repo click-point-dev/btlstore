@@ -41,7 +41,7 @@
 					<h1 class='text-accent'>404</h1>
 				</div>
 				<div class='page-404__body'>
-					<h3>Такой страницы нет</h3>
+					<h3 class='mb-15'>Такой страницы нет</h3>
 					<p>Но есть много других полезных страниц</p>
 					<nav class='contacts-card__navigate'>
 						<ul class="contacts-card__list">
@@ -60,7 +60,7 @@
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Закажите услугу</h5>
+								<h5 class='h5 text-white'>Закажите услугу</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
@@ -97,8 +97,10 @@
 										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -106,10 +108,6 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!</h3>
-			</div>
-			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
 		</div>
 	</body>
 

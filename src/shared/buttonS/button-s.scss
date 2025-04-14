@@ -1,5 +1,12 @@
 .button-s {
-	@include adaptiveValue("font-size", 24, 12);
-	@include adaptiveValue("padding-block", 15, 8);
-	@include adaptiveValue("padding-inline", 39, 12);
+	a,
+	button {
+		display: inline-block;
+		@include adaptiveValue("font-size", 24, 12);
+		@include adaptiveValue("padding-block", 15, 8);
+		@include adaptiveValue("padding-inline", 39, 12);
+		span {
+			@include adaptiveValue("padding-left", 32, 20);
+		}
+	}
 }

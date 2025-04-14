@@ -1,1 +1,55 @@
-.btl-page {}
+.btl-page {
+   .servicies-btl {
+      // .servicies-btl__row
+
+      &__row {
+         --grid-gap: 20px;
+         display: flex;
+         flex-wrap: wrap;
+         gap: var(--grid-gap);
+         justify-content: center;
+      }
+
+      // .servicies-btl__column
+
+      &__column {
+         min-width: 320px;
+         max-width: min(100%, 447px);
+         flex: 1 0 calc((100% - var(--grid-gap) * 3) / 4);
+
+         &:nth-last-child(-n + 3) {
+         }
+
+         display: flex;
+         flex-direction: column;
+      }
+   }
+   .card-servicies {
+      flex: 1 0 100%;
+      // .card-servicies__image
+
+      &__image {
+      }
+
+      // .card-servicies__content
+
+      &__content {
+      }
+
+      // .card-servicies__accent
+
+      &__accent {
+      }
+
+      // .card-servicies__title
+
+      &__title {
+      }
+   }
+   .align-center {
+   }
+   .text-bold {
+   }
+   .text-white {
+   }
+}

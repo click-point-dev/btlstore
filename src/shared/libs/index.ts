@@ -1,4 +1,3 @@
-export * from './libs';
 export * from './isHoverableDevice';
 export * from './getHash';
 export * from './dataMediaQueries';
@@ -9,3 +8,11 @@ export * from './documentLock';
 export * from './insertContent';
 export * from './addClass';
 export * from './rundomInt';
+export * from './isAvaliableURI';
+export * from './checkViewportWidth';
+export * from './getCitiesFromApi';
+export * from './showOverlay';
+export * from './isAvailableUrl';
+export * from './slideToggle';
+export * from './rebaseHtmlElement';
+export * from './hideShowElement';

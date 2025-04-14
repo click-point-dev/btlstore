@@ -30,7 +30,7 @@
 										<div class="services-tabs-item__content">
 											<div class="services-tabs-item__container">
 												<div class="services-tabs-item__body">
-													<h1><span>.</span>EVENT</h1>
+													<h1 class='h1 text-with-dot'><span>.</span>EVENT</h1>
 													<div class="services-tabs-item__text text">
 														<p>— то, на чем держится эмоциональная связь с брендом. Профессионально организовываем мероприятия, которые покоряют сердца, вызывают улыбки и оставляют приятные впечатления!</p>
 													</div>
@@ -59,7 +59,7 @@
 										<div class="services-tabs-item__content">
 											<div class="services-tabs-item__container">
 												<div class="services-tabs-item__body">
-													<h1><span>.</span>PR</h1>
+													<h1 class='h1 text-with-dot'><span>.</span>PR</h1>
 													<div class="services-tabs-item__text text">
 														<p>— опора в ваших отношениях с аудиторией. Работаем с запросами событийного PR любой сложности — организовываем конференции, выставки, презентации и форумы. Сделаем так, чтобы о вашем продукте говорили!</p>
 													</div>
@@ -89,7 +89,7 @@
 										<div class="services-tabs-item__content">
 											<div class="services-tabs-item__container">
 												<div class="services-tabs-item__body">
-													<h1><span>.</span>BTL</h1>
+													<h1 class='h1 text-with-dot'><span>.</span>BTL</h1>
 													<div class="services-tabs-item__text text">
 														<p>— фундамент взаимодействия с потребителем здесь и сейчас. Провести дегустацию, организовать лифлетинг, семплинг или праздничное открытие, а может быть, интегрировать бренд в крупное мероприятие — легко!</p>
 													</div>
@@ -129,7 +129,7 @@
 					<div class="full-width-form__container">
 						<div class="full-width-form__head">
 							<div class="full-width-form__title">
-								<h5 class=' text-white'>Закажите услугу</h5>
+								<h5 class='h5 text-white'>Закажите услугу</h5>
 							</div>
 							<div class="full-width-form__sub-title">
 								<p class="text-s text-white">Планируете организовать корпоратив, тимбилдинг, мероприятие для клиентов?</p>
@@ -166,8 +166,10 @@
 										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 									</div>
 									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" checked required />
-										<label class='checkbox__label text-xs text-white' for="agreement">Согласен на обработку персональных данных</label>
+										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
+										<label class='checkbox__label text-xxs text-white' for="agreement">
+											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+										</label>
 									</div>
 								</div>
 							</form>
@@ -175,10 +177,7 @@
 					</div>
 				</div>
 			{{/widgets/popup/popup}}
-			<div class='success' style='visibility: hidden; display: none;'>
-				<h3 class='text-white'>Заявка отправлена!</h3>
-			</div>
-			{{!-- <a href="components"><img width='100px' height='100px' src="/images/favicon.png" alt=""></a> --}}
+
 		</div>
 	</body>
 

@@ -1,0 +1,24 @@
+.megafon {
+	.two-rows-fw-image__block {
+		background-color: #01b255 !important;
+	}
+
+	.two-rows-fw-image__column {
+		&:nth-child(2) {
+			background-color: #01b255 !important;
+		}
+	}
+
+	.two-rows-fw-image__images .color-block {
+		background-color: #2065ab;
+
+		&:after {
+			background: linear-gradient(#2065ab 5%, rgba(29, 2, 9, 0) 50%);
+		}
+	}
+
+	svg circle {
+		stroke: #01b255;
+		stroke-opacity: 0.5;
+	}
+}

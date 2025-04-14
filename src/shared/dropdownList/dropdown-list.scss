@@ -1,0 +1,14 @@
+.dropdown-container {
+	background-color: white;
+	color: inherit;
+	@include adaptiveValue("padding-block", 15, 7);
+	border-radius: 3px;
+	border: 1px solid #9b999a;
+	overflow: hidden;
+}
+.dropdown-list {
+	max-height: 200px;
+	overflow-y: auto;
+	// max-height: inherit;
+	// overflow-y: auto;
+}
