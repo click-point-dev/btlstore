@@ -137,13 +137,6 @@ export function btlPage(): void {
       console.log(heigth);
       secondRow.style.height = '0';
 
-      const timeline = gsap.timeline({ paused: true });
-      timeline.fromTo(
-         secondRow,
-         { height: 0, marginTop: 0 },
-         { height: heigth, marginTop: '20px' },
-      );
-
       parentElement.insertAdjacentHTML(
          'afterend',
          /*html*/ `
@@ -151,6 +144,19 @@ export function btlPage(): void {
             <button>Показать все услуги</button>
          </div>`,
       );
+
+      const timeline = gsap.timeline({ paused: true });
+      const cards = gsap.utils.selector(secondRow);
+      console.log(cards('& > *'));
+
+      timeline
+         .fromTo(
+            secondRow,
+            { height: 0, marginTop: 0 },
+            { height: heigth, marginTop: '20px' },
+         )
+         .from(cards('& > *'), { stagger: 0.1, opacity: 0 }, '-=0.2');
+
       parentElement.nextElementSibling.addEventListener('click', () =>
          secondRow.getBoundingClientRect().height === 0
             ? timeline.play()
