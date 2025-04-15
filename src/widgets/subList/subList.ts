@@ -5,6 +5,7 @@ export function subList(): void {
    const sublists = Array.from(document.querySelectorAll('.sub-list'));
    if (!sublists.length) return;
 
+   //todo перенести в файл constants (например). - это бизнесс-логика
    const openedClass = 'sub-list-open';
 
    function gsapAnimate(element: Element, elemItemsClass: string) {
