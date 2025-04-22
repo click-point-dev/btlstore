@@ -45,36 +45,6 @@
    }
 }
 
-.novosibirsk,
-.ekaterinburg,
-.volgograd {
-   .footer {
-      &__body {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         @include adaptiveValue('column-gap', 28, 12);
-         @include adaptiveValue('row-gap', 42, 13);
-
-         @media (max-width: $tablet) {
-            grid-template-columns: repeat(2, 1fr);
-         }
-      }
-
-      div:has(> .contacts-card--w2) {
-         grid-column: span 2;
-      }
-
-      @media (min-width: $tablet) {
-         div:has(> .contacts-card--w2) {
-            grid-column: span 2;
-         }
-         div:has(> .contacts-card--w2:last-child) {
-            grid-column: span 2;
-         }
-      }
-   }
-}
-
 .contacts-card {
    // .contacts-card__body
 

@@ -7,6 +7,7 @@ export * from './swiper';
 export * from './sliderParams';
 export * from './sliderCases';
 export * from './footer';
+export * from './footerV1';
 export * from './contactsCard';
 export * from './person';
 export * from './tooltip';
