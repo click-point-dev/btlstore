@@ -155,6 +155,7 @@ export function btlPage(): void {
             { height: 0, marginTop: 0 },
             { height: heigth, marginTop: '20px' },
          )
+         .to(secondRow, { overflow: 'unset' })
          .from(cards('& > *'), { stagger: 0.1, opacity: 0 }, '-=0.2');
 
       parentElement.nextElementSibling.addEventListener('click', () =>
