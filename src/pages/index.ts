@@ -5,7 +5,7 @@ export * from './aboutPage';
 export * from './vacanciesPage';
 export * from './mtsBlogAndVoice';
 export * from './gloriaJeans';
-export * from './zhiznмart';
+export * from './zhiznmart';
 export * from './mtsFashionDay';
 export * from './razumnyeOtNaroda';
 export * from './tnt';

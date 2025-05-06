@@ -1,0 +1,16 @@
+.zhiznmart {
+   .two-rows-fw-image__block {
+      background-color: $green !important;
+   }
+
+   .two-rows-fw-image__column {
+      &:nth-child(2) {
+         background-color: $green !important;
+      }
+   }
+
+   svg circle {
+      stroke: $green;
+      stroke-opacity: 0.5;
+   }
+}

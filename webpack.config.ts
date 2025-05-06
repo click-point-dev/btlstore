@@ -200,7 +200,7 @@ const config = (env: EnvVariables): Configuration => {
             'components',
             'contacts',
             'cases/mts-blog-and-voice',
-            'cases/zhiznмart',
+            'cases/zhiznmart',
             'cases/gloria-jeans',
             'cases/tnt',
             'cases/eastern-special-equipment',
