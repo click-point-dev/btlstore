@@ -1,61 +1,99 @@
-.privacy {
-	a {
-		color: #bf274d;
-	}
+.page-privacy {
+   .header {
+      position: relative;
+   }
 
-	ul li:not(:last-child) {
-		margin-bottom: 10px;
-	}
+   main {
+      background-color: white;
 
-	div:has(> table) {
-		overflow: hidden;
-		border-radius: 20px;
-		border: 1px solid #a7a7a7;
-		margin: 20px 0;
-	}
+      ol {
+         list-style: none;
+         counter-reset: li;
+         h2,
+         h3,
+         p {
+            display: inline-block;
+         }
+      }
+      ol > li:before {
+         counter-increment: li;
+         content: counters(li, '.') '. ';
+      }
 
-	table {
-		width: 100%;
-		border-spacing: 0;
-		font-family: Arial, sans-serif;
-		background-color: #fff;
-	}
+      ul li {
+         list-style: unset !important;
+      }
+      a {
+         color: #bf274d;
+      }
+   }
 
-	​ th,
-	td {
-		padding: 12px;
-		text-align: left;
-		border: 1px solid #ddd;
-	}
+   .h1,
+   .h2 {
+      line-height: 1;
+   }
 
-	th {
-		background-color: #f2f2f2;
-		color: #333;
-		font-weight: bold;
-	}
+   ul,
+   ol {
+      li:not(:last-child),
+      div:not(:last-child) {
+         margin-bottom: 10px;
+      }
 
-	td {
-		background-color: #fafafa;
-	}
+      li:not(:has(> ol)) {
+         margin-bottom: 100px;
+      }
+   }
 
-	tbody tr:nth-child(odd) td {
-		background-color: #f9f9f9;
-	}
+   div:has(> table) {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid #a7a7a7;
+      margin: 20px 0;
+   }
 
-	tbody tr:hover td {
-		background-color: #f1f1f1;
-	}
+   table {
+      width: 100%;
+      border-spacing: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+   }
 
-	h2 {
-		margin-bottom: 70px !important;
-	}
+   ​ th,
+   td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+   }
 
-	p:not(:last-child),
-	ul:not(:last-child) {
-		margin-bottom: 15px;
-	}
+   th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+   }
 
-	article:not(:last-child) {
-		margin-bottom: 50px;
-	}
+   td {
+      background-color: #fafafa;
+   }
+
+   tbody tr:nth-child(odd) td {
+      background-color: #f9f9f9;
+   }
+
+   tbody tr:hover td {
+      background-color: #f1f1f1;
+   }
+
+   // h2 {
+   // 	margin-bottom: 70px !important;
+   // }
+
+   // p:not(:last-child),
+   // ul:not(:last-child) {
+   //    margin-bottom: 15px;
+   // }
+
+   // article:not(:last-child) {
+   //    margin-bottom: 50px;
+   // }
 }
