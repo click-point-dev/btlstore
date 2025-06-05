@@ -53,6 +53,9 @@
 }
 
 //+ paddinds (добавляю, из технических соображений- пока безсистемно)
+.pb-20 {
+   padding-bottom: 20px;
+}
 .pbl-50 {
    @include adaptiveValue('padding-block', 50, 30);
 }
@@ -68,6 +71,7 @@
 .pb-200 {
    @include adaptiveValue('padding-bottom', 200, 82);
 }
+
 .pt-200 {
    @include adaptiveValue('padding-top', 200, 82);
 }
@@ -85,4 +89,5 @@
 //+ modificators
 .width-full {
    width: 100% !important;
+   flex-basis: 100% !important;
 }

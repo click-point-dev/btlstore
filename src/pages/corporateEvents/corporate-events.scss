@@ -531,6 +531,7 @@
       }
    }
 }
+
 .form-2 {
    @include adaptiveValue('padding-inline', 117, 20);
    border: solid 1px #18252f38;
@@ -619,6 +620,10 @@
 
    &:focus {
       border-bottom: solid 1px $accent1;
+   }
+
+   &:disabled {
+      border-bottom-color: #18252f1e;
    }
 
    &:focus,

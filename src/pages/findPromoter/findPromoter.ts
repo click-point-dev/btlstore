@@ -44,4 +44,6 @@ export async function findPromoter() {
          });
       }
    });
+
+   // обработка input radio valu=other
 }

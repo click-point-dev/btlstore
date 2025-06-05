@@ -69,11 +69,21 @@
    line-height: 130%;
 }
 
+.text-xxs {
+   font-size: 12px !important;
+   line-height: 130% !important;
+}
+
 //+ text decorations
 
 .uppercase {
    text-transform: uppercase !important;
 }
+
+.text-underline {
+   text-decoration: underline !important;
+}
+
 .align-center {
    text-align: center !important;
 }

@@ -47,3 +47,7 @@ export * from './textWithDot';
 export * from './spacings';
 export * from './textList';
 export * from './quoteCard';
+export * from './decotations';
+export * from './inputFile';
+export * from './multicheckbox';
+export * from './inputRadio';
