@@ -1,74 +1,202 @@
+// <div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+// <label>
+//    <input type="checkbox" value='Раскладка  по почтовым ящикам' name='job'>
+//    <i class='border-gray'></i>
+//    <span class='text-xxs text-gray'>Раскладка по почтовым ящикам</span>
+// </label>
+// </div>
+
+// .checkbox {
+//    position: relative;
+//    cursor: pointer;
+//    flex: 1 1 100%;
+//    display: flex;
+//    align-items: center;
+//    &:not(:last-child) {
+//       margin-bottom: em(5);
+//    }
+//    // .checkbox__input
+//    &__input {
+//       position: absolute;
+//       width: 0;
+//       height: 0;
+//       opacity: 0;
+//       font-size: 0 !important;
+
+//       &:focus + .checkbox__label:before {
+//          outline-offset: 2px;
+//          outline-color: black;
+//          outline: 1px solid black;
+//       }
+//       // &:checked + .checkbox__label:before {
+//       //    background-color: $white;
+//       // }
+//       // &:checked + .checkbox__label:after {
+//       //    opacity: 1;
+//       // }
+//    }
+//    // .checkbox__label
+//    &__label {
+//       position: relative;
+//       // display: inline-flex;
+//       // margin-inline: auto;
+//       // align-items: center;
+//       // gap: 10px;
+//       // max-width: 325px;
+//       cursor: pointer;
+//       padding-left: 25px;
+//       p {
+//          // padding-left: 25px;
+//       }
+
+//       &::before,
+//       &:after {
+//          position: absolute;
+//          width: 20px;
+//          height: 20px;
+//       }
+
+//       &:before {
+//          content: '';
+//          top: 0;
+//          left: 0;
+//          border: 1px solid currentColor;
+//          background-color: transparent;
+//          transition: background-color $anim;
+//       }
+
+//       &:after {
+//          content: '\e901';
+//          top: 3px;
+//          left: 4px;
+//          font-family: 'iconfont';
+//          font-size: 0.8em;
+//          color: $accent1;
+//          opacity: 0;
+//          pointer-events: none;
+//          transition: opacity $anim;
+//       }
+
+//       &.checkbox-width-14 {
+//          &::before,
+//          &:after {
+//             width: 14px;
+//             height: 14px;
+//          }
+//          &::before {
+//             border-radius: 1px;
+//          }
+//          &:after {
+//             top: 0px;
+//             left: 2px;
+//          }
+//       }
+//    }
+// }
+
+// [type='checkbox'] + * a {
+//    text-decoration: underline;
+// }
+
+// .checkbox.checked {
+//    .checkbox__label:after {
+//       opacity: 1;
+//    }
+//    .checkbox__label:before {
+//       background-color: $white;
+//    }
+
+//    .checkbox__label.checkbox-accent-1 {
+//       &::before {
+//          background-color: $accent1;
+//          border-color: transparent;
+//       }
+//       &::after {
+//          color: white;
+//       }
+//    }
+// }
+
 .checkbox {
-	position: relative;
-	cursor: pointer;
-	flex: 1 1 100%;
-	display: flex;
-	align-items: center;
-	&:not(:last-child) {
-		margin-bottom: em(5);
-	}
-	// .checkbox__input
-	&__input {
-		position: absolute;
-		width: 0;
-		height: 0;
-		opacity: 0;
-		font-size: 0;
+   position: relative;
 
-		&:focus + .checkbox__label:before {
-		}
-		&:checked + .checkbox__label:before {
-			background-color: $white;
-		}
-		&:checked + .checkbox__label:after {
-			opacity: 1;
-		}
-	}
-	// .checkbox__label
-	&__label {
-		position: relative;
-		// display: inline-flex;
-		// margin-inline: auto;
-		// align-items: center;
-		// gap: 10px;
-		// max-width: 325px;
-		cursor: pointer;
-		p {
-			padding-left: 25px;
-		}
+   label {
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      cursor: pointer;
+      i {
+         display: block;
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         width: 20px;
+         aspect-ratio: 1;
+         border-radius: 2px;
+         border: 1px solid currentColor;
+         background-color: transparent;
+         transition:
+            background-color $anim,
+            border-color $anim;
 
-		&:before {
-			position: absolute;
-			content: "";
-			top: 0;
-			left: 0;
-			width: 20px;
-			height: 20px;
-			border: 1px solid currentColor;
-			background-color: transparent;
-			transition: background-color $anim;
-		}
+         &::before {
+            position: absolute;
+            pointer-events: none;
+            content: '';
+            z-index: 2;
+            top: 2px;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            aspect-ratio: 1;
+            border-left: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            rotate: (-45deg);
+            scale: 0.6;
+            opacity: 0;
+            transition:
+               opacity $anim,
+               background-color $anim,
+               border-color $anim;
+         }
+      }
 
-		&:after {
-			position: absolute;
-			content: "\e901";
-			width: 20px;
-			height: 20px;
-			top: 3px;
-			left: 4px;
-			font-family: "iconfont";
-			font-size: 0.8em;
-			color: $accent1;
-			opacity: 0;
-			pointer-events: none;
-			transition: opacity $anim;
-		}
-	}
-	// .checkbox__text
-	&__text {
-	}
-}
+      input[type='checkbox'] {
+         appearance: none;
 
-[type="checkbox"] + * a {
-	text-decoration: underline;
+         &:focus ~ i {
+            outline-offset: 2px;
+            outline: 1px solid currentColor;
+         }
+      }
+
+      input[type='checkbox']:checked ~ i {
+         background-color: white;
+         border-color: transparent !important;
+         &::before {
+            opacity: 1;
+            border-color: $accent1;
+         }
+      }
+   }
+
+   &.checkbox-width-14 {
+      i {
+         width: 14px;
+      }
+      label {
+         padding-left: 20px;
+      }
+   }
+
+   &.checkbox-accent-1 {
+      input[type='checkbox']:checked ~ i {
+         background-color: $accent1;
+         &::before {
+            opacity: 1;
+            border-color: white;
+         }
+      }
+   }
 }

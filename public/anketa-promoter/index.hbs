@@ -38,35 +38,51 @@
 										<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
 									</div>
 									<div class='form-2__row'>
-										<input class="input form-2__input form-2-input text-gray" id='form-2-name' type="text" name='name' placeholder=''>
-										<label for="form-2-name">Имя</label>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-fio' type="text" name='name' placeholder=''>
+										<label for="form-2-name">ФИО (полностью)</label>
 										<input class='input fn' name='fn' id='fn' type='text' required />
-									</div>
-									<div class='form-2__row'>
-										<input class="input form-2__input form-2-input text-gray" id='form-2-surname' type="text" name='surname' placeholder=''>
-										<label for="form-2-surname">Фамилия</label>
 									</div>
 									<div class='form-2__row'>
 										<input class="input form-2__input form-2-input text-gray" id='form-2-birthdate' type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name='bdate' placeholder=''>
 										<label for="form-2-birthdate">Дата рождения (дд.мм.гггг)</label>
 									</div>
 									<div class='form-2__row'>
-										<select class="input form-2__input form-2-input text-gray" id='form-2-gender' name='sex' placeholder=''>
-											<option value=""></option>
-											<option value="1">Мужской</option>
-											<option value="2">Женский</option>
-										</select>
-										<label for="form-2-name">Пол</label>
-									</div>
-									<div class='form-2__row'>
 										<input class="input form-2__input form-2-input text-gray" id='form-2-phone' type="tel" name='phone' placeholder=''>
 										<label for="form-2-phone">Телефон</label>
+									</div>
+									<div class='form-2__row form-2-radio-input'>
+										<p class='form-2-radio-input__title text-gray mb-15'>Гражданство</p>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-1" name="citizenship" value="России" checked />
+											<label class='text-gray text-xxs' for="form-2-citizenship-1">России</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-2" name="citizenship" value="Белоруссии" />
+											<label class='text-gray text-xxs' for="form-2-citizenship-2">Белоруссии</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-3" name="citizenship" value="Казахстана" />
+											<label class='text-gray text-xxs' for="form-2-citizenship-3">Казахстана</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-4" name="citizenship" value="Армении" />
+											<label class='text-gray text-xxs' for="form-2-citizenship-4">Армении</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-5" name="citizenship" value="Кыргызстана" />
+											<label class='text-gray text-xxs' for="form-2-citizenship-5">Кыргызстана</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-citizenship-6" name="citizenship" value="other" />
+											<label class='text-gray text-xxs' for="form-2-citizenship-6">Другое</label>
+											{{!-- <input type="text" class='input form-2__input form-2-input text-gray' name='citizenship' disabled> --}}
+										</div>
 									</div>
 									<div class='form-2__row'>
 										<div class='search-with-dropdown' data-search-block>
 											<div class="search-input dropdown-initializer form-2__row" data-search-input>
 												<input class="input form-2__input form-2-input text-gray" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
-												<label for="city">Укажите город</label>
+												<label for="city">Город</label>
 												<input class='hide' type="text" name='city_id'>
 											</div>
 											<div class="search-results hide" data-search-results>
@@ -78,14 +94,161 @@
 										</div>
 									</div>
 									<div class='form-2__row'>
-										<div class='form-2__row'>
-											<div class='form-2__checkbox'>
-												<input class="input form-2__input form-2-input" id='form-2-agreement' type="checkbox" name='agreement' required>
-												<label for="form-2-agreement">
-													<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
-												</label>
-
+										<input class="input form-2__input form-2-input text-gray" id='form-2-height' type="number" name='height' placeholder=''>
+										<label for="form-2-name">Рост (см)</label>
+									</div>
+									<div class='form-2__row form-2-radio-input pb-20 border-bottom'>
+										<p class='form-2-radio-input__title text-gray mb-15'>Размер одежды</p>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-size-1" name="clothes_size" value="40-44" checked />
+											<label class='text-gray text-xxs' for="form-2-size-1">40-44</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-size-2" name="clothes_size" value="46-48" />
+											<label class='text-gray text-xxs' for="form-2-size-2">46-48</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-size-3" name="clothes_size" value="50-52" />
+											<label class='text-gray text-xxs' for="form-2-size-3">50-52</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-size-4" name="clothes_size" value="54-56" />
+											<label class='text-gray text-xxs' for="form-2-size-4">54-56</label>
+										</div>
+									</div>
+									<div class='form-2__row form-2-radio-input pb-20 border-bottom'>
+										<p class='form-2-radio-input__title text-gray mb-15'>Есть мед книжка</p>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-medical-1" name="medical_book" value="Действующая" />
+											<label class='text-gray text-xxs' for="form-2-medical-1">Действующая</label>
+										</div>
+										<div class='form-2-radio-input__item'>
+											<input type="radio" id="form-2-medical-2" name="medical_book" value="Нет" checked />
+											<label class='text-gray text-xxs' for="form-2-medical-2">Нет</label>
+										</div>
+									</div>
+									<div class='form-2__row multicheckbox pb-20 border-bottom' data-multicheckbox>
+										<div class='mb-15 multicheckbox__title text-gray'>
+											<p data-multicheckbox-title>Чем вы готовы заниматься?</p><span>(выберите один или несколько вариантов ответов)</span>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Любая' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Любая</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Раздача листовок' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Раздача листовок</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Расклейка' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Расклейка</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Раскладка  по почтовым ящикам' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Раскладка по почтовым ящикам</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Раскладка листовок под дворники авто' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Раскладка листовок под дворники авто</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Распространение дорхенгеров' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Распространение дорхенгеров</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Консультирование' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Консультирование</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Человек-бутерброд (спец костюм напоминающий банер)' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Человек-бутерброд (спец костюм напоминающий банер)</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Дегустации (раздача пробников )' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Дегустации (раздача пробников )</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='В ростовой кукле' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>В ростовой кукле</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='С громкоговорителем' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>С громкоговорителем</span>
+											</label>
+										</div>
+										<div class='checkbox checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label>
+												<input type="checkbox" value='Анкетирование' name='job'>
+												<i class='border-gray'></i>
+												<span class='text-xxs text-gray'>Анкетирование</span>
+											</label>
+										</div>
+									</div>
+									<div class='form-2__row pb-20 border-bottom'>
+										<p class='text-gray mb-15 text-xs'>Фото в полный рост</p>
+										<p class='text-gray mb-15 text-xxs'>Загрузите 1 файл в формате JPG или PNG. Размер файла – не более 15 MB.</p>
+										<div class="input-file">
+											<div class="input-file__input mb-15">
+												<input type="file" name="file[]" id="personPfoto" class="" accept="image/png, image/jpeg" />
+												<div class="input-file__button button">
+													<button class='text-xxs' inert>
+														<span>
+															<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10" stroke="#BF274D" stroke-linecap="round" stroke-linejoin="round" />
+																<path d="M4.67188 6.66667L8.00521 10L11.3385 6.66667" stroke="#BF274D" stroke-linecap="round" stroke-linejoin="round" />
+																<path d="M8 10V2" stroke="#BF274D" stroke-linecap="round" stroke-linejoin="round" />
+															</svg>
+														</span>Добавить файл
+													</button>
+												</div>
 											</div>
+										</div>
+										<div class="text-xxs">
+											<div class="input-file__files" id="formFilesPlaceholder"></div>
+										</div>
+										{{!-- <div class='form-2-radio-input__item'>
+											<input type="file" id="form-2-person-pfoto" name="file" accept="image/png, image/jpeg" capture='user' />
+										</div> --}}
+									</div>
+									<div class='form-2__row'>
+										<div class='checkbox text-xxs text-gray checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label class=''>
+												<input type="checkbox" name='agreement'>
+												<i></i>
+												<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
+											</label>
 										</div>
 									</div>
 									<div class='form-2__action'>
@@ -162,10 +325,11 @@
 									<div class="button button-light button-xl">
 										<button>Оставить заявку</button>
 									</div>
-									<div class='input-block checkbox text-white'>
-										<input class='checkbox__input' type="checkbox" id="checkbox-input" name="agreement" required />
-										<label class='checkbox__label text-xxs text-white' for="agreement">
-											<p>я принимаю условия <a href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</p>
+									<div class='checkbox text-xxs text-white text-white' data-checkbox>
+										<label class=''>
+											<input type="checkbox" name='agreement'>
+											<i></i>
+											<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
 										</label>
 									</div>
 								</div>
