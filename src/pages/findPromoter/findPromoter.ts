@@ -1,6 +1,8 @@
 import { dropdownList, getCitiesFromApi } from '../../shared';
 import { searchWidget } from '../../widgets';
 
+//todo инпут с городами вынести в отдельный файл
+
 export async function findPromoter() {
    const searchBlocks = document.querySelectorAll('[data-search-block]');
    if (!searchBlocks.length) return;
