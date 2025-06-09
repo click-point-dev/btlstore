@@ -1,0 +1,15 @@
+.multicheckbox {
+   padding-left: 10px;
+
+   &__title {
+      @include adaptiveValue('font-size', 16, 14);
+   }
+
+   .checkbox:not(:last-child) {
+      margin-bottom: 10px;
+   }
+
+   label::before {
+      // border: solid 1px #2b2a2b !important;
+   }
+}
