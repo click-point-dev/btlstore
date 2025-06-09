@@ -1,0 +1,29 @@
+.input-radio {
+   &__title {
+      display: block;
+      @include adaptiveValue('font-size', 16, 14);
+   }
+   input[type='radio'] {
+      width: 18px;
+      flex: 0 0 18px;
+      aspect-ratio: 1;
+      accent-color: $accent1;
+   }
+
+   input[type='radio'],
+   input[type='radio'] + label {
+      cursor: pointer;
+   }
+
+   div:has(input + label) {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__item {
+      input[type='text'] {
+         padding-block: 3px; // фикс для выравнивания высоты текст-инпут для опции Другое
+      }
+   }
+}
