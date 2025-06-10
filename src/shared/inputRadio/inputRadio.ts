@@ -49,6 +49,8 @@ export class RadioGruoupData {
    }
 }
 
+sessionStorage.removeItem('radioGroupsData');
+
 export function inputRadio(form: HTMLFormElement, validator: JustValidate) {
    const radioGroupNames = [
       ...new Set(
@@ -127,11 +129,11 @@ export function inputRadio(form: HTMLFormElement, validator: JustValidate) {
             });
       });
 
-   Boolean(radioGroupNames.length) &&
+   radioGroupNames.length &&
       sessionStorage.setItem(
          'radioGroupsData',
          JSON.stringify(radioGroupsData),
       );
 
-   return radioGroupsData;
+   // return radioGroupsData;
 }
