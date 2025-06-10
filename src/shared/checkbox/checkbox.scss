@@ -165,7 +165,7 @@
       input[type='checkbox'] {
          appearance: none;
 
-         &:focus ~ i {
+         &:focus-visible ~ i {
             outline-offset: 2px;
             outline: 1px solid currentColor;
          }
