@@ -296,6 +296,9 @@ const config = (env: EnvVariables): Configuration => {
                   filename:
                      page === 'index' ? `index.html` : `${page}/index.html`,
                   favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
+                  minify: {
+                     removeRedundantAttributes: false,
+                  },
                }),
          ),
 
