@@ -127,7 +127,11 @@ export function inputRadio(form: HTMLFormElement, validator: JustValidate) {
             });
       });
 
-   sessionStorage.setItem('radioGroupsData', JSON.stringify(radioGroupsData));
+   Boolean(radioGroupNames.length) &&
+      sessionStorage.setItem(
+         'radioGroupsData',
+         JSON.stringify(radioGroupsData),
+      );
 
    return radioGroupsData;
 }
