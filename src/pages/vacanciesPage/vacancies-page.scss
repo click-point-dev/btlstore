@@ -202,10 +202,6 @@
    &__cta {
       display: flex;
       justify-content: center;
-      button,
-      a {
-         @include adaptiveValue('font-size', 32, 30);
-      }
    }
 }
 
