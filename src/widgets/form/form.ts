@@ -3,6 +3,8 @@ import JustValidate, { Rules } from 'just-validate';
 import {
    addClass,
    changeElements,
+   documentLock,
+   documentUnlock,
    getVacancyName,
    inputFile,
    inputRadio,
@@ -14,8 +16,6 @@ import {
 
 export function form(): void {
    const forms = Array.from(document.forms);
-
-   // let fileList = [];
 
    if (!forms.length) return;
 
@@ -39,17 +39,16 @@ export function form(): void {
       }
 
       // validate and submit
-      //todo tooltip, addRequiredGroup for multicheckbox
       const validate = new JustValidate(form, {
          validateBeforeSubmitting: true,
          // testingMode: true,
       });
 
-      //radio inputs (with others groups)
+      //radio inputs (with others inputs)
       inputRadio(form, validate);
 
       //file input
-      inputFile(form);
+      inputFile(form, validate);
 
       validateForm(form, validate, telInput);
 
@@ -204,33 +203,6 @@ export function form(): void {
             .closest('.multicheckbox') as HTMLElement;
          validate.addRequiredGroup(jobBlock, 'Укажите хотя бы один вариант');
       }
-      if (form['file[]']) {
-         validate.addField(form['file[]'], [
-            {
-               rule: Rules.MinFilesCount,
-               value: 1,
-               errorMessage: 'Фото обязательно',
-            },
-            {
-               rule: Rules.Files,
-               errorMessage: 'Файл не более 15 Мб',
-               value: {
-                  files: {
-                     maxSize: 15000000,
-                  },
-               },
-            },
-            {
-               rule: Rules.Files,
-               errorMessage: 'Только изображения png, jpg, jpeg',
-               value: {
-                  files: {
-                     extensions: ['png', 'jpg', 'jpeg'],
-                  },
-               },
-            },
-         ]);
-      }
       if (form.agreement) {
          validate.addField(form.agreement, [
             {
@@ -241,8 +213,29 @@ export function form(): void {
       }
    }
 
+   async function sendPostRequestToGoogleSheets(
+      url: string,
+      body: FormData,
+      message: string,
+   ) {
+      try {
+         const res = await fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: body,
+         });
+
+         // message += `<p>✅ Данные записаны в таблицу</p>`;
+      } catch (error) {
+         // message += `<p>Ошибка при отправке данных в google sheet: ${error}</p>`;
+         console.error(message, error);
+      }
+   }
+
    async function submitForm(form: HTMLFormElement) {
-      let message: string;
+      const promoterSheetUrl =
+         'https://script.google.com/macros/s/AKfycbyZvp1_-hO_051X3S8A_CZG64ob46lwTV6xzDX2ZkJZBxc4aPlFXb1RqsG1Cr5bpjjs/exec';
+      let message: string = '';
       const formData = new FormData(form);
       const method = form.getAttribute('method');
       const loader = form.querySelector('.form__loader') as HTMLElement;
@@ -256,7 +249,7 @@ export function form(): void {
       let commentString = formData.get('comment') || '';
       const height = formData.get('height') || '';
       const citizenship =
-         radioGroupsData.filter(item => item._nameAttr === 'citizenship')[0]
+         radioGroupsData?.filter(item => item._nameAttr === 'citizenship')[0]
             ._value || formData.get('citizenship');
       const medical_book = formData.get('medical_book') || '';
       const clothes_size = formData.get('clothes_size') || '';
@@ -276,6 +269,7 @@ export function form(): void {
          commentString += `Размер одежды: ${clothes_size.toString().trim()};\r\n`;
       if (Boolean(medical_book))
          commentString += `Медицинская книжка: ${medical_book.toString().trim()};\r\n`;
+
       multicheckboxesData.forEach(data => {
          if (data.value.length) {
             commentString += `${data.title}: ${data.value.join(', ')}`;
@@ -284,57 +278,52 @@ export function form(): void {
             formData.set('job', data.value.join(', '));
          }
       });
+      commentString && formData.set('comment', commentString);
 
       phone &&
          formData.set('phone', phone.toString().trim().replace(/[\D]+/g, ''));
-      commentString && formData.set('comment', commentString);
+
       citizenship && formData.set('citizenship', citizenship);
 
-      addClass(loader, 'visible');
-
+      //+ логи formData
       // for (let [key, value] of formData.entries()) {
       //    console.log(key, value);
       // }
 
-      if (isGoogleSheets) {
-         const URL_APP =
-            'https://script.google.com/macros/s/AKfycbyZvp1_-hO_051X3S8A_CZG64ob46lwTV6xzDX2ZkJZBxc4aPlFXb1RqsG1Cr5bpjjs/exec';
-
-         const phone = formData.get('phone').slice(1);
-         formData.set('phone', phone);
-
-         try {
-            const res = await fetch(URL_APP, {
-               method: method,
-               mode: 'no-cors',
-               body: formData,
-            });
-            console.log(res);
-         } catch (error) {
-            console.error('Ошибка при отправке данных в google sheet:', error);
-         }
-      }
-
       try {
+         addClass(loader, 'visible');
          const res = await fetch('/api/request.php', {
             method: method,
             body: formData,
          });
-         // console.log(res);
+
          if (res.status !== 200) {
             throw new Error(
-               `❌\n Что-то пошло не так. Код ответа ${res.status}`,
+               `<p>❌ Что-то пошло не так. Код ответа ${res.status}</p></br><p>сейчас вернем вас обратно!</p><p class="h3">🤷‍♀️</p>`,
             );
          }
 
-         message = '✅ Заявка отправлена!';
+         isGoogleSheets &&
+            (await sendPostRequestToGoogleSheets(
+               promoterSheetUrl,
+               formData,
+               message,
+            ));
+
+         message +=
+            '<p>✅ Заявка отправлена.</p></br><p>сейчас вернем вас обратно!</p><p class="h3">🤗</p>';
          form.reset();
       } catch (error) {
          console.error(error);
-         message = error;
+         message += error;
       } finally {
          removeClass(loader, 'visible');
-         showOverlay(form, message, null, 3000);
+         await showOverlay(
+            document.body,
+            message,
+            'text-xs align-center',
+            3000,
+         );
       }
    }
 }
