@@ -1,0 +1,55 @@
+.input-file {
+   position: relative;
+   // .input-file__input
+
+   &__input {
+      display: flex;
+      gap: 10px;
+
+      &:hover .input-file__btn span:before {
+         background-color: $accent1;
+      }
+
+      input {
+         position: absolute;
+         inset: 0;
+         opacity: 0;
+         font-size: 0;
+         cursor: pointer;
+      }
+
+      .input-file__button {
+         overflow: unset;
+
+         button {
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            line-height: 130%;
+            color: $accent1;
+            border: solid 1px #18252f38;
+            border-radius: 5px;
+            span {
+               padding-left: unset;
+            }
+         }
+      }
+   }
+
+   // .input-file__files
+
+   &__files {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: start;
+      text-align: left;
+
+      > * {
+         // cursor: pointer;
+      }
+   }
+}
