@@ -43,7 +43,7 @@
 										<input class='input fn' name='fn' id='fn' type='text' required />
 									</div>
 									<div class='form-2__row'>
-										<input class="input form-2__input form-2-input text-gray" id='form-2-birthdate' onfocus="(this.type='date')" onblur="(this.type='text')" name='bdate' placeholder=''>
+										<input class="input form-2__input form-2-input text-gray" id='form-2-birthdate' type='date' name='bdate' placeholder=''>
 										<label for="form-2-birthdate">Дата рождения (дд.мм.гггг)</label>
 									</div>
 									<div class='form-2__row'>
@@ -221,7 +221,7 @@
 										<p class='text-gray mb-15 text-xxs'>Загрузите 1 файл в формате JPG или PNG. Размер файла – не более 15 MB.</p>
 										<div class="input-file">
 											<div class="input-file__input mb-15">
-												<input type="file" name="file[]" id="personPfoto" class="" accept="image/png, image/jpeg" />
+												<input type="file" name="file[]" id="personPfoto" class="" accept="image/*" />
 												<div class="input-file__button button">
 													<button class='text-xxs' inert>
 														<span>
@@ -236,7 +236,7 @@
 											</div>
 										</div>
 										<div class="text-xxs">
-											<div class="input-file__files" id="formFilesPlaceholder"></div>
+											<div class="input-file__files" data-files-input-placeholder></div>
 										</div>
 										{{!-- <div class='input-radio__item'>
 											<input type="file" id="form-2-person-pfoto" name="file" accept="image/png, image/jpeg" capture='user' />
