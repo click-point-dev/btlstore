@@ -1,11 +1,11 @@
 import JustValidate, { Rules } from 'just-validate';
 
 export function inputFile(form: HTMLFormElement, validator: JustValidate) {
-   let filesList: File[] | null;
+   let filesList: File[] | null = [];
    const filesInput = form['file[]'] as HTMLInputElement;
 
    if (!filesInput) return;
-   console.log(filesInput);
+
    const filesPlaceholder = form.querySelector(
       '[data-files-input-placeholder]',
    ) as HTMLDivElement;
@@ -17,14 +17,36 @@ export function inputFile(form: HTMLFormElement, validator: JustValidate) {
          errorMessage: 'Фото обязательно',
       },
       {
+         rule: Rules.MaxFilesCount,
+         value: 1,
+         errorMessage: 'Не более одного файла',
+      },
+      {
          rule: Rules.Files,
          value: {
             files: {
                extensions: ['jpeg', 'jpg', 'png'],
+            },
+         },
+         errorMessage: 'Только файлы jpeg, jpg, png',
+      },
+      {
+         rule: Rules.Files,
+         value: {
+            files: {
                maxSize: 15000000,
             },
          },
-         errorMessage: 'Только картинки не более 15 Мб',
+         errorMessage: 'Большой размер файла (max 15MB)',
+      },
+      {
+         rule: Rules.Files,
+         value: {
+            files: {
+               minSize: 15000,
+            },
+         },
+         errorMessage: 'Мленький размер файла (min 15kB) ',
       },
    ]);
 
@@ -46,20 +68,24 @@ export function inputFile(form: HTMLFormElement, validator: JustValidate) {
             `,
             );
          }
-         return Array.from(files);
       }
 
       if (files === null) clearPlaceholder();
-      return null;
    }
 
    filesInput.addEventListener('change', async e => {
       if (e.target instanceof HTMLInputElement) {
-         const isValid = await validator.revalidateField(filesInput);
          let files = e.target.files;
+         const isValid = await validator.revalidateField(filesInput);
 
-         if (isValid) filesList = paintList(files, filesPlaceholder);
-         if (!isValid) filesList = paintList(null, filesPlaceholder);
+         if (isValid && files.length) {
+            for (let file of files) {
+               file.size > 0 && filesList.push(file);
+            }
+         }
+
+         if (isValid) paintList(files, filesPlaceholder);
+         if (!isValid) paintList(null, filesPlaceholder);
       }
    });
 
