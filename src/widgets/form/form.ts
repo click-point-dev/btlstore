@@ -14,7 +14,7 @@ import {
    showOverlay,
 } from '../../shared';
 
-export function form(): void {
+export function form() {
    const forms = Array.from(document.forms);
 
    if (!forms.length) return;
@@ -48,13 +48,16 @@ export function form(): void {
       inputRadio(form, validate);
 
       //file input
-      inputFile(form, validate);
+      const filesList = inputFile(form, validate);
+      // for (let [key, value] of new FormData(form).entries()) {
+      //    console.log(key, value);
+      // }
 
       validateForm(form, validate, telInput);
 
       validate.onSuccess(event => {
          const form = event.target as HTMLFormElement;
-         submitForm(form);
+         submitForm(form, filesList);
       });
    });
 
@@ -221,21 +224,25 @@ export function form(): void {
       try {
          const res = await fetch(url, {
             method: 'POST',
-            mode: 'no-cors',
+            // mode: 'no-cors',
             body: body,
          });
-
-         // message += `<p>✅ Данные записаны в таблицу</p>`;
+         if (res.ok) {
+            // const data = await res.json();
+            // console.log(data);
+            message += `<p>✅ Данные записаны в таблицу</p>`;
+         }
       } catch (error) {
-         // message += `<p>Ошибка при отправке данных в google sheet: ${error}</p>`;
-         console.error(message, error);
+         message += `<p>Ошибка при отправке данных в google sheet: ${error}</p>`;
+         console.error(error);
       }
    }
 
-   async function submitForm(form: HTMLFormElement) {
+   async function submitForm(form: HTMLFormElement, filesList: File[] = []) {
       const promoterSheetUrl =
-         'https://script.google.com/macros/s/AKfycbyZvp1_-hO_051X3S8A_CZG64ob46lwTV6xzDX2ZkJZBxc4aPlFXb1RqsG1Cr5bpjjs/exec';
+         'https://script.google.com/macros/s/AKfycbw_JvVw_cHcyE1xcbg8aPmD12B3tNTXp6YlBxn4miOZA2QK1df-AONrbKrIFjGUR_AY/exec';
       let message: string = '';
+
       const formData = new FormData(form);
       const method = form.getAttribute('method');
       const loader = form.querySelector('.form__loader') as HTMLElement;
@@ -255,12 +262,16 @@ export function form(): void {
       const clothes_size = formData.get('clothes_size') || '';
       const phone = formData.get('phone') || '';
 
+      //+ title
       formData.set(
          'title',
          `${isVacancy ? `Отклик на вакансию: ${vacancyTitle}` : `Заявка с сайта ${window.location.hostname}`}`,
       );
+
+      //+ type
       if (isVacancy) formData.set('type', 'vacancy');
 
+      //+ comment
       if (Boolean(height))
          commentString += `Рост: ${height.toString().trim()} см;\r\n`;
       if (Boolean(citizenship))
@@ -274,16 +285,28 @@ export function form(): void {
          if (data.value.length) {
             commentString += `${data.title}: ${data.value.join(', ')}`;
          }
+         //+ job
          if (data.value.length && isGoogleSheets) {
             formData.set('job', data.value.join(', '));
          }
       });
       commentString && formData.set('comment', commentString);
 
+      //+ phone
       phone &&
          formData.set('phone', phone.toString().trim().replace(/[\D]+/g, ''));
 
+      //+ citizenship
       citizenship && formData.set('citizenship', citizenship);
+
+      //+ file[]
+      formData.delete('file[]');
+      // console.log(filesList);
+      if (filesList.length) {
+         filesList.forEach(file => {
+            formData.append('file[]', file);
+         });
+      }
 
       //+ логи formData
       // for (let [key, value] of formData.entries()) {
@@ -299,7 +322,7 @@ export function form(): void {
 
          if (res.status !== 200) {
             throw new Error(
-               `<p>❌ Что-то пошло не так. Код ответа ${res.status}</p></br><p>сейчас вернем вас обратно!</p><p class="h3">🤷‍♀️</p>`,
+               `<p>❌ Что-то пошло не так. Код ответа ${res.status}</p>`,
             );
          }
 
@@ -310,14 +333,14 @@ export function form(): void {
                message,
             ));
 
-         message +=
-            '<p>✅ Заявка отправлена.</p></br><p>сейчас вернем вас обратно!</p><p class="h3">🤗</p>';
+         message += '<p>✅ Заявка отправлена.</p>';
          form.reset();
       } catch (error) {
          console.error(error);
          message += error;
       } finally {
          removeClass(loader, 'visible');
+         message += `</br><p>сейчас вернем вас обратно!</p><p class="h3">🤗</p>`;
          await showOverlay(
             document.body,
             message,
