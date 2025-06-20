@@ -1,94 +1,94 @@
 .input-block {
-	position: relative;
-	// z-index: 100;
-	@include adaptiveValue("min-width", 353, 324, 1440, 1100, 1);
-	// display: block;
+   position: relative;
+   // z-index: 100;
+   @include adaptiveValue('min-width', 353, 324, 1440, 1100, 1, false);
+   // display: block;
 
-	&:has(.just-validate-error-field) {
-		// &:after {
-		// 	content: "!";
-		// 	position: absolute;
-		// 	height: 100%;
-		// 	max-height: 30px;
-		// 	aspect-ratio: 1;
-		// 	right: 0;
-		// 	bottom: 15px;
-		// 	display: flex;
-		// 	justify-content: center;
-		// 	align-items: center;
-		// 	font-size: rem(20);
-		// 	font-weight: 600;
-		// 	color: $accent2;
-		// 	border: 1px solid $white;
-		// 	border-radius: 100%;
-		// }
-	}
+   &:has(.just-validate-error-field) {
+      // &:after {
+      // 	content: "!";
+      // 	position: absolute;
+      // 	height: 100%;
+      // 	max-height: 30px;
+      // 	aspect-ratio: 1;
+      // 	right: 0;
+      // 	bottom: 15px;
+      // 	display: flex;
+      // 	justify-content: center;
+      // 	align-items: center;
+      // 	font-size: rem(20);
+      // 	font-weight: 600;
+      // 	color: $accent2;
+      // 	border: 1px solid $white;
+      // 	border-radius: 100%;
+      // }
+   }
 
-	&:has(textarea) {
-		min-width: 100%;
-	}
+   &:has(textarea) {
+      min-width: 100%;
+   }
 
-	label:not(.checkbox__label) {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		width: 100%;
-		height: min-content;
-		@include adaptiveValue("padding-bottom", 10, 9);
-		@include adaptiveValue("padding-inline", 10, 9);
-		@include adaptiveValue("font-size", 32, 20);
-		bottom: 0;
-		left: 0;
-		// bottom: 7px;
-		color: inherit;
-		line-height: 100%;
-		pointer-events: none;
-	}
+   label:not(.checkbox__label) {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: min-content;
+      @include adaptiveValue('padding-bottom', 10, 9);
+      @include adaptiveValue('padding-inline', 10, 9);
+      @include adaptiveValue('font-size', 32, 20);
+      bottom: 0;
+      left: 0;
+      // bottom: 7px;
+      color: inherit;
+      line-height: 100%;
+      pointer-events: none;
+   }
 
-	.input {
-		display: block;
-		width: 100%;
-		min-height: 62px;
-		@include adaptiveValue("padding", 10, 9);
-		&:-webkit-autofill {
-			transition: all 5000s ease-in-out;
-		}
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		outline: 0;
-		background: transparent;
-		border-bottom: 2px solid currentColor;
-		color: inherit;
-		@include adaptiveValue("font-size", 24, 22);
+   .input {
+      display: block;
+      width: 100%;
+      min-height: 62px;
+      @include adaptiveValue('padding', 10, 9);
+      &:-webkit-autofill {
+         transition: all 5000s ease-in-out;
+      }
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: 0;
+      background: transparent;
+      border-bottom: 2px solid currentColor;
+      color: inherit;
+      @include adaptiveValue('font-size', 24, 22);
 
-		&::placeholder {
-			// display: none;
-			opacity: 0;
-		}
-	}
+      &::placeholder {
+         // display: none;
+         opacity: 0;
+      }
+   }
 
-	.input.just-validate-error-field {
-		border-bottom: 2px solid $accent2;
-	}
+   .input.just-validate-error-field {
+      border-bottom: 2px solid $accent2;
+   }
 
-	//error input style
-	.just-validate-error-field {
-	}
+   //error input style
+   .just-validate-error-field {
+   }
 }
 //div with error message
 .just-validate-error-label {
-	position: absolute;
-	top: calc(100% + 2px);
-	padding: 4px 8px;
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 130%;
-	background-color: $white;
-	border-radius: $radius;
+   position: absolute;
+   top: calc(100% + 2px);
+   padding: 4px 8px;
+   font-size: 12px;
+   font-weight: 600;
+   line-height: 130%;
+   background-color: $white;
+   border-radius: $radius;
 }
 
 input.input.fn {
-	display: none;
-	pointer-events: none;
+   display: none;
+   pointer-events: none;
 }
