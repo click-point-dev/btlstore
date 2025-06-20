@@ -13,6 +13,7 @@ import {
    removeClass,
    showOverlay,
 } from '../../shared';
+import { FormEctionEndpoint } from './formTyps';
 
 export function form() {
    const forms = Array.from(document.forms);
@@ -158,6 +159,29 @@ export function form() {
             },
          ]);
       }
+      if (form.middle_name) {
+         validate.addField(form.middle_name, [
+            {
+               rule: Rules.CustomRegexp,
+               value: /^[-А-Яа-яЁё A-Za-z]*$/,
+               errorMessage: 'Только буквы, тире, пробел',
+            },
+            {
+               rule: Rules.Required,
+               errorMessage: 'Введите отчество',
+            },
+            {
+               rule: Rules.MinLength,
+               value: 2,
+               errorMessage: 'Минимум 2 символа',
+            },
+            {
+               rule: Rules.MaxLength,
+               value: 50,
+               errorMessage: 'Не более 50 символов',
+            },
+         ]);
+      }
       if (form.bdate) {
          validate.addField(form.bdate, [
             {
@@ -233,14 +257,14 @@ export function form() {
             message += `<p>✅ Данные записаны в таблицу</p>`;
          }
       } catch (error) {
-         message += `<p>Ошибка при отправке данных в google sheet: ${error}</p>`;
+         message += `<p>❌ Ошибка при отправке данных в google sheet: ${error}</p>`;
          console.error(error);
+      } finally {
+         return message;
       }
    }
 
    async function submitForm(form: HTMLFormElement, filesList: File[] = []) {
-      const promoterSheetUrl =
-         'https://script.google.com/macros/s/AKfycbw_JvVw_cHcyE1xcbg8aPmD12B3tNTXp6YlBxn4miOZA2QK1df-AONrbKrIFjGUR_AY/exec';
       let message: string = '';
 
       const formData = new FormData(form);
@@ -309,29 +333,37 @@ export function form() {
       }
 
       //+ логи formData
+      // console.log(vacancyTitle);
       // for (let [key, value] of formData.entries()) {
       //    console.log(key, value);
       // }
 
+      const endpoint =
+         (vacancyTitle === 'промоутер' && FormEctionEndpoint.promoter) ||
+         FormEctionEndpoint.request;
+
       try {
          addClass(loader, 'visible');
-         const res = await fetch('/api/request.php', {
+         // const res = await fetch('/api/request.php', {
+
+         const res = await fetch(endpoint, {
             method: method,
             body: formData,
          });
 
-         if (res.status !== 200) {
+         if (res.status !== 200 && res.status !== 201) {
             throw new Error(
                `<p>❌ Что-то пошло не так. Код ответа ${res.status}</p>`,
             );
          }
 
-         isGoogleSheets &&
-            (await sendPostRequestToGoogleSheets(
-               promoterSheetUrl,
+         if (isGoogleSheets) {
+            message += await sendPostRequestToGoogleSheets(
+               FormEctionEndpoint.promoterSheet,
                formData,
                message,
-            ));
+            );
+         }
 
          message += '<p>✅ Заявка отправлена.</p>';
          form.reset();
