@@ -24,3 +24,4 @@ export * from './rowWithImage';
 export * from './sliderThesis';
 export * from './searchWidget';
 export * from './cardServicies';
+export * from './casesCardsWidget';
