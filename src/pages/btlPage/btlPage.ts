@@ -5,7 +5,8 @@ import {
    dataMediaQueries,
    isAvailableUrl,
 } from '../../shared';
-import { sliderCases } from '../../widgets';
+import { casesCardsWidget, sliderCases } from '../../widgets';
+import { casesData } from '../../entities/Cases/casesData';
 
 const citiesBtlData = [
    {
@@ -87,13 +88,16 @@ const citiesBtlData = [
 export function btlPage(): void {
    if (!isAvailableUrl('btl')) return;
 
-   // инициализация слайдера в кейсах
-   const circlesSliders = Array.from(
-      document.querySelectorAll('.corporate-events .slider-cases'),
-   );
-   if (circlesSliders.length > 0) {
-      checkViewportWidth('(max-width: 1439px)') && sliderCases();
-   }
+   // рендер карточек в портвфолио
+   const portfolioBlock = document.querySelector(
+      '[data-portfolio]',
+   ) as HTMLDivElement;
+
+   portfolioBlock &&
+      portfolioBlock.insertAdjacentElement(
+         'beforeend',
+         casesCardsWidget(casesData, ['type', ['BTL']], true),
+      );
 
    // рендер списка городов
    const citiesListPlaceholder = document.querySelector(
@@ -163,6 +167,13 @@ export function btlPage(): void {
             ? timeline.play()
             : timeline.reverse(),
       );
+   }
+   // инициализация слайдера в кейсах
+   const circlesSliders = Array.from(
+      document.querySelectorAll('.corporate-events .slider-cases'),
+   );
+   if (circlesSliders.length > 0) {
+      checkViewportWidth('(max-width: 1439px)') && sliderCases();
    }
    checkViewportWidth('(max-width: 700px)') && showAllBtlServices();
 }

@@ -10,6 +10,7 @@ import {
    mainPage,
    page404,
    pageCases,
+   portfolioPage,
    prPage,
    vacanciesPage,
 } from './pages';
@@ -51,23 +52,23 @@ document.addEventListener('DOMContentLoaded', function () {
    textarea();
    person();
 
-   if (screenWidth <= 1280) {
-      sliderParams();
-   }
    // sliderCases(); // перенес запуск функции в страницу
-   cardCircle();
-   pageCases();
-   form();
    popup();
+   portfolioPage();
+   pageCases();
    vacanciesPage();
-   sliderThesis();
    corporateEvents();
-   // spoller2();
    findPromoter();
    eventMarketing();
    hideShowElement();
    btlPage();
    prPage();
+   cardCircle();
+   sliderThesis();
+   if (screenWidth <= 1280) {
+      sliderParams();
+   }
+   form();
 });
 
 window.addEventListener('load', function () {

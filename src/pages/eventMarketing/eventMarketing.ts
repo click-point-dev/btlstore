@@ -1,6 +1,7 @@
+import { casesData } from '../../entities/Cases/casesData';
 import { renderCitiesList, renderCityTitle } from '../../features';
 import { checkViewportWidth, isAvailableUrl } from '../../shared';
-import { sliderCases } from '../../widgets';
+import { casesCardsWidget, sliderCases } from '../../widgets';
 
 const citiesMarketingData = [
    {
@@ -82,13 +83,16 @@ const citiesMarketingData = [
 export function eventMarketing(): void {
    if (!isAvailableUrl('event-marketing')) return;
 
-   // инициализация слайдера в кейсах
-   const circlesSliders = Array.from(
-      document.querySelectorAll('.corporate-events .slider-cases'),
-   );
-   if (circlesSliders.length > 0) {
-      checkViewportWidth('(max-width: 1439px)') && sliderCases();
-   }
+   // рендер карточек в портвфолио
+   const portfolioBlock = document.querySelector(
+      '[data-portfolio]',
+   ) as HTMLDivElement;
+
+   portfolioBlock &&
+      portfolioBlock.insertAdjacentElement(
+         'beforeend',
+         casesCardsWidget(casesData, ['type', ['event']], true),
+      );
 
    // рендер списка городов
    const citiesListPlaceholder = document.querySelector(
@@ -103,4 +107,12 @@ export function eventMarketing(): void {
    ) as HTMLElement;
    cityTitlePlaceholder &&
       renderCityTitle(cityTitlePlaceholder, citiesMarketingData);
+
+   // инициализация слайдера в кейсах
+   const circlesSliders = Array.from(
+      document.querySelectorAll('.corporate-events .slider-cases'),
+   );
+   if (circlesSliders.length > 0) {
+      checkViewportWidth('(max-width: 1439px)') && sliderCases();
+   }
 }
