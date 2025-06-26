@@ -1,30 +1,27 @@
 .page__portfolio {
-	.header {
-		position: relative;
-	}
+   .header {
+      position: relative;
+   }
 }
 
 .portfolio {
-	background-color: $white;
-	padding-top: 36px;
+   background-color: $white;
+   padding-top: 36px;
 
-	&__type {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 60, 55);
-		}
-	}
+   &__type {
+   }
 
-	&__body {
-		display: flex;
-		gap: 30px;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-	}
+   &__body {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+   }
 
-	.card-circle {
-		position: relative;
-		z-index: 5;
-		flex: 0 0;
-	}
+   .card-circle {
+      position: relative;
+      z-index: 5;
+      flex: 0 0;
+   }
 }
