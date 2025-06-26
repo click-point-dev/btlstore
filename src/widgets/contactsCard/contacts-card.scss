@@ -49,11 +49,13 @@
          }
 
          .logo {
-            path {
-               fill: white;
+            path,
+            .fil0 {
+               fill: white !important;
             }
-            .text-pro {
-               fill: $accent1;
+            .text-pro,
+            .fil1 {
+               fill: $accent1 !important;
             }
          }
       }
