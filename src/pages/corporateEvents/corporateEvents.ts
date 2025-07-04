@@ -2,6 +2,7 @@ import { casesData } from '../../entities';
 import { renderCitiesList, renderCityTitle } from '../../features';
 import { checkViewportWidth, isAvailableUrl } from '../../shared';
 import { casesCardsWidget, sliderCases } from '../../widgets';
+import DOMPurify from 'dompurify';
 
 const citiesCorporateData = [
    {
@@ -89,15 +90,28 @@ export function corporateEvents(): void {
       '[data-portfolio]',
    ) as HTMLDivElement;
 
-   portfolioBlock &&
-      portfolioBlock.insertAdjacentElement(
-         'beforeend',
+   // portfolioBlock &&
+   //    portfolioBlock.insertAdjacentElement(
+   //       'beforeend',
+   //       casesCardsWidget(
+   //          casesData,
+   //          ['id', ['0002', '0003', '0004', '0014', '0024', '0025', '0026']],
+   //          true,
+   //       ),
+   //    );
+
+   if (portfolioBlock) {
+      const clear = DOMPurify.sanitize(
          casesCardsWidget(
             casesData,
             ['id', ['0002', '0003', '0004', '0014', '0024', '0025', '0026']],
             true,
          ),
+         { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
       );
+
+      portfolioBlock.innerHTML = clear;
+   }
 
    // console.log(readCityByUrl(citiesCorporateData));
    // рендер списка ссылок городов

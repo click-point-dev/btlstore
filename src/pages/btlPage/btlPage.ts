@@ -7,6 +7,7 @@ import {
 } from '../../shared';
 import { casesCardsWidget, sliderCases } from '../../widgets';
 import { casesData } from '../../entities/Cases/casesData';
+import DOMPurify from 'dompurify';
 
 const citiesBtlData = [
    {
@@ -93,11 +94,20 @@ export function btlPage(): void {
       '[data-portfolio]',
    ) as HTMLDivElement;
 
-   portfolioBlock &&
-      portfolioBlock.insertAdjacentElement(
-         'beforeend',
+   // portfolioBlock &&
+   //    portfolioBlock.insertAdjacentElement(
+   //       'beforeend',
+   //       casesCardsWidget(casesData, ['type', ['BTL']], true),
+   //    );
+
+   if (portfolioBlock) {
+      const clean = DOMPurify.sanitize(
          casesCardsWidget(casesData, ['type', ['BTL']], true),
+         { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
       );
+
+      portfolioBlock.innerHTML = clean;
+   }
 
    // рендер списка городов
    const citiesListPlaceholder = document.querySelector(

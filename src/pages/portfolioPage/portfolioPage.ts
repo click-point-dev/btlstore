@@ -1,7 +1,7 @@
-import { CasesData } from '../../entities/Cases/caseCardsTypes';
 import { casesData } from '../../entities/Cases/casesData';
 import { isAvailableUrl } from '../../shared';
 import { casesCardsWidget } from '../../widgets';
+import DOMPurify from 'dompurify';
 
 export function portfolioPage(): void {
    if (!isAvailableUrl('portfolio')) return;
@@ -14,9 +14,13 @@ export function portfolioPage(): void {
       '[data-portfolio]',
    ) as HTMLDivElement;
 
-   cardsTypes.forEach(cardType => {
+   cardsTypes.forEach((cardType, indexType, arrayTypes) => {
+      const isLastType = indexType >= arrayTypes.length - 1;
       const portfolioTypeBlock = document.createElement('div');
-      portfolioTypeBlock.classList.add('portfolio__type', 'mb-140');
+      portfolioTypeBlock.classList.add(
+         'portfolio__type',
+         `${!isLastType ? 'mb-140' : '_'}`,
+      );
       const portfolioTypeHead = document.createElement('div');
       portfolioTypeHead.classList.add('portfolio__head');
       const cards = casesCardsWidget(casesData, ['type', [`${cardType}`]]);
@@ -25,6 +29,12 @@ export function portfolioPage(): void {
       portfolioTypeBlock.insertAdjacentElement('beforeend', cards);
       portfolioTypeBlock.insertAdjacentElement('afterbegin', portfolioTypeHead);
 
-      portfolioBlock.insertAdjacentElement('beforeend', portfolioTypeBlock);
+      // const
+
+      portfolioBlock.innerHTML += DOMPurify.sanitize(portfolioTypeBlock, {
+         USE_PROFILES: { svg: true, svgFilters: true, html: true },
+      });
+
+      // portfolioBlock.insertAdjacentElement('beforeend', portfolioTypeBlock);
    });
 }
