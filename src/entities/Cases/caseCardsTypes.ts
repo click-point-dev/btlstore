@@ -6,11 +6,16 @@ export interface CaseCard {
    description: string;
    link: string;
    image: string;
+   prevNextLinks?: {
+      prev: string;
+      next: string;
+   };
 }
 
 // Тип для массива карточек
 export type CasesData = CaseCard[];
 
-type FilterKey = keyof CaseCard;
-
-export type Filters = [FilterKey, string[]];
+// тип для фолтра
+export type FilterCriteria = {
+   [K in keyof Partial<CaseCard>]: CaseCard[K] | Array<CaseCard[K]>;
+};

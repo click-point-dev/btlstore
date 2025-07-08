@@ -13,15 +13,9 @@ export function eventMarketing(): void {
       '[data-portfolio]',
    ) as HTMLDivElement;
 
-   // portfolioBlock &&
-   //    portfolioBlock.insertAdjacentElement(
-   //       'beforeend',
-   //       casesCardsWidget(casesData, ['type', ['event']], true),
-   //    );
-
    if (portfolioBlock) {
       const clear = DOMPurify.sanitize(
-         casesCardsWidget(casesData, ['type', ['event']], true),
+         casesCardsWidget(casesData, true, { type: 'EVENT', id: '0031' }),
          { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
       );
 

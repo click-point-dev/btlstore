@@ -8,6 +8,10 @@ export const casesData: CasesData = [
       description: 'Музыкальное шоу «Blog&VOICE»',
       link: '/cases/mts-blog-and-voice',
       image: '/images/cases/01.webp',
+      prevNextLinks: {
+         prev: '/cases/solid-bank/',
+         next: '/cases/mts-30-let/',
+      },
    },
    {
       id: '0002',
@@ -16,6 +20,10 @@ export const casesData: CasesData = [
       description: '30 лет. Больше чем цифра',
       link: '/cases/mts-30-let/',
       image: '/images/cases/12.webp',
+      prevNextLinks: {
+         prev: '/cases/mts-blog-and-voice',
+         next: '/cases/gazpromneft-innovacii/',
+      },
    },
    {
       id: '0003',
@@ -24,6 +32,10 @@ export const casesData: CasesData = [
       description: 'Корпоративное мероприятие',
       link: '/cases/gazpromneft-innovacii/',
       image: '/images/cases/11.webp',
+      prevNextLinks: {
+         prev: '/cases/mts-30-let/',
+         next: '/cases/tele2/',
+      },
    },
    {
       id: '0004',
@@ -32,6 +44,10 @@ export const casesData: CasesData = [
       description: 'Корпоративное мероприятие',
       link: '/cases/tele2/',
       image: '/images/cases/26.webp',
+      prevNextLinks: {
+         prev: '/cases/gazpromneft-innovacii/',
+         next: '/cases/rosselhozbank-2/',
+      },
    },
    {
       id: '0005',
@@ -40,6 +56,10 @@ export const casesData: CasesData = [
       description: 'Открытия отделений банка',
       link: '/cases/rosselhozbank-2/',
       image: '/images/cases/24.webp',
+      prevNextLinks: {
+         prev: '/cases/tele2/',
+         next: '/cases/rosselhozbank/',
+      },
    },
    {
       id: '0006',
@@ -48,6 +68,10 @@ export const casesData: CasesData = [
       description: 'Мероприятие для партнеров',
       link: '/cases/rosselhozbank/',
       image: '/images/cases/23.webp',
+      prevNextLinks: {
+         prev: '/cases/rosselhozbank-2/',
+         next: '/cases/gloria-jeans',
+      },
    },
    {
       id: '0007',
@@ -56,6 +80,10 @@ export const casesData: CasesData = [
       description: 'Открытия магазинов',
       link: '/cases/gloria-jeans',
       image: '/images/cases/06.webp',
+      prevNextLinks: {
+         prev: '/cases/rosselhozbank/',
+         next: '/cases/alfabank/',
+      },
    },
    {
       id: '0008',
@@ -64,6 +92,10 @@ export const casesData: CasesData = [
       description: 'Открытие отделений',
       link: '/cases/alfabank/',
       image: '/images/cases/15.webp',
+      prevNextLinks: {
+         prev: '/cases/gloria-jeans',
+         next: '/cases/sovkombank/',
+      },
    },
    {
       id: '0009',
@@ -72,6 +104,10 @@ export const casesData: CasesData = [
       description: 'Открытие отделений',
       link: '/cases/sovkombank/',
       image: '/images/cases/25.webp',
+      prevNextLinks: {
+         prev: '/cases/alfabank/',
+         next: '/cases/komandor/',
+      },
    },
    {
       id: '0010',
@@ -80,6 +116,10 @@ export const casesData: CasesData = [
       description: 'Открытие сети магазинов',
       link: '/cases/komandor/',
       image: '/images/cases/20.webp',
+      prevNextLinks: {
+         prev: '/cases/sovkombank/',
+         next: '/cases/zhiznmart',
+      },
    },
    {
       id: '0011',
@@ -88,6 +128,10 @@ export const casesData: CasesData = [
       description: 'открытия магазинов',
       link: '/cases/zhiznmart',
       image: '/images/cases/07.webp',
+      prevNextLinks: {
+         prev: '/cases/komandor/',
+         next: '/cases/kari/',
+      },
    },
    {
       id: '0012',
@@ -96,6 +140,10 @@ export const casesData: CasesData = [
       description: 'Фестиваль шопинга',
       link: '/cases/kari/',
       image: '/images/cases/13.webp',
+      prevNextLinks: {
+         prev: '/cases/zhiznmart',
+         next: '/cases/megafon/',
+      },
    },
    {
       id: '0013',
@@ -104,6 +152,10 @@ export const casesData: CasesData = [
       description: 'PR-мероприятия',
       link: '/cases/megafon/',
       image: '/images/cases/21.webp',
+      prevNextLinks: {
+         prev: '/cases/kari/',
+         next: '/cases/rzhd/',
+      },
    },
    {
       id: '0014',
@@ -112,6 +164,10 @@ export const casesData: CasesData = [
       description: 'Слет молодежи',
       link: '/cases/rzhd/',
       image: '/images/cases/14.webp',
+      prevNextLinks: {
+         prev: '/cases/megafon/',
+         next: '/cases/razumnye-ot-naroda',
+      },
    },
    {
       id: '0015',
@@ -120,6 +176,10 @@ export const casesData: CasesData = [
       description: 'Организация конференции',
       link: '/cases/razumnye-ot-naroda',
       image: '/images/cases/08.webp',
+      prevNextLinks: {
+         prev: '/cases/rzhd/',
+         next: '/cases/red-bull/',
+      },
    },
    {
       id: '0016',
@@ -128,6 +188,10 @@ export const casesData: CasesData = [
       description: 'Реализация ряда мероприятий',
       link: '/cases/red-bull/',
       image: '/images/cases/22.webp',
+      prevNextLinks: {
+         prev: '/cases/razumnye-ot-naroda',
+         next: '/cases/tnt',
+      },
    },
    {
       id: '0017',
@@ -136,6 +200,10 @@ export const casesData: CasesData = [
       description: 'Запуск рекламных кампаний',
       link: '/cases/tnt',
       image: '/images/cases/09.webp',
+      prevNextLinks: {
+         prev: '/cases/red-bull/',
+         next: '/cases/eastern-special-equipment',
+      },
    },
    {
       id: '0018',
@@ -144,6 +212,10 @@ export const casesData: CasesData = [
       description: 'Присутствие бренда на выставке',
       link: '/cases/eastern-special-equipment',
       image: '/images/cases/05.webp',
+      prevNextLinks: {
+         prev: '/cases/tnt',
+         next: '/cases/jagermaster/',
+      },
    },
    {
       id: '0019',
@@ -152,6 +224,10 @@ export const casesData: CasesData = [
       description: 'Проведение дегустаций',
       link: '/cases/jagermaster/',
       image: '/images/cases/19.webp',
+      prevNextLinks: {
+         prev: '/cases/eastern-special-equipment',
+         next: '/cases/bochkarev/',
+      },
    },
    {
       id: '0020',
@@ -160,6 +236,10 @@ export const casesData: CasesData = [
       description: 'Дегустации',
       link: '/cases/bochkarev/',
       image: '/images/cases/16.webp',
+      prevNextLinks: {
+         prev: '/cases/jagermaster/',
+         next: '/cases/za-rodinu/',
+      },
    },
    {
       id: '0021',
@@ -168,6 +248,10 @@ export const casesData: CasesData = [
       description: 'Анкетирование покупателей',
       link: '/cases/za-rodinu/',
       image: '/images/cases/27.webp',
+      prevNextLinks: {
+         prev: '/cases/bochkarev/',
+         next: '/cases/burger-king/',
+      },
    },
    {
       id: '0022',
@@ -176,6 +260,10 @@ export const casesData: CasesData = [
       description: 'Промоакции',
       link: '/cases/burger-king/',
       image: '/images/cases/17.webp',
+      prevNextLinks: {
+         prev: '/cases/za-rodinu/',
+         next: '/cases/heineken/',
+      },
    },
    {
       id: '0023',
@@ -184,6 +272,10 @@ export const casesData: CasesData = [
       description: 'Дегустация безалкогольных напитков',
       link: '/cases/heineken/',
       image: '/images/cases/18.webp',
+      prevNextLinks: {
+         prev: '/cases/burger-king/',
+         next: '/cases/glazka/',
+      },
    },
    {
       id: '0024',
@@ -192,6 +284,10 @@ export const casesData: CasesData = [
       description: '15 лет — юбилей!',
       link: '/cases/glazka/',
       image: '/images/cases/28.webp',
+      prevNextLinks: {
+         prev: '/cases/heineken/',
+         next: '/cases/trakresurs/',
+      },
    },
    {
       id: '0025',
@@ -200,6 +296,10 @@ export const casesData: CasesData = [
       description: 'День рождения филиала',
       link: '/cases/trakresurs/',
       image: '/images/cases/29.webp',
+      prevNextLinks: {
+         prev: '/cases/glazka/',
+         next: '/cases/novie-metallurgicheskie-tehnologii/',
+      },
    },
    {
       id: '0026',
@@ -208,5 +308,69 @@ export const casesData: CasesData = [
       description: '10-летие компании',
       link: '/cases/novie-metallurgicheskie-tehnologii/',
       image: '/images/cases/30.webp',
+      prevNextLinks: {
+         prev: '/cases/trakresurs/',
+         next: '/cases/haval-novosibirsk/',
+      },
+   },
+   {
+      id: '0027',
+      type: 'EVENT',
+      title: 'HAVAL',
+      description: 'Бренд-день в Новосибирске',
+      link: '/cases/haval-novosibirsk/',
+      image: '/images/cases/39.webp',
+      prevNextLinks: {
+         prev: '/cases/novie-metallurgicheskie-tehnologii/',
+         next: '/cases/haval-samara/',
+      },
+   },
+   {
+      id: '0028',
+      type: 'EVENT',
+      title: 'HAVAL',
+      description: 'Бренд-день в Самаре',
+      link: '/cases/haval-samara/',
+      image: '/images/cases/40.webp',
+      prevNextLinks: {
+         prev: '/cases/haval-novosibirsk/',
+         next: '/cases/magnit/',
+      },
+   },
+   {
+      id: '0029',
+      type: 'BTL',
+      title: 'Магнит',
+      description: 'Открытие магазина',
+      link: '/cases/magnit/',
+      image: '/images/cases/41.webp',
+      prevNextLinks: {
+         prev: '/cases/haval-samara/',
+         next: '/cases/oktoprint/',
+      },
+   },
+   {
+      id: '0030',
+      type: 'EVENT',
+      title: 'ОктоПринт',
+      description: 'Полиграфический семинар для бренда',
+      link: '/cases/oktoprint/',
+      image: '/images/cases/42.webp',
+      prevNextLinks: {
+         prev: '/cases/magnit/',
+         next: '/cases/solid-bank/',
+      },
+   },
+   {
+      id: '0031',
+      type: 'BTL',
+      title: 'Солид Банк',
+      description: 'Открытие первого отделения',
+      link: '/cases/solid-bank/',
+      image: '/images/cases/43.webp',
+      prevNextLinks: {
+         prev: '/cases/oktoprint/',
+         next: '/cases/mts-blog-and-voice',
+      },
    },
 ];

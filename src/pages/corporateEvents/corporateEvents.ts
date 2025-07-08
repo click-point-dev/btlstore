@@ -24,11 +24,18 @@ export function corporateEvents(): void {
 
    if (portfolioBlock) {
       const clear = DOMPurify.sanitize(
-         casesCardsWidget(
-            casesData,
-            ['id', ['0002', '0003', '0004', '0014', '0024', '0025', '0026']],
-            true,
-         ),
+         casesCardsWidget(casesData, true, {
+            id: [
+               '0002',
+               '0003',
+               '0004',
+               '0014',
+               '0024',
+               '0025',
+               '0026',
+               '0031',
+            ],
+         }),
          { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
       );
 

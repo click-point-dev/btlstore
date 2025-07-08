@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { renderCitiesList, renderCityTitle } from '../../features';
 import { checkViewportWidth, isAvailableUrl } from '../../shared';
-import { casesCardsWidget, sliderCases } from '../../widgets';
+import { casesCardsWidget, filterCases, sliderCases } from '../../widgets';
 import { casesData } from '../../entities/Cases/casesData';
 import DOMPurify from 'dompurify';
 import { citiesBtlData } from '../../entities';
@@ -14,15 +14,9 @@ export function btlPage(): void {
       '[data-portfolio]',
    ) as HTMLDivElement;
 
-   // portfolioBlock &&
-   //    portfolioBlock.insertAdjacentElement(
-   //       'beforeend',
-   //       casesCardsWidget(casesData, ['type', ['BTL']], true),
-   //    );
-
    if (portfolioBlock) {
       const clean = DOMPurify.sanitize(
-         casesCardsWidget(casesData, ['type', ['BTL']], true),
+         casesCardsWidget(casesData, true, { type: 'BTL' }),
          { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
       );
 

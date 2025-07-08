@@ -23,7 +23,7 @@ export function portfolioPage(): void {
       );
       const portfolioTypeHead = document.createElement('div');
       portfolioTypeHead.classList.add('portfolio__head');
-      const cards = casesCardsWidget(casesData, ['type', [`${cardType}`]]);
+      const cards = casesCardsWidget(casesData, false, { type: cardType });
 
       portfolioTypeHead.innerHTML = `<h2 class="h2 text-with-dot mb-40"><span>.</span>${cardType}</h2>`;
       portfolioTypeBlock.insertAdjacentElement('beforeend', cards);
