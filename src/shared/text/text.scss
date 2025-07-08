@@ -12,7 +12,7 @@
    @media (max-width: $mobile) {
       font-weight: 900;
    }
-   @include adaptiveValue('line-height', 102, 33);
+   // @include adaptiveValue('line-height', 102, 33);
 }
 
 .h5 {
