@@ -1,0 +1,16 @@
+.solid-bank {
+   .two-rows-fw-image__block {
+      background-color: #760135 !important;
+   }
+
+   .two-rows-fw-image__column {
+      &:nth-child(2) {
+         background-color: #760135 !important;
+      }
+   }
+
+   svg circle {
+      stroke: #760135;
+      stroke-opacity: 0.5;
+   }
+}

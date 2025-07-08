@@ -1,0 +1,16 @@
+.oktoprint {
+   .two-rows-fw-image__block {
+      background-color: #fb0040 !important;
+   }
+
+   .two-rows-fw-image__column {
+      &:nth-child(2) {
+         background-color: #fb0040 !important;
+      }
+   }
+
+   svg circle {
+      stroke: #fb0040;
+      stroke-opacity: 0.5;
+   }
+}

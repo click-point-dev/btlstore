@@ -1,0 +1,16 @@
+.haval-novosibirsk {
+   .two-rows-fw-image__block {
+      background-color: #00cabf !important;
+   }
+
+   .two-rows-fw-image__column {
+      &:nth-child(2) {
+         background-color: #00cabf !important;
+      }
+   }
+
+   svg circle {
+      stroke: #00cabf;
+      stroke-opacity: 0.5;
+   }
+}

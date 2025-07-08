@@ -41,3 +41,7 @@ export * from './corporateEvents';
 export * from './privacy';
 export * from './findPromoter';
 export * from './eventMarketing';
+export * from './havalSamara';
+export * from './havalNovosibirsk';
+export * from './oktoprint';
+export * from './solidBank';
