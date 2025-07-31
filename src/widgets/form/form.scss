@@ -37,6 +37,7 @@
    &__row {
       display: flex;
       justify-content: space-between;
+      column-gap: 30px;
       @media (max-width: $burger) {
          flex-direction: column;
          row-gap: 28px;
@@ -69,6 +70,10 @@
                text-align: left;
             }
          }
+      }
+
+      & > * {
+         flex: 0 1 50%;
       }
 
       &:last-child {
