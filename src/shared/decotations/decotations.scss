@@ -9,3 +9,29 @@
 .border-black {
    border-color: black !important;
 }
+
+.border-accent1 {
+   border: 1px solid $accent1 !important;
+}
+
+.bg-accent1 {
+   background-color: $accent1 !important;
+}
+
+.bg-white {
+   background-color: white !important;
+}
+
+.radius-10 {
+   border-radius: 10px !important;
+   overflow: hidden;
+}
+
+.radius-20 {
+   border-radius: 20px !important;
+}
+
+.radius-30 {
+   @include adaptiveValue('border-radius', 30, 10);
+   overflow: hidden;
+}

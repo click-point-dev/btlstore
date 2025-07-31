@@ -221,7 +221,7 @@
    }
 
    .accent-block-text {
-      @include adaptiveValue('margin-bottom', 100, 40);
+      // @include adaptiveValue('margin-bottom', 100, 40);
    }
 
    ///====================events======================
