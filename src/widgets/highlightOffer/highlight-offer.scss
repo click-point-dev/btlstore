@@ -1,0 +1,80 @@
+.highlight-offer {
+   $media-width: 1279.99px;
+   @media (width > $media-width) {
+      display: flex;
+      justify-content: space-between;
+      // gap: 20px;
+      // .highlight-offer__image
+
+      &__image {
+         display: none;
+         display: block;
+         flex-basis: 521px;
+         // flex-grow: 1;
+         overflow: visible;
+         position: relative;
+         div {
+            position: absolute;
+            width: 100%;
+            height: calc(100% + 40px);
+            bottom: 0;
+            left: 0;
+            img {
+               object-position: bottom;
+               top: unset;
+               bottom: 0;
+               height: unset;
+            }
+         }
+         &::before {
+            position: absolute;
+            content: '';
+            border-radius: 0 50px 0 20px;
+            background: $accent1;
+            width: 87%;
+            height: 334px;
+            bottom: 0;
+            left: 0;
+         }
+      }
+   }
+
+   // .highlight-offer__content
+
+   &__content {
+      flex-basis: min(700px, 100%);
+      flex-shrink: 0;
+      @include adaptiveValue('padding-right', 97, 20);
+
+      @include adaptiveValue('padding-block', 60, 20);
+      box-sizing: content-box;
+
+      @media (width < $media-width) {
+         padding-right: unset;
+         @include adaptiveValue('padding-inline', 60, 20);
+         flex-shrink: unset;
+         flex-basis: 100%;
+      }
+   }
+
+   // .highlight-offer__text
+
+   &__text {
+   }
+
+   // .highlight-offer__cta
+
+   &__cta {
+      .button-xl * span {
+         padding-left: 0 !important;
+         @media (width < $mobile) {
+            display: none;
+         }
+      }
+      .button {
+         @media (width < $mobile) {
+            display: flex;
+         }
+      }
+   }
+}

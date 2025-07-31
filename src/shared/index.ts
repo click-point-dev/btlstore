@@ -51,3 +51,4 @@ export * from './decotations';
 export * from './inputFile';
 export * from './multicheckbox';
 export * from './inputRadio';
+export * from './layout';

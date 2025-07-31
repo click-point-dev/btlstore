@@ -24,6 +24,14 @@
    @include adaptiveValue('margin-bottom', 40, 10);
 }
 
+.mb-50 {
+   @include adaptiveValue('margin-bottom', 50, 30);
+}
+
+.mb-60 {
+   @include adaptiveValue('margin-bottom', 60, 40);
+}
+
 .mb-30-all {
    margin-bottom: 30px;
 }
@@ -56,8 +64,13 @@
 .pb-20 {
    padding-bottom: 20px;
 }
+
 .pbl-50 {
    @include adaptiveValue('padding-block', 50, 30);
+}
+
+.pbl-60 {
+   @include adaptiveValue('padding-block', 60, 20);
 }
 
 .pinl-96 {
@@ -72,6 +85,9 @@
    @include adaptiveValue('padding-bottom', 200, 82);
 }
 
+.pt-140 {
+   @include adaptiveValue('padding-top', 140, 30);
+}
 .pt-200 {
    @include adaptiveValue('padding-top', 200, 82);
 }
@@ -86,8 +102,14 @@
    gap: 20px;
 }
 
-//+ modificators
-.width-full {
-   width: 100% !important;
-   flex-basis: 100% !important;
+.gap-50 {
+   gap: 50px;
+}
+
+.gap-140 {
+   @include adaptiveValue('gap', 140, 30);
+}
+
+.h-467 {
+   @include adaptiveValue('height', 467, 145);
 }

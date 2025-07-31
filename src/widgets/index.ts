@@ -25,3 +25,4 @@ export * from './sliderThesis';
 export * from './searchWidget';
 export * from './cardServicies';
 export * from './casesCardsWidget';
+export * from './highlightOffer';

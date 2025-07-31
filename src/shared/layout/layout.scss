@@ -1,0 +1,14 @@
+.row-50 {
+   display: flex;
+   gap: 20px;
+
+   &__column {
+      flex: 0 0 50%;
+   }
+}
+
+//+ modificators
+.width-full {
+   width: 100% !important;
+   flex-basis: 100% !important;
+}
