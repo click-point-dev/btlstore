@@ -163,15 +163,7 @@ const config = (env: EnvVariables): Configuration => {
          ],
       },
       resolve: {
-         extensions: [
-            '.tsx',
-            '.ts',
-            '.js',
-            '.css',
-            '.scss',
-            '.hbs',
-            '.handlebars',
-         ],
+         extensions: ['.tsx', '.ts', '.js', '.css', '.scss', '.hbs', '.handlebars'],
          alias: {
             '@img': path.resolve(__dirname, 'public/images'),
             '@fonts': path.resolve(__dirname, 'public/fonts'),
@@ -287,19 +279,30 @@ const config = (env: EnvVariables): Configuration => {
             'event-marketing/ufa',
             'event-marketing/volgograd',
             'event-marketing/voronezh',
+            'razdacha-listovok',
+            'razdacha-listovok/chelyabinsk',
+            'razdacha-listovok/ekaterinburg',
+            'razdacha-listovok/irkutsk',
+            'razdacha-listovok/krasnodar',
+            'razdacha-listovok/krasnoyarsk',
+            'razdacha-listovok/nizhnii-novgorod',
+            'razdacha-listovok/novosibirsk',
+            'razdacha-listovok/omsk',
+            'razdacha-listovok/perm',
+            'razdacha-listovok/samara',
+            'razdacha-listovok/saratov',
+            'razdacha-listovok/tomsk',
+            'razdacha-listovok/ufa',
+            'razdacha-listovok/volgograd',
+            'razdacha-listovok/voronezh',
          ].map(
             page =>
                new HtmlWebpackPlugin({
                   template:
                      page === 'index'
                         ? path.resolve(__dirname, 'public', 'index.hbs')
-                        : path.resolve(
-                             __dirname,
-                             'public',
-                             `${page}/index.hbs`,
-                          ),
-                  filename:
-                     page === 'index' ? `index.html` : `${page}/index.html`,
+                        : path.resolve(__dirname, 'public', `${page}/index.hbs`),
+                  filename: page === 'index' ? `index.html` : `${page}/index.html`,
                   favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
                   minify: {
                      removeRedundantAttributes: false,
