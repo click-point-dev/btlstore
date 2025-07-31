@@ -231,3 +231,81 @@ export const citiesCorporateData = [
       url: '/corporate-events/voronezh',
    },
 ];
+
+export const citiesRazdachaListovokData = [
+   {
+      city_ru: 'Челябинск',
+      city_en: 'chelyabinsk',
+      url: '/razdacha-listovok/chelyabinsk',
+   },
+   {
+      city_ru: 'Екатеринбург',
+      city_en: 'ekaterinburg',
+      url: '/razdacha-listovok/ekaterinburg',
+   },
+   {
+      city_ru: 'Иркутск',
+      city_en: 'irkutsk',
+      url: '/razdacha-listovok/irkutsk',
+   },
+   {
+      city_ru: 'Краснодар',
+      city_en: 'krasnodar',
+      url: '/razdacha-listovok/krasnodar',
+   },
+   {
+      city_ru: 'Красноярск',
+      city_en: 'krasnoyarsk',
+      url: '/razdacha-listovok/krasnoyarsk',
+   },
+   {
+      city_ru: 'Нижний Новгород',
+      city_en: 'nizhnii-novgorod',
+      url: '/razdacha-listovok/nizhnii-novgorod',
+   },
+   {
+      city_ru: 'Новосибирск',
+      city_en: 'novosibirsk',
+      url: '/razdacha-listovok/novosibirsk',
+   },
+   {
+      city_ru: 'Омск',
+      city_en: 'omsk',
+      url: '/razdacha-listovok/omsk',
+   },
+   {
+      city_ru: 'Пермь',
+      city_en: 'perm',
+      url: '/razdacha-listovok/perm',
+   },
+   {
+      city_ru: 'Самара',
+      city_en: 'samara',
+      url: '/razdacha-listovok/samara',
+   },
+   {
+      city_ru: 'Саратов',
+      city_en: 'saratov',
+      url: '/razdacha-listovok/saratov',
+   },
+   {
+      city_ru: 'Томск',
+      city_en: 'tomsk',
+      url: '/razdacha-listovok/tomsk',
+   },
+   {
+      city_ru: 'Уфа',
+      city_en: 'ufa',
+      url: '/razdacha-listovok/ufa',
+   },
+   {
+      city_ru: 'Волгоград',
+      city_en: 'volgograd',
+      url: '/razdacha-listovok/volgograd',
+   },
+   {
+      city_ru: 'Воронеж',
+      city_en: 'voronezh',
+      url: '/razdacha-listovok/voronezh',
+   },
+];

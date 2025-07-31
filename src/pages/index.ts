@@ -45,3 +45,4 @@ export * from './havalSamara';
 export * from './havalNovosibirsk';
 export * from './oktoprint';
 export * from './solidBank';
+export * from './razdachaListovok';

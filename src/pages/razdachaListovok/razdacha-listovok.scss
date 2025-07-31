@@ -1,0 +1,65 @@
+.razdacha-listovok {
+   background-color: white;
+   .row-50 {
+      display: flex;
+      // gap: 20px;
+      @extend .gap-140;
+
+      &__column {
+         // flex: 0 1 100%;
+         flex-shrink: 1;
+
+         &:has(img) {
+            flex-grow: 1;
+            flex-basis: min(100%, 563px);
+         }
+      }
+
+      @media (width < $burger) {
+         flex-direction: column-reverse;
+
+         &__column:has(img) {
+            @include adaptiveValue('flex-basis', 320, 182);
+         }
+      }
+   }
+
+   ul:has(.item-with-marker) {
+      li:not(:last-child) {
+         @extend .mb-20;
+      }
+   }
+
+   .item-with-marker {
+      align-items: flex-start;
+      &__marker {
+         padding-top: 0.25em;
+      }
+   }
+
+   .form-2-widget__image {
+      img {
+         object-position: center;
+      }
+
+      .circl-with-image__decor {
+         opacity: 0;
+         scale: 0;
+      }
+
+      @media (any-hover: hover) and (pointer: fine) {
+         &__decor {
+            transition:
+               opacity $anim,
+               scale $anim 0.1s;
+         }
+
+         &:hover {
+            .circl-with-image__decor {
+               opacity: 1;
+               scale: 1;
+            }
+         }
+      }
+   }
+}
