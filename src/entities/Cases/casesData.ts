@@ -125,7 +125,7 @@ export const casesData: CasesData = [
       id: '0011',
       type: 'EVENT',
       title: 'ЖизньМарт',
-      description: 'открытия магазинов',
+      description: 'Открытия магазинов',
       link: '/cases/zhiznmart',
       image: '/images/cases/07.webp',
       prevNextLinks: {
