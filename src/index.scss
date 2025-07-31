@@ -23,7 +23,7 @@ $fontFamily: Montserrat, sans-serif, Arial;
 
 // Основные цвета
 $mainColor: #120005; // Цвет шрифта по умолчанию
-$bg: #f1f8ffee;
+$bg: #ffffff94;
 $white: #ffffff;
 $accent1: #bf274d;
 $accent1-hover: #901836;
@@ -57,9 +57,7 @@ $containerPadding: 60;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em(
-   $containerWidth
-); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $burger: em(1099.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
@@ -81,7 +79,7 @@ $responsiveType: 1;
 body {
    position: relative;
    z-index: -100;
-   background-color: $accent1;
+   // background-color: $accent1;
 
    // Скролл заблокирован
    .lock &,
