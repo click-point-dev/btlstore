@@ -9,11 +9,13 @@ const config = {
    singleQuote: true,
    jsxSingleQuote: true,
    arrowParens: 'avoid',
+   printWidth: 100,
    // overrides: [
    //    {
-   //       files: ['*.hbs', '*.handlebars'],
+   //       files: ['**/*.hbs', '**/*.handlebars'],
    //       options: {
-   //          parser: 'angular',
+   //          printWidth: 100,
+   //          parser: '',
    //          singleQuote: true,
    //          singleAttributePerLine: true,
    //          arrowParens: 'always',
