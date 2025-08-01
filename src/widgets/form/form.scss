@@ -93,3 +93,13 @@
       }
    }
 }
+
+.full-width-form {
+   .popup:has(&) & {
+      padding-block: 0;
+      @include adaptiveValue('padding-bottom', 50, 30);
+      @media (max-width: $mobile) {
+         padding-top: 80px;
+      }
+   }
+}
