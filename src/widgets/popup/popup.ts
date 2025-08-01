@@ -16,6 +16,7 @@ export function popup(): void {
          .to(item, {
             css: {
                display: 'grid',
+               placeItems: 'center',
                visibility: 'visible',
                pointerEvents: 'all',
             },
@@ -26,7 +27,7 @@ export function popup(): void {
             {
                top: '-100%',
                opacity: 0,
-               duration: 0.7,
+               duration: 0.5,
                ease: 'back.out(0.5)',
             },
             '+=0.5',
@@ -47,29 +48,21 @@ export function popup(): void {
       });
 
       // close popup
-      item
-         .querySelector('.popup__close')
-         .addEventListener('click', function () {
-            const html = document.documentElement;
-            html.classList.contains('popup-shown') &&
-               html.classList.remove('popup-shown');
+      item.querySelector('.popup__close').addEventListener('click', function () {
+         const html = document.documentElement;
+         html.classList.contains('popup-shown') && html.classList.remove('popup-shown');
 
-            timeline.reverse();
-         });
+         timeline.reverse();
+      });
    });
 
-   function showPopup(
-      timeline: gsap.core.Timeline,
-      item: HTMLElement,
-      collerType: string,
-   ) {
+   function showPopup(timeline: gsap.core.Timeline, item: HTMLElement, collerType: string) {
       const popupType = item.dataset.popupType;
       // const closeButton = item.querySelector('[data-popup-close]')
 
       if (popupType === collerType) {
          const html = document.documentElement;
-         !html.classList.contains('popup-shown') &&
-            html.classList.add('popup-shown');
+         !html.classList.contains('popup-shown') && html.classList.add('popup-shown');
 
          timeline.play();
       }
