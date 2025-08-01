@@ -5,13 +5,11 @@ export function header(): void {
    gsap.registerPlugin(ScrollTrigger);
 
    document.addEventListener('DOMContentLoaded', () => {
-      const headerClone = document.querySelector('.header') as HTMLElement;
-      const headerHeight = headerClone.getBoundingClientRect().height;
+      const header = document.querySelector('.header') as HTMLElement;
+      const headerHeight = header.getBoundingClientRect().height;
       document.querySelector('main').style.marginTop = `${headerHeight}px`;
-      // .cloneNode(true) as HTMLElement;
-      // // headerClone.style.position = 'absolute';
 
-      Object.assign(headerClone.style, {
+      Object.assign(header.style, {
          position: 'fixed',
          // width: '100%',
          // left: 0,
@@ -20,25 +18,24 @@ export function header(): void {
          zIndex: 151,
       });
 
-      // document.body.insertAdjacentElement('afterbegin', headerClone);
-
       const showAnim = gsap.timeline({
          scrollTrigger: {
             trigger: 'body',
             start: 'top top',
             end: 99999,
-            onToggle: self => {
-               console.log('toggled, isActive:', self.isActive);
-            },
+            // markers: true,
+            // onToggle: self => {
+            //    // console.log('toggled, isActive:', self.isActive);
+            // },
             onUpdate: self => {
-               console.log(
-                  'progress:',
-                  self.progress.toFixed(3),
-                  'direction:',
-                  self.direction,
-                  'velocity',
-                  self.getVelocity(),
-               );
+               // console.log(
+               //    'progress:',
+               //    self.progress.toFixed(3),
+               //    'direction:',
+               //    self.direction,
+               //    'velocity',
+               //    self.getVelocity(),
+               // );
                self.direction === -1 ? showAnim.play() : showAnim.reverse();
             },
          },
@@ -48,7 +45,7 @@ export function header(): void {
 
       showAnim
          .fromTo(
-            headerClone,
+            header,
             {
                top: '-100%',
             },

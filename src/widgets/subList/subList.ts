@@ -17,18 +17,18 @@ export function subList(): void {
             opacity: 1,
             scaleY: 1,
             // height: 'auto',
-            paddingTop: 16,
+            paddingTop: '1.1em',
             paddingBottom: 16,
             duration: 0.5,
             ease: 'power4.inOut',
             // delay: 0.2,
          })
          .to(item, {
-            stagger: 0.1,
+            stagger: 0.05,
             x: 0,
             opacity: 1,
             // duration: 0.5,
-            delay: -0.5,
+            delay: -0.15,
             ease: 'power4.inOut',
          });
 
@@ -58,8 +58,7 @@ export function subList(): void {
       }
 
       function handleTabKey() {
-         const items: Element[] =
-            gsap.utils.selector(sublist)('.sub-list__item a');
+         const items: Element[] = gsap.utils.selector(sublist)('.sub-list__item a');
          if (!items.length) return;
 
          items.forEach(item => {
@@ -94,11 +93,11 @@ export function subList(): void {
       }
 
       if (isHoverableDevice()) {
-         parentEl.addEventListener('mouseenter', () => {
+         parentEl.addEventListener('mouseover', () => {
             handleOpen();
             return;
          });
-         parentEl.addEventListener('mouseleave', () => {
+         parentEl.addEventListener('mouseout', () => {
             handleClose();
             return;
          });
