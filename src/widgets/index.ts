@@ -26,3 +26,4 @@ export * from './searchWidget';
 export * from './cardServicies';
 export * from './casesCardsWidget';
 export * from './highlightOffer';
+export * from './form3';
