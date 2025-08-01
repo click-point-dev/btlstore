@@ -1,25 +1,21 @@
 .popup {
-   .main__full-width-form {
-      padding-block: 0;
-      @include adaptiveValue('padding-bottom', 50, 30);
-      @media (max-width: $mobile) {
-         padding-top: 80px;
-      }
-   }
-
    position: fixed;
    top: 0;
    z-index: 200;
    height: 100vh;
-   // max-width: 100%;
    padding-block: 10vh;
    background-color: $accent1-l;
+   &:has([class*='form-3']) {
+      background-color: #ffffff61;
+   }
    backdrop-filter: blur(17px);
    display: none;
    visibility: hidden;
    pointer-events: none;
-   scrollbar-width: 0;
    overflow-y: auto;
+
+   //scroll-bar
+   scrollbar-width: none;
    &::-webkit-scrollbar {
       display: none;
       width: 0;
@@ -27,21 +23,14 @@
    }
 
    &__wrapper {
-      // display: flex;
-      // flex-wrap: wrap;
-      // justify-content: center;
-      // align-items: center;
       background-color: $accent1;
    }
 
    &__block {
-      // width: 100%;
    }
 
    &__close {
       display: flex;
-      // width: 100vw;
-      // background-color: $accent1;
       cursor: pointer;
       span {
          margin-left: auto;
