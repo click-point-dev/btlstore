@@ -9,8 +9,25 @@
    &__content {
    }
 
-   &:has(img) {
+   &:has(.quote-card__image) {
+      .quote-card__image {
+         position: relative;
+         aspect-ratio: 1;
+         img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform-origin: center top;
+            scale: 1.2;
+         }
+      }
+
       @media (min-width: $mobile) {
+         .quote-card__image {
+            aspect-ratio: unset;
+         }
          display: flex;
          flex-direction: row;
          justify-content: space-between;
@@ -25,6 +42,7 @@
 
          img {
             transform-origin: left top;
+            // aspect-ratio: 1;
          }
       }
    }
@@ -63,16 +81,5 @@
    // .quote-card__image
 
    &__image {
-      position: relative;
-      aspect-ratio: 1;
-      img {
-         position: absolute;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         transform-origin: center top;
-         scale: 1.2;
-      }
    }
 }
