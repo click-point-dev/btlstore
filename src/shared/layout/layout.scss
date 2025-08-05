@@ -3,7 +3,19 @@
    gap: 20px;
 
    &__column {
-      flex: 0 0 50%;
+      flex: 1 1 50%;
+
+      &:not(:has(img)) {
+         flex-shrink: 0;
+      }
+   }
+   @media (width < $burger) {
+      flex-direction: column;
+      &__column {
+         &:has(img) {
+            @include adaptiveValue('flex-basis', 380, 182, 1100, 360, 1, false);
+         }
+      }
    }
 }
 
