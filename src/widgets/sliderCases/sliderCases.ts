@@ -4,14 +4,12 @@ import { Keyboard } from 'swiper/modules';
 // import 'swiper/css';
 
 export function sliderCases(): void {
-   const cases: HTMLElement[] = Array.from(
-      document.querySelectorAll('.card-circle__swiper'),
-   );
+   const cases: HTMLElement[] = Array.from(document.querySelectorAll('.card-circle__swiper'));
 
    if (!cases.length) return;
 
    cases.forEach(item => {
-      console.log('start sliderCases');
+      // console.log('start sliderCases');
       const centralSlideNumber = Math.floor(
          Array.from(item.querySelectorAll('.swiper-slide')).length / 2 - 1,
       );
