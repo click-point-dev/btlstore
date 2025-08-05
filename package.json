@@ -57,6 +57,6 @@
       "inputmask": "^5.0.8",
       "just-validate": "^4.3.0",
       "postcss-scss": "^4.0.9",
-      "swiper": "^11.0.6"
+      "swiper": "^11.2.10"
    }
 }
