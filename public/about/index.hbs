@@ -6,48 +6,139 @@
 	</head>
 
 	<body>
-		<div class='page page__about wrapper'>
+		<div class='page page-about wrapper'>
 
 			{{> app/loader/loader}}
 
 
 			{{> widgets/header/header}}
 
-			<main class='about-page event-page'>
+			<main class='page-about'>
 
-				<section class="main__services services">
-					<div class="services__container">
-						<h1 class='h2 text-with-dot'><span>.</span>Немного о&nbsp;нас</h1>
-						<div class="services__text text">
-							<p class='text-bold'>Добро пожаловать на сайт агентства событий «ПРОБТЛ»!</p>
-							<p>Мы команда профессионалов, которые занимаются организацией и проведением мероприятий любого масштаба и сложности. Наша миссия — сделать каждое событие ярким, запоминающимся и неповторимым, чтобы оно стало настоящим праздником для каждого участника.</p>
-							<p>Агентство событий «ПРОБТЛ» предлагает широкий спектр услуг в области организации мероприятий: корпоративные события, презентации, конференции, выставки, семинары, фестивали, промоакции и многое другое. Мы стремимся к тому, чтобы каждое мероприятие было продумано до мелочей, начиная от идеи и концепции и заканчивая реализацией и анализом результатов.</p>
-						</div>
-						<h3 class='h3 mb-15'>Наши преимущества:</h3>
-						<ul class="services__list">
-							<li class="services__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Опыт: многолетний опыт работы в сфере организации мероприятий позволяет нам успешно реализовывать проекты любой сложности.</li>
-							<li class="services__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Собственные ресурсы: штат, своя база промоутеров по всей стране, типография и производственный цех позволяют запускать мероприятия по выгодным ценам.</li>
-							<li class="services__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Профессионализм: наши сотрудники — это высококвалифицированные специалисты, знающие все тонкости и нюансы своей работы.</li>
-							<li class="services__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Индивидуальный подход: мы учитываем все пожелания и требования наших клиентов, чтобы создать уникальное и запоминающееся мероприятие.</li>
-							<li class="services__list-item item-with-marker text-s"><span class='item-with-marker__marker icon-star-4pins'></span>Креативность: мы постоянно следим за новыми тенденциями и предлагаем нашим клиентам самые актуальные и интересные идеи для их мероприятий.</li>
-						</ul>
-						<div class="services__row">
-							<div class='services__column'>
-								{{> widgets/quote/quote quote='Про события, про впечатления, про имидж — ПРОБТЛ.' remark='— Полина Кочеткова, директор компании «ПРОБТЛ»' }}
-							</div>
-							<div class='services__column'>
-								{{> shared/squareImage/squareImage imgSrc='/images/team/Polina.webp' position='top'}}
+				<section class="page-about__first-screen mb-200">
+					<div class="page-about__head mb-140 ">
+						<div class="big-decorate-title">.Немного о нас</div>
+						<div class='page-about__container'>
+							<div class="page-about__title h1">
+								<h1 class="h2 mb-0 text-with-dot"><span>.</span>Немного о нас</h1>
 							</div>
 						</div>
 					</div>
-
-
+					<div class='page-about__container'>
+						<div class='accent-block-text radius-20 bg-accent1 text-p2 mb-80'>
+							<div class="accent-block-text__content text-white">
+								<p><b>Добро пожаловать на сайт агентства событий «ПРОБТЛ»!</b></p>
+								<p>Мы команда профессионалов, которые занимаются организацией промоакций и проведением мероприятий любого масштаба и сложности.</p>
+								<p><b>Наша миссия</b> — сделать каждое событие ярким, запоминающимся и неповторимым, чтобы оно стало настоящим праздником для каждого участника.</p>
+							</div>
+						</div>
+						<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered mb-60 text-p2">
+							<p><span class='text-accent1'><b>Агентство событий «ПРОБТЛ»</b></span> предлагает широкий спектр услуг в области предоставления BTL-услуг и организации мероприятий: корпоративные события, презентации, конференции, выставки, семинары, фестивали, промоакции и многое другое.</p>
+						</div>
+					</div>
 				</section>
 
-				<section class="main__about about">
-					<div class="about__container">
-						<div class="about__body pb-200">
-							<div class="about-swiper swiper slider-params mb-146">
+				<section class="page-about__our-capabilities mb-200">
+					<div class='page-about__container'>
+						<div class="page-about__body">
+							<div class="row-50 mb-80 gap-140">
+								<div class="row-50__column">
+									<h4 class="h4 mb-50">Мы можем организовать любой вид промоакций под ключ:</h4>
+									<ul class='text-p2'>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>раздача листовок,</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>проведение дегустации,</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>сэмплинг,</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>промоутеры-консультанты,</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>проведение анкетирования,</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p>промоутеры в ростовой кукле.</p>
+										</li>
+									</ul>
+								</div>
+								<div class="row-50__column ">
+									<img style='scale: -1 1;' src="/images/razdacha-listovok/5b72b1047ee694a35b78c1ef6a2e6a418f5bfa71.webp" alt="">
+								</div>
+							</div>
+							<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered mb-60 text-p2">
+								<div class='accent-block-text__content'>
+									<p>Мы стремимся к тому, чтобы каждая промоакция и каждое мероприятие были продуманы до мелочей, от идеи и концепции до реализации и анализа результатов.</p>
+									<p>Для продвижения вашего бренда мы предлагаем <b>эффективные промоакции</b>, которые действительно работают. Благодаря собственной базе проверенного промоперсонала по всей России и отлаженным логистическим схемам мы реализуем проекты любой сложности — от локальных промоакций до одновременных запусков в 100+ городах.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="page-about__our-advantages mb-200">
+					<div class="page-about__head mb-140 ">
+						<div class="big-decorate-title text-bordered">.Наши преимущества:</div>
+						<div class='page-about__container'>
+							<div class="page-about__title h1">
+								<h1 class="h2 mb-0 text-with-dot"><span>.</span>Наши преимущества:</h1>
+							</div>
+						</div>
+					</div>
+					<div class='page-about__container'>
+						<div class="page-about__body">
+							<div class="row-50 gap-140 mb-200">
+								<div class="row-50__column image-full-width radius-30">
+									<img src="/images/about/8a2481221726a6c370ba38e1609faceefed347ba.webp" alt="">
+								</div>
+								<div class="row-50__column">
+									<ul class='text-p2'>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p><b>Опыт:</b> многолетний опыт работы в сфере организации мероприятий позволяет нам успешно реализовывать проекты любой сложности.</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p><b>Собственные ресурсы:</b> штат, своя база промоутеров по всей стране, типография и производственный цех позволяют запускать мероприятия по выгодным ценам.</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p><b>Профессионализм:</b> наши сотрудники — это высококвалифицированные специалисты, знающие все тонкости и нюансы своей работы.</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p><b>Индивидуальный подход:</b> мы учитываем все пожелания и требования наших клиентов, чтобы создать уникальное и запоминающееся мероприятие.</p>
+										</li>
+										<li class="item-with-marker">
+											<span class="item-with-marker__marker icon-star-4pins text-accent1"></span>
+											<p><b>Креативность:</b> мы постоянно следим за новыми тенденциями и предлагаем нашим клиентам самые актуальные и интересные идеи для их мероприятий.</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class='quote-card mb-200'>
+								<div class="quote-card__content pbl-50 pinl-96">
+									<div class="quote-card__quote mb-40">
+										<p>Про события, про впечатления, про имидж — <span class='text-accent'>ПРОБТЛ</span></p>
+									</div>
+									<div class="quote-card__remark">
+										<p>Людмила Казакова, руководитель event-направления</p>
+									</div>
+								</div>
+								<div class="quote-card__image">
+									<img src="/images/team/kazakova-01.webp" alt="">
+								</div>
+							</div>
+							<div class="about-swiper swiper slider-params mb-146 pbl-146">
 								<div class='about__wrapper swiper-wrapper'>
 									<div class="about__params swiper-slide">
 										<div class="params-circl">
@@ -101,12 +192,139 @@
 									</div>
 								</div>
 							</div>
-							<div class="about__docs row-with-image">
-								<div class="row-with-image__image"><img src="/images/sertificates/pic.png" alt="удостоверение агентства"></div>
-								<div class="row-with-image__content">
-									<p>«ПРОБТЛ» является членом Российской Ассоциации БТЛ, что подтверждает нашу надежность, как поставщика маркетинговых услуг.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="page-about__docs mb-200">
+					<div class="page-about__container">
+						<div class="about__docs row-with-image">
+							<div class="row-with-image__image radius-20"><img class='radius-20' src="/images/sertificates/pic.png" alt="удостоверение агентства"></div>
+							<div class="row-with-image__content">
+								<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered mb-60 text-p2">
+									<div class='accent-block-text__content'>
+										<p><span class='text-accent1'><b>«ПРОБТЛ» является членом Российской Ассоциации БТЛ</b></span>, что подтверждает нашу надежность, как поставщика маркетинговых услуг.</p </div>
+									</div>
 								</div>
 							</div>
+						</div>
+				</section>
+
+				<section class="page-about__faq mb-200">
+					<div class="page-about__head mb-140">
+						<div class="big-decorate-title text-bordered">.FAQ</div>
+						<div class='page-about__container'>
+							<h2 class="page-about__title h2 text-with-dot"><span>.</span>FAQ</h2>
+						</div>
+					</div>
+					<div class="page-about__container">
+						<ul class="" data-spollers data-one-spoller>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Как осуществляется документооборот?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Для удобства и прозрачности мы используем ЭДО, который позволяет быстро и безопасно обмениваться счетами, актами и другими необходимыми документами. Если вы не работаете по ЭДО — обменяемся документами по электронной почте, а оригиналы отправим простым письмом.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Как оплатить?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<div class='text-p2'>
+										<p><b>Оплата по счёту</b></p>
+										<p>Стандартный способ оплаты — безналичный перевод по выставленному счету. После согласования условий мы оперативно выставляем документы для оплаты.</p>
+									</div>
+									<div class='text-p2'>
+										<p><b>Постоплата для постоянных клиентов</b></p>
+										<p>Удобная схема оплаты после выполнения услуг.</p>
+									</div>
+									<div class='text-p2'>
+										<p><b>Оплата в рамках тендера</b></p>
+										<p>Мы работаем с тендерами и готовы принимать оплату согласно условиям конкурсной документации, включая специальные требования и сроки.</p>
+									</div>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Можно ли заказать у вас разработку и печать материалов для мероприятий и промоакций?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Да, в агентстве событий «ПРОБТЛ» вы можете заказать разработку и печать промоматериалов для мероприятий. Мы создаём маркетинговые материалы с учётом специфики вашего бренда и целей кампании, включая дизайн, производство и логистику полиграфии для промоакций и событий.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Как вы обеспечиваете качество работы промоутеров на промоакциях?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Промоутеры проходят обязательное обучение, включающее знание продукта и техники коммуникации. Во время акции мы осуществляем регулярный контроль, используем фотоотчеты, а также собираем обратную связь.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>В каких регионах вы работаете?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Мы реализуем BTL-акции и мероприятия по всей России.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Можно ли заказать у вас промоутера для работы в ростовой кукле?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Да, у нас есть большая база промоутеров с опытом работы в ростовых куклах. Они умеют привлекать внимание, создавать позитивный имидж бренда и взаимодействовать с аудиторией на мероприятиях.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Нужно ли промоутерам иметь медицинскую книжку?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Для работы в торговых точках и общественном питании наличие медицинской книжки обязательно. Мы обеспечиваем всех промоутеров необходимыми документами для легальной и безопасной работы.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Можно ли заказать у вас полный цикл организации мероприятия?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Да, мы берем на себя всё — от концепции и сценария до технического обеспечения и подбора персонала.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Какие мероприятия вы организуете?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Какие мероприятия вы организуете?
+										Мы проводим промоакции, презентации, корпоративные и публичные события, дегустации, мастер-классы и интерактивные акции с целью повышения узнаваемости бренда и вовлечения аудитории.</p>
+								</div>
+							</li>
+							<li class='radius-10  border-accent1 mb-12'>
+								<div class='pbl-30 pinl-50' type='button' data-spoller>
+									<p class='text-p2'><b>Как оставить заявку на проведение промоакции или мероприятия?</b></p>
+								</div>
+								<div class='pinl-50 pb-20 pt-20'>
+									<p class='text-p2'>Оставить заявку очень просто — заполните форму обратной связи на нашем сайте или свяжитесь с менеджером по телефону или электронной почте. Мы оперативно обсудим ваши задачи, предложим оптимальное решение и подготовим коммерческое предложение.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="corporate-events__cities cities mb-200">
+					<div class="corporate-events__head mb-140">
+						<div class="big-decorate-title text-bordered"><span>.</span>Организовываем события по всей России:</div>
+						<div class='corporate-events__container'>
+							<h2 class="corporate-events__title h2 text-with-dot"><span>.</span>Организовываем события по всей России:</h2>
+						</div>
+					</div>
+					<div class="corporate-events__body">
+						<div class="corporate-events__container">
+							<ul class="cities__list text-gray text-s" data-links-list></ul>
 						</div>
 					</div>
 				</section>
@@ -134,9 +352,20 @@
 									<label for="name">Имя</label>
 									<input class="input fn" name="fn" id="fn" type="text" required />
 								</div>
-								<div class='input-block text-white'>
-									<input class="input" name="city" id="city" type="text" placeholder="" />
-									<label for="city">Город</label>
+								<div class='input-block'>
+									<div class='search-with-dropdown' data-search-block>
+										<div class="search-input dropdown-initializer text-white" data-search-input>
+											<input class="input" id='city' type="text" autocomplete="off" autocomplete="new-password" name='city' placeholder=''>
+											<label for="city">Укажите город</label>
+											<input class='hide' type="text" name='city_id'>
+										</div>
+										<div class="search-results hide " data-search-results>
+											<div class='dropdown-container' data-dropdown-list>
+												<ul class="dropdown-list text-xxs">
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class='input-block text-white'>
 									<input class="input" name="phone" id="phone" type="tel" placeholder="" required />
@@ -151,7 +380,7 @@
 							</div>
 							<div class="form__row">
 								<div class="button button-light button-xl">
-									<button type="submit" class="" id="submit-btn">Оставить заявку</button>
+									<button>Оставить заявку</button>
 								</div>
 								<div class='checkbox text-xxs text-white' data-checkbox>
 									<label class=''>
@@ -166,6 +395,49 @@
 				</div>
 			</div>
 			{{/widgets/popup/popup}}
+			{{#> widgets/popup/popup type='request-popup-form-3' closeClasses='text-gray' wrapperClasses='bg-white'}}
+			<div class="form-3-widget">
+				<div class='form-3-widget__container'>
+					<div class="form-3-widget__head">
+						<div class="form-3-widget__title">Рассчитайте стоимость мероприятия за пару минут!</div>
+					</div>
+					<div class="form-3-widget__body">
+						<div class="form-3-widget__form-3 form-3 text-gray">
+							<form class="form-2__form form" method='post'>
+								<div class="form__loader">
+									<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
+								</div>
+								<div class='form-2__row'><input class="input form-2__input form-2-input" id='form-2-name' type="text" name='name' placeholder=''><label for="form-2-name">Введите имя</label></div>
+								<div class='form-2__row'><input class="input form-2__input form-2-input" id='form-2-phone' type="tel" name='phone' placeholder=''><label for="form-2-phone">Введите телефон</label></div>
+								<div class='form-2__row'><input class="input form-2__input form-2-input" id='form-2-company-name' type="text" name='brand' placeholder=''><label for="form-2-company-name">Введите название компании</label></div>
+								<div class='form-2__row'><textarea class="input form-2__input form-2-input" id='form-2-budget' type="text" name='comment' placeholder=''></textarea><label for="form-2-budget">Расскажите более подробно, что нужно организовать:</label></div>
+								<div class='form-2__row'>
+									<div class='form-2__row'>
+										<div class='checkbox text-xxs text-gray checkbox-width-14 checkbox-accent-1' data-checkbox>
+											<label class=''>
+												<input type="checkbox" name='agreement'>
+												<i></i>
+												<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class='form-2__action'>
+									<div class="button button-color button-xl">
+										<button type="submit" class="" id="submit-btn">Оставить заявку</button>
+									</div>
+								</div>
+								<input class='input fn' type="text" id='fn' name='fn'>
+							</form>
+						</div>
+						<div class="form-3-widget__image">
+							<img src="/images/corporate-events/clock-with-hands.webp" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/widgets/popup/popup}}
+
 		</div>
 	</body>
 
