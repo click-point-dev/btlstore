@@ -69,13 +69,18 @@
    }
 }
 .text-p1 {
-   @include adaptiveValue('margin-bottom', 30, 10);
+   &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 30, 10, 1440, 360, 1, false);
+   }
    @include adaptiveValue('font-size', 36, 22);
    font-weight: 700;
    line-height: 130%;
 }
 
 .text-p2 {
+   &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 30, 10, 1440, 360, 1, false);
+   }
    @include adaptiveValue('font-size', 24, 16);
    @include adaptiveValue('line-height', 31.2, 22.4);
 }

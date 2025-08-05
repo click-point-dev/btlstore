@@ -65,6 +65,13 @@
    padding-bottom: 20px;
 }
 
+.pt-20 {
+   padding-top: 20px;
+}
+
+.pbl-30 {
+   @include adaptiveValue('padding-block', 30, 15);
+}
 .pbl-50 {
    @include adaptiveValue('padding-block', 50, 30);
 }
@@ -75,6 +82,9 @@
 
 .pinl-96 {
    @include adaptiveValue('padding-inline', 96, 20);
+}
+.pinl-50 {
+   @include adaptiveValue('padding-inline', 50, 15);
 }
 
 .pb-140 {
@@ -94,6 +104,10 @@
 
 .pbl-200 {
    @include adaptiveValue('padding-block', 200, 82);
+}
+
+.pbl-146 {
+   @include adaptiveValue('padding-block', 146, 17);
 }
 
 //+ gaps
