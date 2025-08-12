@@ -65,8 +65,36 @@
    padding-bottom: 20px;
 }
 
+.pb-80 {
+   @include adaptiveValue('padding-bottom', 80, 40);
+}
+
+.pb-140 {
+   @include adaptiveValue('padding-bottom', 140, 41);
+}
+
+.pb-200 {
+   @include adaptiveValue('padding-bottom', 200, 82);
+}
+
 .pt-20 {
    padding-top: 20px;
+}
+
+.pt-80 {
+   @include adaptiveValue('padding-top', 80, 40);
+}
+
+.pt-140 {
+   @include adaptiveValue('padding-top', 140, 30);
+}
+
+.pt-200 {
+   @include adaptiveValue('padding-top', 200, 82);
+}
+
+.pbl-23 {
+   @include adaptiveValue('padding-block', 23, 0, 1440, 1100);
 }
 
 .pbl-30 {
@@ -80,34 +108,20 @@
    @include adaptiveValue('padding-block', 60, 20);
 }
 
-.pinl-96 {
-   @include adaptiveValue('padding-inline', 96, 20);
-}
-.pinl-50 {
-   @include adaptiveValue('padding-inline', 50, 15);
-}
-
-.pb-140 {
-   @include adaptiveValue('padding-bottom', 140, 41);
-}
-
-.pb-200 {
-   @include adaptiveValue('padding-bottom', 200, 82);
-}
-
-.pt-140 {
-   @include adaptiveValue('padding-top', 140, 30);
-}
-.pt-200 {
-   @include adaptiveValue('padding-top', 200, 82);
+.pbl-146 {
+   @include adaptiveValue('padding-block', 146, 17);
 }
 
 .pbl-200 {
    @include adaptiveValue('padding-block', 200, 82);
 }
 
-.pbl-146 {
-   @include adaptiveValue('padding-block', 146, 17);
+.pinl-50 {
+   @include adaptiveValue('padding-inline', 50, 15);
+}
+
+.pinl-96 {
+   @include adaptiveValue('padding-inline', 96, 20);
 }
 
 //+ gaps
