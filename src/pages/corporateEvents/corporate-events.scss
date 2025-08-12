@@ -596,9 +596,9 @@
    @include adaptiveValue('padding-block', 12, 14, 1440, 360, 0, false);
    position: relative;
    z-index: 1;
-   color: black;
+   color: inherit;
    background-color: transparent;
-   border-bottom: solid 1px#18252f38;
+   border-bottom: solid 1px currentColor;
    &:-webkit-autofill {
       transition: all 5000s ease-in-out;
    }
