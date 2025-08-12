@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { documentUnlock, isAvaliableURI } from '../../shared';
 
 export function hideLoader(): void {
-   if (!isAvaliableURI()) return;
+   // if (!isAvaliableURI()) return;
 
    const point = document.querySelector('.first-screen__logo');
    const cords = point && point.getBoundingClientRect();
@@ -28,6 +28,7 @@ export function hideLoader(): void {
          ease: 'power1.in',
          onComplete: () => {
             documentUnlock();
+            // console.log(cords);
          },
       });
 
