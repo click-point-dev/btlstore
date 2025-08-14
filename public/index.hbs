@@ -7,12 +7,10 @@
 
 
 	<body>
+		{{> app/loader/loader}}
+
 		<div class='page page__main wrapper'>
-
-			{{> app/loader/loader}}
-
 			{{> widgets/header/header}}
-
 			<main class='main'>
 
 				<section class="main__first-screen first-screen mb-200">
@@ -64,8 +62,16 @@
 								</div>
 							</div>
 							<div class="first-screen__cta">
-								<div class="button button-color bordered shadow-light">
-									<a href='#main-form'>Обсудить проект<span class='icon-arrow'></span></a>
+								<div class="button button-primary button-big button-with-icon shadow-light">
+									<a href='#main-form'>
+										<span>Обсудить проект</span>
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16">
+												<path fill="currentColor" fill-rule="evenodd" d="M10.159 10.72a.75.75 0 1 0 1.06 1.06l3.25-3.25L15 8l-.53-.53l-3.25-3.25a.75.75 0 0 0-1.061 1.06l1.97 1.97H1.75a.75.75 0 1 0 0 1.5h10.379z" clip-rule="evenodd" />
+											</svg>
+										</span>
+									</a>
+									{{!-- <a href='#main-form'>Обсудить проект<span class='icon-arrow'></span></a> --}}
 								</div>
 							</div>
 						</div>
@@ -73,7 +79,6 @@
 					<div class="first-screen__bg">
 						<img src="/images/main-page/01.webp" alt="люди выступают на сцене">
 						<div></div>
-
 					</div>
 				</section>
 
@@ -167,7 +172,7 @@
 									<div class="row-50__column pbl-23">
 										<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered">
 											<p class='text-p2'>Профессионально организовываем мероприятия, которые покоряют сердца, вызывают улыбки и оставляют приятные впечатления!</p>
-											<div class="button button-color button-s">
+											<div class="button button-primary button-small">
 												<a href="/event-marketing" target="_blank">Подробнее</a>
 											</div>
 										</div>
@@ -195,7 +200,7 @@
 									<div class="row-50__column pbl-30">
 										<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered">
 											<p class='text-p2'>Работаем с запросами событийного PR любой сложности — организовываем конференции, выставки, презентации и форумы. <span class='text-accent1'><b>Сделаем так, чтобы о вашем продукте говорили!</b></span></p>
-											<div class="button button-color button-s">
+											<div class="button button-primary button-small">
 												<a href="/pr" target="_blank">Подробнее</a>
 											</div>
 										</div>
@@ -223,7 +228,7 @@
 									<div class="row-50__column pbl-30">
 										<div class="highlight-offer__text text-gray accent-block-text accent-block-text--bordered">
 											<p class='text-p2'>Провести дегустацию, организовать лифлетинг, семплинг или праздничное открытие, а может быть, интегрировать бренд в крупное мероприятие — легко!</p>
-											<div class="button button-color button-s">
+											<div class="button button-primary button-small">
 												<a href="/btl" target="_blank">Подробнее</a>
 											</div>
 										</div>
@@ -377,7 +382,7 @@
 											</div>
 										</div>
 										<div class='form-2__action'>
-											<div class="button button-secondary button-xl">
+											<div class="button button-primary-light button-big">
 												<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 											</div>
 										</div>
@@ -453,7 +458,7 @@
 								</div>
 							</div>
 							<div class="form__row">
-								<div class="button button-light button-xl">
+								<div class="button button-primary-light button-big">
 									<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 								</div>
 								<div class='checkbox text-xxs text-white' data-checkbox>
