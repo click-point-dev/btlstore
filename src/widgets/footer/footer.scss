@@ -1,8 +1,5 @@
 .footer {
    // .footer__container
-   background-color: $white;
-   // border-radius: 0 0 87px 87px;
-   // @include adaptiveValue('padding-top', 187, 50);
    @include adaptiveValue('padding-bottom', 44, 48);
 
    &__container {
@@ -25,7 +22,7 @@
       display: flex;
       border: 2px solid $accent1;
       border-radius: $radius;
-      background-color: $white;
+      background-color: white;
       transition:
          background-color $anim,
          border-color $anim;
