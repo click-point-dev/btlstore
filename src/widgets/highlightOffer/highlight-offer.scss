@@ -65,10 +65,12 @@
    // .highlight-offer__cta
 
    &__cta {
-      .button-xl * span {
+      .button-big {
          padding-left: 0 !important;
          @media (width < $mobile) {
-            display: none;
+            * span {
+               display: none;
+            }
          }
       }
       .button {

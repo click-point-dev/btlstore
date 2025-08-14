@@ -1,0 +1,209 @@
+.button {
+   // display: inline-flex;
+   // align-items: center;
+   // justify-content: center;
+   // @include adaptiveValue('column-gap', 31.5, 20);
+   // // @include adaptiveValue("padding-block", 17, 9, 1440, 1100, 1);
+   // // @include adaptiveValue("padding-inline", 18, 13, 1440, 1100, 1);
+   // // line-height: 92%;
+   // @include adaptiveValue('border-radius', 10, 5);
+   // overflow: hidden;
+   // cursor: pointer;
+   // text-align: center;
+   // white-space: nowrap;
+
+   // span {
+   //    display: inline-flex;
+   //    height: 100%;
+   //    align-items: center;
+   //    justify-content: center;
+   //    &:before {
+   //       translate: 0 0.3em;
+   //       font-size: 1.5em;
+   //    }
+   // }
+
+   // a,
+   // button {
+   //    display: inline-block;
+   //    line-height: 2;
+   //    // @include adaptiveValue('padding-block', 10, 7, 1440, 1100, 1);
+   //    // @include adaptiveValue('padding-inline', 18, 10, 1440, 1100, 1);
+   //    // @include adaptiveValue('font-size', 23, 11);
+   //    font-weight: 500;
+   //    span {
+   //       @include adaptiveValue('padding-left', 32, 20, 1440, 320, 1, false);
+   //    }
+   // }
+
+   // &:active {
+   //    filter: brightness(0.9);
+   // }
+
+   display: inline-flex;
+   align-items: center;
+
+   overflow: hidden;
+   font-weight: 500;
+   white-space: preserve nowrap;
+   transition:
+      border-color $anim,
+      background-color $anim,
+      color $anim;
+
+   &:active {
+      transition: background-color 0s linear !important;
+   }
+
+   a,
+   button {
+      text-align: center;
+      &:focus-visible {
+         outline: 1px solid black;
+         outline-offset: -3px;
+         border-radius: inherit;
+      }
+   }
+}
+
+// button-color
+.button-primary {
+   background-color: $accent1;
+   color: white;
+
+   &:hover {
+      background-color: #901836;
+   }
+
+   &:active {
+      background-color: $accent1;
+   }
+
+   &[disabled] {
+      background-color: #b7a2a2;
+      color: #ae9090;
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
+   }
+}
+
+.button-primary-light {
+   background-color: $white;
+   color: $accent3;
+
+   &:hover {
+      background-color: $buttonPressed;
+   }
+
+   &:active {
+      background-color: $white;
+      color: $accent1;
+   }
+
+   &[disabled],
+   &:has([disabled]) {
+      background-color: #b7a2a2;
+      color: #ae9090;
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
+   }
+}
+
+.button-secondary {
+   color: $accent1;
+   background-color: transparent;
+   border: 2px solid;
+   border-color: currentColor;
+
+   &:hover {
+      // border-color: #901836;
+      color: #901836;
+   }
+
+   &:active {
+      color: #bf274d;
+      background-color: #d1c1ce;
+   }
+
+   &[disabled],
+   &:has([disabled]) {
+   }
+}
+
+//button-xl
+.button-big {
+   min-width: min(330px, 100%);
+   border-radius: 10px;
+   // @include adaptiveValue('height', 70, 40);
+
+   button,
+   a {
+      display: inline-block;
+      width: 100%;
+      min-height: 100%;
+      @include adaptiveValue('font-size', 23, 16);
+      padding-inline: 60px;
+      @include adaptiveValue('padding-block', 17.25, 10);
+   }
+}
+
+// button-s
+.button-small {
+   min-width: min(240px, 100%);
+   border-radius: 5px;
+
+   button,
+   a {
+      display: inline-block;
+      width: 100%;
+      min-height: 100%;
+      font-size: 16px;
+      text-align: center;
+      padding: 10px 47px;
+   }
+}
+
+.button-with-icon {
+   border: 1px solid;
+   border-color: currentColor;
+   // transition:
+   //    border-color $anim,
+   //    background-color $anim;
+   a,
+   button {
+      display: inline-flex;
+      align-items: center;
+      span {
+         display: inline-flex;
+         // flex-grow: 0;
+         // flex-direction: column;
+         // justify-content: center;
+         // flex-basis: 1em;
+         // padding-bottom: 2px;
+
+         // &:has(svg){}
+      }
+   }
+
+   &.button-big {
+      a,
+      button {
+         gap: 20px;
+      }
+   }
+   &.button-small {
+      a,
+      button {
+         gap: 10px;
+      }
+   }
+
+   &:hover {
+   }
+
+   &:active {
+      border-color: transparent;
+   }
+}
