@@ -1,5 +1,4 @@
 .page-cases {
-   background-color: $white;
    // overflow: hidden;
    .header {
       position: relative;
@@ -70,7 +69,7 @@
 
          &:first-child {
             flex: 0 0 100%;
-            background-color: $white;
+            background-color: white;
             border-radius: 0 0 0 87px;
          }
 
@@ -176,9 +175,7 @@
          // overflow: hidden;
 
          :first-child.color-block,
-         :first-child.two-rows-fw-image__image
-            .image-full-width:first-child
-            img {
+         :first-child.two-rows-fw-image__image .image-full-width:first-child img {
             @media (min-width: $tablet) {
                border-radius: 0 87px 0 0;
             }

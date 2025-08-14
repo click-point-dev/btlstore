@@ -5,8 +5,6 @@
 }
 
 .vacancies-page {
-   background-color: $white;
-   margin-bottom: -1px;
    @include adaptiveValue('padding-top', 87, 24);
 
    // .vacancies-page__vacancies
