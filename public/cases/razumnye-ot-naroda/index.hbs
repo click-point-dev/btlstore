@@ -7,41 +7,37 @@
 
 	<body>
 		<div class='page page-cases wrapper'>
-
-			{{> app/loader/loader}}
-
-
 			{{> widgets/header/header}}
-
-			<div class="razumnye-ot-naroda__breadcrumb">
-				<div class="razumnye-ot-naroda__container">
-					<nav class="breadcrumb">
-						<ul itemscope itemtype="https://schema.org/BreadcrumbList" aria-label="Breadcrumb">
-							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-								<a class='link-header' itemprop="item" href="/">
-									<span itemprop="name">Главная</span>
-								</a>
-								<meta itemprop="position" content="1" />
-							</li>
-							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-								<a class='link-header' itemprop="item" href="/portfolio">
-									<span itemprop="name">Портфолио</span>
-								</a>
-								<meta itemprop="position" content="2" />
-							</li>
-							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-								<a class='link-header' itemprop="item" href="javascript:void(0)">
-									<span itemprop="name">Разумные от&nbsp;народа</span>
-								</a>
-								<meta itemprop="position" content="3" />
-							</li>
-						</ul>
-						<div class="breadcrumb__next"><a class='link-header' href="/cases/tnt">Следующий проект<span class='icon-arrow'></span></a></div>
-					</nav>
-				</div>
-			</div>
-
 			<main class='pb-200 razumnye-ot-naroda'>
+
+				<div class="razumnye-ot-naroda__breadcrumb">
+					<div class="razumnye-ot-naroda__container">
+						<nav class="breadcrumb">
+							<ul itemscope itemtype="https://schema.org/BreadcrumbList" aria-label="Breadcrumb">
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+									<a class='link-header' itemprop="item" href="/">
+										<span itemprop="name">Главная</span>
+									</a>
+									<meta itemprop="position" content="1" />
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+									<a class='link-header' itemprop="item" href="/portfolio">
+										<span itemprop="name">Портфолио</span>
+									</a>
+									<meta itemprop="position" content="2" />
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+									<a class='link-header' itemprop="item" href="javascript:void(0)">
+										<span itemprop="name">Разумные от&nbsp;народа</span>
+									</a>
+									<meta itemprop="position" content="3" />
+								</li>
+							</ul>
+							<div class="breadcrumb__next"><a class='link-header' href="/cases/tnt">Следующий проект<span class='icon-arrow'></span></a></div>
+						</nav>
+					</div>
+				</div>
+
 
 				<section class="razumnye-ot-naroda__two-rows-fw-image two-rows-fw-image">
 					<div class="two-rows-fw-image__block">
@@ -169,7 +165,7 @@
 								</div>
 							</div>
 							<div class="form__row">
-								<div class="button button-light button-xl">
+								<div class="button button-primary-light button-big">
 									<button type="submit" class="" id="submit-btn">Оставить заявку</button>
 								</div>
 								<div class='checkbox text-xxs text-white' data-checkbox>
