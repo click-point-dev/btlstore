@@ -6,8 +6,10 @@ export function header(): void {
 
    document.addEventListener('DOMContentLoaded', () => {
       const header = document.querySelector('.header') as HTMLElement;
+      const loader = document.querySelector('.loader') as HTMLDivElement;
       const headerHeight = header.getBoundingClientRect().height;
       document.querySelector('main').style.marginTop = `${headerHeight}px`;
+      if (loader) loader.style.paddingTop = `${headerHeight}px`;
 
       Object.assign(header.style, {
          position: 'fixed',
@@ -15,7 +17,7 @@ export function header(): void {
          // left: 0,
 
          backgroundColor: '#ffffff94',
-         zIndex: 151,
+         // zIndex: 1,
       });
 
       const showAnim = gsap.timeline({
