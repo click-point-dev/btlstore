@@ -93,6 +93,10 @@
    @include adaptiveValue('padding-top', 200, 82);
 }
 
+.pbl-0 {
+   padding-block: 0 !important;
+}
+
 .pbl-23 {
    @include adaptiveValue('padding-block', 23, 0, 1440, 1100);
 }

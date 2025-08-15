@@ -24,3 +24,11 @@
    width: 100% !important;
    flex-basis: 100% !important;
 }
+
+.absolute {
+   position: absolute;
+   inset: 0;
+   *:has(> &) {
+      position: relative;
+   }
+}
