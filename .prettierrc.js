@@ -10,18 +10,19 @@ const config = {
    jsxSingleQuote: true,
    arrowParens: 'avoid',
    printWidth: 100,
-   // overrides: [
-   //    {
-   //       files: ['**/*.hbs', '**/*.handlebars'],
-   //       options: {
-   //          printWidth: 100,
-   //          parser: '',
-   //          singleQuote: true,
-   //          singleAttributePerLine: true,
-   //          arrowParens: 'always',
-   //       },
-   //    },
-   // ],
+   htmlWhitespaceSensitivity: 'css',
+   overrides: [
+      {
+         files: ['.hbs', '.handlebars'],
+         options: {
+            parser: 'glimmer',
+            // printWidth: 100,
+            // singleQuote: true,
+            // singleAttributePerLine: true,
+            // arrowParens: 'always',
+         },
+      },
+   ],
 };
 
 export default config;
