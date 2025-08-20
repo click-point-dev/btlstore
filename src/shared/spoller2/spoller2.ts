@@ -1,125 +1,101 @@
 import gsap from 'gsap';
 
-export function spoller2(): void {
-   const items = <Element[]>gsap.utils.toArray('.spoller-2__item');
-   const summary = <Element[]>gsap.utils.toArray('.spoller-2__summary');
-   const detail = <Element[]>gsap.utils.toArray('.spoller-2__detail');
+// type detailsSpacingsType = {
+//    [key: string]: any;
+//    paddingTop: string;
+//    marginTop: string;
+//    paddingBottom: string;
+//    marginBottom: string;
+// };
 
-   const animateDetail = gsap.timeline({ paused: true });
+export function spoller2() {
+   function createSpoller(spoller: HTMLElement) {
+      const activeClass = '_spoller-active';
+      const spollerItems = gsap.utils.toArray<HTMLLIElement>('li', spoller);
 
-   function animate(selector: any) {
-      return animateDetail.to(selector, {
-         height: 'auto',
-         translateY: '0px',
-         // paddingTop: '0px',
+      if (!spollerItems || !spollerItems.length)
+         throw new Error('Invalid spoiler structure. Item must be LI element');
+
+      const spollerParent = spoller.closest('.spoller-with-image-widget');
+      let spollerImages: HTMLImageElement[] | null;
+
+      spollerItems.forEach(item => {
+         const itemDetails = item.querySelector('[data-spoller]').nextElementSibling;
+
+         gsap.set(itemDetails, {
+            height: '0px',
+            // paddingTop: '0px',
+            // paddingBottom: '0px',
+            // paddingBlock: '0px',
+            // marginTop: '0px',
+            // marginBottom: '0px',
+            marginBlock: '0px',
+         });
+      });
+
+      if (spollerParent) {
+         spollerImages = gsap.utils.toArray('img', spollerParent);
+
+         spollerImages &&
+            spollerImages.length > 0 &&
+            spollerImages.forEach((image, index, array) => {
+               if (index !== 2 && index !== array.length - 1) {
+                  gsap.set(image, { zIndex: 'unset', opacity: 0 });
+               }
+            });
+      }
+
+      function open(target: GSAPTweenTarget, imageIndex?: number) {
+         const tl = gsap.timeline({ paused: true });
+
+         if (spollerImages && spollerImages.length > 0) {
+            return tl
+               .to(target, { height: 'auto', marginBlock: '20px' })
+               .to(spollerImages[imageIndex], { zIndex: 10, opacity: 1 }, '-=0.3');
+         } else {
+            return tl.to(target, {
+               height: 'auto',
+               marginBlock: '20px',
+            });
+         }
+      }
+
+      function close(target: GSAPTweenTarget, imageIndex?: number) {
+         const tl = gsap.timeline({ paused: true });
+
+         if (spollerImages && spollerImages.length > 0) {
+            return tl
+               .to(target, { height: '0px', marginBlock: '0px' })
+               .to(spollerImages[imageIndex], { zIndex: 0, opacity: 0 });
+         } else {
+            return tl.to(target, { height: '0px', marginBlock: '0px' });
+         }
+      }
+
+      spoller.addEventListener('click', function (event) {
+         const clickEventPath = event.composedPath();
+
+         spollerItems.forEach((item, itemIndex) => {
+            const button = item.querySelector('[data-spoller]') as HTMLElement;
+            const isActive = button.classList.contains(activeClass);
+            const details = button.nextElementSibling;
+
+            if (!clickEventPath.includes(item)) {
+               button.classList.remove(activeClass);
+               close(details, itemIndex).play();
+            }
+            if (clickEventPath.includes(item)) {
+               button.classList.toggle(activeClass, !isActive);
+               !isActive ? open(details, itemIndex).play() : close(details, itemIndex).play();
+            }
+         });
       });
    }
 
-   let isNotOpen = false;
-
-   items.forEach((item, itemIndex) => {
-      item.addEventListener(
-         'click',
-         function (e) {
-            e.preventDefault();
-
-            if (isNotOpen === false) {
-               animate(detail[itemIndex]).play();
-               console.log(detail[itemIndex]);
-               isNotOpen = true;
-            } else {
-               animate(detail[itemIndex]).reverse();
-               isNotOpen = false;
-            }
-         },
-         true,
-      );
-   });
-
-   ///==========================================
-   // const items = gsap.utils.selector('.spoller-2__list');
-
-   // const li = items('.spoller-2__item');
-
-   // const animateDetail = gsap.timeline({ paused: true });
-   // li.forEach(item => {
-   //    item.addEventListener('click', function (e) {
-   //       e.preventDefault();
-   //       const target = gsap.utils.selector(e.currentTarget);
-   //       let isOpen = false;
-   //       console.log(target);
-   //       animateDetail.from(items('.spoller-2__detail'), {
-   //          height: '0px',
-   //          translateY: '100px',
-   //          paddingTop: '0px',
-   //       });
-
-   //       if (isOpen === false) {
-   //          animateDetail.play();
-   //          isOpen = true;
-   //       } else {
-   //          animateDetail.reverse();
-   //          isOpen = false;
-   //       }
-   //    });
-   // });
-
-   ///==========================================
-   // const items: HTMLElement[] = gsap.utils.toArray('.spoller-2__item');
-
-   // if (!items.length) return;
-
-   // const animateDetail = gsap.timeline({ paused: true });
-
-   // items.forEach(item => {
-   //    // const detail = el('.spoller-2__detail')[0];
-   //    // const summary = el('.spoller-2__summary')[0];
-   //    let open = false;
-
-   //    function animate(selector: any) {
-   //       return animateDetail.from(selector, {
-   //          height: '0px',
-   //          translateY: '100px',
-   //          paddingTop: '0px',
-   //       });
-   //    }
-
-   //    item.addEventListener('click', function (e) {
-   //       const el = <Element>e.target;
-   //       if (open === false) {
-   //          el.classList.add('active');
-   //          console.log('open on', el);
-   //          animateDetail.play();
-   //          open = true;
-   //       } else {
-   //          animateDetail.reverse();
-   //          el.classList.remove('active');
-   //          console.log('close on', el);
-   //          open = false;
-   //       }
-   //    });
-   // });
-   ///==========================================
-   // // create timline tween
-   // tl.from(this, { height: 0 });
-
-   // // bind event to button
-   // buttons.forEach(button => {
-   //    box = button
-   //       .closest('.spoller-2__item')
-   //       .querySelector('.spoller-2__detail');
-   //    console.log(box);
-   //    button.addEventListener('click', toggleHeight.bind(box), false);
-   // });
-
-   // function toggleHeight(e: any) {
-   //    e.preventDefault();
-   //    if (open === false) {
-   //       tl.play();
-   //       open = true;
-   //    } else {
-   //       tl.reverse();
-   //       open = false;
-   //    }
-   // }
+   function initSpoilers() {
+      const spollers = document.querySelectorAll<HTMLElement>('.spollers');
+      if (!spollers || !spollers.length) return;
+      spollers.forEach(createSpoller);
+   }
+   initSpoilers();
 }

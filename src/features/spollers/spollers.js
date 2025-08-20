@@ -7,11 +7,9 @@ export function spollers() {
    const spollersArray = document.querySelectorAll('[data-spollers]');
    if (spollersArray.length > 0) {
       // Получение обычных слойлеров
-      const spollersRegular = Array.from(spollersArray).filter(
-         function (item, index, self) {
-            return !item.dataset.spollers.split(',')[0];
-         },
-      );
+      const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
+         return !item.dataset.spollers.split(',')[0];
+      });
       // console.log(spollersArray, '\n', spollersRegular);
       // Инициализация обычных слойлеров
       if (spollersRegular.length) {
@@ -69,12 +67,12 @@ export function spollers() {
          const el = e.target;
          const base = el.closest('[data-spollers]');
 
-         console.log(el, Array.from(base.querySelectorAll('button')));
+         // console.log(el, Array.from(base.querySelectorAll('button')));
 
          Array.from(base.querySelectorAll('button')).forEach((item, index) => {
             if (item === el) {
                queue = index + 1;
-               console.log(queue);
+               // console.log(queue);
             }
          });
 
@@ -86,10 +84,7 @@ export function spollers() {
                ? parseInt(spollersBlock.dataset.spollersSpeed)
                : 500;
             if (!spollersBlock.querySelectorAll('._slide').length) {
-               if (
-                  oneSpoller &&
-                  !spollerTitle.classList.contains('_spoller-active')
-               ) {
+               if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) {
                   hideSpollersBody(spollersBlock);
                }
                spollerTitle.classList.toggle('_spoller-active');
@@ -100,16 +95,11 @@ export function spollers() {
          return queue;
       }
       function hideSpollersBody(spollersBlock) {
-         const spollerActiveTitle = spollersBlock.querySelector(
-            '[data-spoller]._spoller-active',
-         );
+         const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
          const spollerSpeed = spollersBlock.dataset.spollersSpeed
             ? parseInt(spollersBlock.dataset.spollersSpeed)
             : 500;
-         if (
-            spollerActiveTitle &&
-            !spollersBlock.querySelectorAll('._slide').length
-         ) {
+         if (spollerActiveTitle && !spollersBlock.querySelectorAll('._slide').length) {
             spollerActiveTitle.classList.remove('_spoller-active');
             _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
          }

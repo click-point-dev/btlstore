@@ -1,1 +1,54 @@
-.spollers {}
+.spollers {
+   $arrowScale: 0.7;
+   %spoller-arrow {
+      content: '';
+      speak: never;
+      margin-left: auto;
+      height: min(16px, 1em);
+      aspect-ratio: 1;
+      line-height: inherit;
+      right: 0;
+      top: 0.25rem;
+      border-left: 3px solid;
+      border-bottom: 3px solid;
+      border-color: currentColor;
+      border-bottom-left-radius: 5px;
+      rotate: -45deg;
+      scale: $arrowScale;
+      transform-origin: center center;
+      transition:
+         rotate $anim,
+         border-color $anim,
+         scale $anim,
+         translate $anim;
+   }
+
+   %spoller-active-arrow {
+      scale: -$arrowScale !important;
+      translate: 0 0.2em;
+   }
+
+   [data-spoller] {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+      transition:
+         background-color $anim,
+         color $anim;
+
+      &:after {
+         @extend %spoller-arrow;
+      }
+
+      &._spoller-active {
+         &::after {
+            @extend %spoller-active-arrow;
+         }
+      }
+
+      & + * {
+         overflow: hidden;
+      }
+   }
+}

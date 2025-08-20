@@ -28,88 +28,11 @@
 
    &__faq {
       [data-spoller] {
-         $arrowScale: 0.7;
-         cursor: pointer;
-         > p {
-            position: relative;
-            padding-right: 1.2em;
-         }
-         > p::before {
-            content: '';
-            speak: never;
-            position: absolute;
-            height: 1em;
-            aspect-ratio: 1;
-            right: 0;
-            top: 0.13em;
-            border-left: 3px solid;
-            border-bottom: 3px solid;
-            border-color: black;
-            border-radius: 0 0 0 5px;
-            rotate: -45deg;
-            scale: $arrowScale;
-            transform-origin: center center;
-            transition:
-               rotate $anim,
-               border-color $anim,
-               scale $anim,
-               translate $anim;
-         }
-         transition:
-            background-color $anim,
-            color $anim;
-
          &:hover,
          &._spoller-active {
             background-color: $accent1;
             color: white;
-
-            > p::before {
-               border-color: inherit;
-            }
-         }
-         &._spoller-active {
-            > p::before {
-               // rotate: 135deg;
-               scale: -$arrowScale;
-               translate: 0 0.3em;
-            }
          }
       }
    }
 }
-
-// .about-page {
-//    &__about {
-//       @include adaptiveValue('padding-top', 27, 21);
-//       margin-bottom: -1px;
-//    }
-
-//    .about__text {
-//    }
-
-//    .about__params {
-//       @include adaptiveValue('flex-basis', 467, 240);
-//    }
-
-//    .params-circl--big {
-//       max-width: 467px;
-//       margin-left: auto;
-//    }
-
-//    .about__body {
-//       &:not(:last-child) {
-//          @include adaptiveValue('padding-bottom', 100, 70);
-//       }
-//    }
-
-//    .main__about {
-//       padding-block: unset;
-//    }
-// }
-
-// .page-about {
-//    ul:has(.item-with-marker) li:not(:last-child) {
-//       @extend .mb-20;
-//    }
-// }

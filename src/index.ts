@@ -46,13 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
    headerMenu();
    subList();
    tabs();
-   spollers();
    input();
    checkbox();
    textarea();
    person();
-
-   // sliderCases(); // перенес запуск функции в страницу
+   spoller2();
    popup();
    portfolioPage();
    pageCases();
