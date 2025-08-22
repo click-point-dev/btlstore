@@ -10,37 +10,28 @@ export function btlPage(): void {
    if (!isAvailableUrl('btl')) return;
 
    // рендер карточек в портвфолио
-   const portfolioBlock = document.querySelector(
-      '[data-portfolio]',
-   ) as HTMLDivElement;
+   const portfolioBlock = document.querySelector('[data-portfolio]') as HTMLDivElement;
 
    if (portfolioBlock) {
-      const clean = DOMPurify.sanitize(
-         casesCardsWidget(casesData, true, { type: 'BTL' }),
-         { USE_PROFILES: { svg: true, svgFilters: true, html: true } },
-      );
+      const clean = DOMPurify.sanitize(casesCardsWidget(casesData, true, { type: 'BTL' }), {
+         USE_PROFILES: { svg: true, svgFilters: true, html: true },
+      });
 
       portfolioBlock.innerHTML = clean;
    }
 
    // рендер списка городов
-   const citiesListPlaceholder = document.querySelector(
-      '[data-links-list]',
-   ) as HTMLElement;
-   citiesListPlaceholder &&
-      renderCitiesList(citiesListPlaceholder, citiesBtlData);
+   const citiesListPlaceholder = document.querySelector('[data-links-list]') as HTMLElement;
+   citiesListPlaceholder && renderCitiesList(citiesListPlaceholder, citiesBtlData);
 
    // рендер названия города в h1
-   const cityTitlePlaceholder = document.querySelector(
-      '[data-city-title]',
-   ) as HTMLElement;
+   const cityTitlePlaceholder = document.querySelector('[data-city-title]') as HTMLElement;
    cityTitlePlaceholder && renderCityTitle(cityTitlePlaceholder, citiesBtlData);
 
-   // view all servicies
+   // показать все сервисы
    function showAllBtlServices() {
       const services = document.querySelectorAll('[data-btl-service]');
-      const parentElement =
-         document.querySelector('[data-btl-service]').parentElement;
+      const parentElement = document.querySelector('[data-btl-service]').parentElement;
       const firstRow = document.createElement('div');
       const secondRow = document.createElement('div');
 
@@ -58,44 +49,45 @@ export function btlPage(): void {
          display: flex;
          flex-direction: column;
          gap: 20px;
-
-   `;
+         `;
       });
-      const heigth = secondRow.getBoundingClientRect().height;
-      console.log(heigth);
+      const initialHeight = secondRow.getBoundingClientRect().height;
       secondRow.style.height = '0';
 
       parentElement.insertAdjacentHTML(
          'afterend',
          /*html*/ `
-         <div class="button button-color button-xl" style="display:flex; margin-top: 40px;">
-            <button>Показать все услуги</button>
+         <div class="button button-primary button-big" style="display:flex; margin-top: 40px;">
+            <button data-cta>Показать все услуги</button>
          </div>`,
       );
 
       const timeline = gsap.timeline({ paused: true });
       const cards = gsap.utils.selector(secondRow);
-      console.log(cards('& > *'));
+      // console.log(cards('& > *'));
 
       timeline
          .fromTo(
             secondRow,
             { height: 0, marginTop: 0 },
-            { height: heigth, marginTop: '20px' },
+            { height: initialHeight, marginTop: '20px' },
          )
          .to(secondRow, { overflow: 'unset' })
          .from(cards('& > *'), { stagger: 0.1, opacity: 0 }, '-=0.2');
 
-      parentElement.nextElementSibling.addEventListener('click', () =>
-         secondRow.getBoundingClientRect().height === 0
-            ? timeline.play()
-            : timeline.reverse(),
-      );
+      parentElement.nextElementSibling.addEventListener('click', async () => {
+         const isOpen = secondRow.getBoundingClientRect().height === 0;
+         const button = parentElement.nextElementSibling.querySelector(
+            '[data-cta]',
+         ) as HTMLButtonElement;
+         button.disabled = true;
+         isOpen ? await timeline.play() : await timeline.reverse();
+         button.textContent = isOpen ? 'Скрыть' : 'Показать все услуги';
+         button.disabled = false;
+      });
    }
    // инициализация слайдера в кейсах
-   const circlesSliders = Array.from(
-      document.querySelectorAll('.corporate-events .slider-cases'),
-   );
+   const circlesSliders = Array.from(document.querySelectorAll('.corporate-events .slider-cases'));
    if (circlesSliders.length > 0) {
       checkViewportWidth('(max-width: 1439px)') && sliderCases();
    }
