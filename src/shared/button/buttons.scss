@@ -102,7 +102,7 @@
       display: inline-block;
       width: 100%;
       min-height: 100%;
-      @include adaptiveValue('font-size', 23, 16);
+      @include adaptiveValue('font-size', 23, 16, 1440, 360, 1, false);
       padding-inline: 60px;
       @include adaptiveValue('padding-block', 17.25, 10);
    }
