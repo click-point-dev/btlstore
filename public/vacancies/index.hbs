@@ -1,75 +1,44 @@
 <!DOCTYPE html>
 <html lang='ru'>
 
-	<head>
-		{{> app/head canonical='https://probtl.ru/vacancies/' title='Вакансии в агентстве событий "ПРОБТЛ"' description='Любите организовывать мероприятия? Тогда мы ждем вас в нашу команду! Следите за нашими вакансиями и отправляйте резюме. Мы занимаемся организацией мероприятий для известных федеральных брендов и региональных компаний' ogImage='https://probtl.ru/images/main-page/01.webp'}}
-	</head>
+<head>
+	{{> app/head canonical='https://probtl.ru/vacancies/' title='Вакансии в агентстве событий "ПРОБТЛ"' description='Любите организовывать мероприятия? Тогда мы ждем вас в нашу команду! Следите за нашими вакансиями и отправляйте резюме. Мы занимаемся организацией мероприятий для известных федеральных брендов и региональных компаний' ogImage='https://probtl.ru/images/main-page/01.webp'}}
+</head>
 
-	<body>
-		<div class='page page__vacancies wrapper'>
+<body>
+	<div class='page page__vacancies wrapper'>
 
 
 
-			{{> widgets/header/header}}
+		{{> widgets/header/header}}
 
-			<main class='vacancies-page'>
+		<main class='vacancies-page'>
 
-				<div class="vacancies-page__vacancies vacancies">
-					<div class="vacancies__container">
-						<div class="vacancies__head">
-							<div class="vacancies__title">
-								<h5 class='h5'><span data-vacancy-count-placeholder></span> открытых вакансий</h5>
-							</div>
+			<div class="vacancies-page__vacancies vacancies">
+				<div class="vacancies__container">
+					<div class="vacancies__head">
+						<div class="vacancies__title">
+							<h5 class='h5'><span data-vacancy-count-placeholder></span> открытых вакансий</h5>
 						</div>
-						<div class="vacancies__body">
+					</div>
+					<div class="vacancies__body">
 
-							<div data-tabs='20000' data-tabs-animate='1000' class="vacancies__spollers spollers">
-								<ul data-tabs-titles class="spollers__navigation">
-									<li type="button" class="spollers__title h3">
-										Менеджер по продажам
+						<section class='mb-200 vacancies__list'>
+							<ul class="spollers" data-duration='1000'>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>Менеджер по продажам</p>
 										<div class='title__decor'>
 											<span class='icon-star-4pins'></span>
 											<span class='icon-arrow'></span>
 										</div>
-									</li>
-									<li type="button" class="spollers__title h3">Event-менеджер
-										<div class='title__decor'>
-											<span class='icon-star-4pins'></span>
-											<span class='icon-arrow'></span>
-										</div>
-									</li>
-									<li type="button" class="spollers__title h3">Специалист по креативным разработкам
-										<div class='title__decor'>
-											<span class='icon-star-4pins'></span>
-											<span class='icon-arrow'></span>
-										</div>
-									</li>
-									<li type="button" class="spollers__title h3">BTL-менеджер
-										<div class='title__decor'>
-											<span class='icon-star-4pins'></span>
-											<span class='icon-arrow'></span>
-										</div>
-									</li>
-									<li type="button" class="spollers__title h3">Менеджер по подбору промо-персонала
-										<div class='title__decor'>
-											<span class='icon-star-4pins'></span>
-											<span class='icon-arrow'></span>
-										</div>
-									</li>
-									<li type="button" class="spollers__title h3">Промоутер
-										<div class='title__decor'>
-											<span class='icon-star-4pins'></span>
-											<span class='icon-arrow'></span>
-										</div>
-									</li>
-								</ul>
-
-								<section data-tabs-body class="spollers__content pb-200">
-									<article class="spollers__body vacancy">
+									</div>
+									<article class="spollers__body vacancy" data-vacancy-title="Менеджер по продажам">
 										<div class="vacancy__head">
-											<div class="vacancy__description">Мы предлагаем тебе стать частью нашей команды и вместе с нами создавать яркие и запоминающиеся мероприятия, которые будут радовать и удивлять твоих клиентов.</div>
+											<div class="vacancy__description">Мы предлагаем тебе стать частью нашей команды и вместе с нами создавать
+												яркие и запоминающиеся мероприятия, которые будут радовать и удивлять твоих клиентов.</div>
 										</div>
-										<div class="vacancy__body" data-vacancy-title="Менеджер по продажам">
+										<div class="vacancy__body">
 											<div class="vacancy__content">
 												<div class="vacancy__row">
 													<div class="vacancy__column">
@@ -87,10 +56,13 @@
 																	Взаимодействие с отделом реализации проектов
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Поиск компаний желающих реализовать проекты и акции вместе с нами
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Поиск компаний желающих
+																	реализовать проекты и акции вместе с нами
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Взаимодействовать с клиентами в других городах, ведь мы специализируемся и на региональных проектах.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Взаимодействовать
+																	с клиентами
+																	в других городах, ведь мы специализируемся и на региональных проектах.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>Участие в тендерах
@@ -115,7 +87,9 @@
 																	Трудолюбие, ответственность, пунктуальность;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Опыт работы в event-индустрии или продажах будет преимуществом.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Опыт работы в
+																	event-индустрии
+																	или продажах будет преимуществом.
 																</li>
 															</ul>
 														</div>
@@ -164,10 +138,21 @@
 											</div>
 										</div>
 									</article>
-
+								</li>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>Event-менеджер</p>
+										<div class='title__decor'>
+											<span class='icon-star-4pins'></span>
+											<span class='icon-arrow'></span>
+										</div>
+									</div>
 									<article class="spollers__body vacancy" data-vacancy-title="Event-менеджер">
 										<div class="vacancy__head">
-											<div class="vacancy__description">— это творец и организатор незабываемых событий. Если ты коммуникабельный, креативный, умеешь работать в&nbsp;режиме многозадачности и&nbsp;стремишься к&nbsp;постоянному развитию, то&nbsp;эта вакансия именно для&nbsp;тебя!</div>
+											<div class="vacancy__description">— это творец и организатор незабываемых событий. Если ты
+												коммуникабельный,
+												креативный, умеешь работать в&nbsp;режиме многозадачности и&nbsp;стремишься к&nbsp;постоянному развитию,
+												то&nbsp;эта вакансия именно для&nbsp;тебя!</div>
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
@@ -179,7 +164,9 @@
 														<div class="vacancy__section-content">
 															<div class="text text-s">
 																<p>
-																	Реализовывать проекты любого уровня сложности. Проводить праздничные открытия сетевых торговых точек. Организовывать корпоративные мероприятия и конференции, выставочную деятельность. А также воплощать в жизнь множество нестандартных и интересных мероприятий.
+																	Реализовывать проекты любого уровня сложности. Проводить праздничные открытия сетевых
+																	торговых точек. Организовывать корпоративные мероприятия и конференции, выставочную
+																	деятельность. А также воплощать в жизнь множество нестандартных и интересных мероприятий.
 																</p>
 															</div>
 															<ul class="vacancy__list">
@@ -195,19 +182,26 @@
 																	<span class='item-with-marker__marker icon-star-4pins'></span>Составление смет проектов.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Написание концептов, таймингов.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Написание концептов,
+																	таймингов.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Организация и ведение мероприятий разного уровня.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Организация и ведение
+																	мероприятий разного уровня.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Планирование и контроль всех этапов мероприятия.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Планирование и контроль
+																	всех
+																	этапов мероприятия.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Взаимодействие с партнерами, подрядчиками и потенциальными клиентами.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Взаимодействие с
+																	партнерами,
+																	подрядчиками и потенциальными клиентами.
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Работа с крупными компаниями.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Работа с крупными
+																	компаниями.
 																</li>
 															</ul>
 														</div>
@@ -246,7 +240,8 @@
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
-																	умение работать в режиме многозадачности, с большим потоком информации, в т. ч. в рамках организации нескольких событий одновременно!
+																	умение работать в режиме многозадачности, с большим потоком информации, в т. ч. в рамках
+																	организации нескольких событий одновременно!
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
@@ -299,13 +294,24 @@
 											</div>
 										</div>
 									</article>
-
+								</li>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>Специалист по креативным разработкам</p>
+										<div class='title__decor'>
+											<span class='icon-star-4pins'></span>
+											<span class='icon-arrow'></span>
+										</div>
+									</div>
 									<article class="spollers__body vacancy" data-vacancy-title="Специалист по креативным разработкам">
 										<div class="vacancy__head">
 											<div class="vacancy__description">
 												<div class='text'>
-													<p>Мы предлагаем тебе стать частью нашей команды и вместе с нами создавать яркие и запоминающиеся мероприятия, которые будут радовать и удивлять твоих клиентов.</p>
-													<p>Если ты творческий человек, умеющий создавать концепты мероприятий, знающий, как удивить и найти нестандартный подход к мероприятию; если твои идеи реально воплотить в жизнь согласно продуманным презентациям, то ты тот, кто нам нужен.</p>
+													<p>Мы предлагаем тебе стать частью нашей команды и вместе с нами создавать яркие и запоминающиеся
+														мероприятия, которые будут радовать и удивлять твоих клиентов.</p>
+													<p>Если ты творческий человек, умеющий создавать концепты мероприятий, знающий, как удивить и найти
+														нестандартный подход к мероприятию; если твои идеи реально воплотить в жизнь согласно продуманным
+														презентациям, то ты тот, кто нам нужен.</p>
 												</div>
 											</div>
 										</div>
@@ -340,11 +346,14 @@
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
-																	разрабатывать идеи кей-вижуалов (креативные изображения для мероприятий и рекламных кампаний);
+																	разрабатывать идеи кей-вижуалов (креативные изображения для мероприятий и рекламных
+																	кампаний);
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
-																	готовить дизайн-концепции мероприятий, макеты застройки промозон, фотозон и мерча (возможно, в паре с дизайнером агентства);
+																	готовить дизайн-концепции мероприятий, макеты застройки промозон, фотозон и мерча
+																	(возможно,
+																	в паре с дизайнером агентства);
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
@@ -397,10 +406,20 @@
 											</div>
 										</div>
 									</article>
-
+								</li>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>BTL-менеджер</p>
+										<div class='title__decor'>
+											<span class='icon-star-4pins'></span>
+											<span class='icon-arrow'></span>
+										</div>
+									</div>
 									<article class="spollers__body vacancy" data-vacancy-title="BTL-менеджер">
 										<div class="vacancy__head">
-											<div class="vacancy__description">BTL-проекты — лифлетинг, дегустации, консультации, праздничные открытия салонов, торговых точек, офисов на территории РФ, Белоруссии, Казахстана. А также воплощение в жизнь множества нестандартных и интересных запросов и задач.</div>
+											<div class="vacancy__description">BTL-проекты — лифлетинг, дегустации, консультации, праздничные открытия
+												салонов, торговых точек, офисов на территории РФ, Белоруссии, Казахстана. А также воплощение в жизнь
+												множества нестандартных и интересных запросов и задач.</div>
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
@@ -421,26 +440,33 @@
 																	управлять командой персонала;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>взаимодействовать с организациями по изготовлению рекламного оборудования
+																	<span class='item-with-marker__marker icon-star-4pins'></span>взаимодействовать с
+																	организациями по изготовлению рекламного оборудования
 																	и оформлению мероприятий;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>составлять сметы и отчеты по проектам;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>составлять сметы и отчеты
+																	по
+																	проектам;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>участвовать в тендерах и креативных «штурмах»;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>участвовать в тендерах и
+																	креативных «штурмах»;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>писать концепты, тайминги;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>получать согласования и взаимодействовать с торговыми сетями (букирование);
+																	<span class='item-with-marker__marker icon-star-4pins'></span>получать согласования и
+																	взаимодействовать с торговыми сетями (букирование);
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>вести отчетность, документооборот;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>вести отчетность,
+																	документооборот;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>и еще много важной и интересной работы.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>и еще много важной и
+																	интересной работы.
 																</li>
 															</ul>
 														</div>
@@ -508,7 +534,8 @@
 														</div>
 													</div>
 												</div>
-												<div class="text">Ждем тебя с новыми идеями и желанием влиться в наш дружный творческий коллектив, жми «ОТКЛИКНУТЬСЯ»!</div>
+												<div class="text">Ждем тебя с новыми идеями и желанием влиться в наш дружный творческий коллектив, жми
+													«ОТКЛИКНУТЬСЯ»!</div>
 											</div>
 											<div class="vacancy__cta">
 												<div type="button" class="button button-primary button-big" data-popup-type='popup-vacancy'>
@@ -517,10 +544,19 @@
 											</div>
 										</div>
 									</article>
-
-									<article class="spollers__body vacancy" data-vacancy-title="Промоутер">
+								</li>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>Менеджер по подбору промо-персонала</p>
+										<div class='title__decor'>
+											<span class='icon-star-4pins'></span>
+											<span class='icon-arrow'></span>
+										</div>
+									</div>
+									<article class="spollers__body vacancy" data-vacancy-title="Менеджер по подбору промо-персонала">
 										<div class="vacancy__head">
-											<div class="vacancy__description">В связи с расширением штата ищем в команду менеджера по набору промоперсонала (с возможностью удаленной работы).</div>
+											<div class="vacancy__description">В связи с расширением штата ищем в команду менеджера по набору
+												промоперсонала (с возможностью удаленной работы).</div>
 										</div>
 										<div class="vacancy__body">
 											<div class="vacancy__content">
@@ -533,17 +569,21 @@
 															<ul class="vacancy__list">
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
-																	искать персонал в г. Новосибирске и на территории РФ (промоутеры, супервайзеры, координаторы);
+																	искать персонал в г. Новосибирске и на территории РФ (промоутеры, супервайзеры,
+																	координаторы);
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
 																	<span class='item-with-marker__marker icon-star-4pins'></span>
 																	проводить тренинги и кастинги;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>выводить персонал в «поля» и контролировать качество работы персонала;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>выводить персонал в «поля»
+																	и
+																	контролировать качество работы персонала;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>составлять отчеты, фотоотчеты.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>составлять отчеты,
+																	фотоотчеты.
 																</li>
 															</ul>
 														</div>
@@ -568,13 +608,16 @@
 																	<span class='item-with-marker__marker icon-star-4pins'></span>понимание специфики работы;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>высокий уровень стрессоустойчивости;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>высокий уровень
+																	стрессоустойчивости;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>ответственность и внимательность;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>ответственность и
+																	внимательность;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>умение быстро принимать правильные решения в затруднительных ситуациях.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>умение быстро принимать
+																	правильные решения в затруднительных ситуациях.
 																</li>
 															</ul>
 														</div>
@@ -603,7 +646,8 @@
 														</div>
 													</div>
 												</div>
-												<div class="text">Если вы готовы принять вызов и стать частью нашей команды, отправьте свой отклик, и мы свяжемся с вами в ближайшее время.</div>
+												<div class="text">Если вы готовы принять вызов и стать частью нашей команды, отправьте свой отклик, и мы
+													свяжемся с вами в ближайшее время.</div>
 											</div>
 											<div class="vacancy__cta">
 												<div type="button" class="button button-primary button-big" data-popup-type='popup-vacancy'>
@@ -612,7 +656,15 @@
 											</div>
 										</div>
 									</article>
-
+								</li>
+								<li class='mb-12'>
+									<div class='pbl-30' type='button' data-spoller>
+										<p class='text-p1'>Промоутер</p>
+										<div class='title__decor'>
+											<span class='icon-star-4pins'></span>
+											<span class='icon-arrow'></span>
+										</div>
+									</div>
 									<article class="spollers__body vacancy" data-vacancy-title="Промоутер">
 										<div class="vacancy__head">
 											<div class="vacancy__description">Ищем активных и общительных людей для работы на промоакциях!</div>
@@ -662,10 +714,13 @@
 																	Ответственность и пунктуальность;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Готовность работать в активном формате;
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Готовность работать в
+																	активном
+																	формате;
 																</li>
 																<li class="vacancy__item item-with-marker text-s">
-																	<span class='item-with-marker__marker icon-star-4pins'></span>Опыт в промо – плюс, но не обязателен.
+																	<span class='item-with-marker__marker icon-star-4pins'></span>Опыт в промо – плюс, но не
+																	обязателен.
 																</li>
 															</ul>
 														</div>
@@ -703,16 +758,16 @@
 											</div>
 										</div>
 									</article>
-
-								</section>
-							</div>
-						</div>
+								</li>
+							</ul>
+						</section>
 					</div>
 				</div>
+			</div>
 
-			</main>
-			{{> widgets/footer/footer}}
-			{{#> widgets/popup/popup type='request-popup'}}
+		</main>
+		{{> widgets/footer/footer}}
+		{{#> widgets/popup/popup type='request-popup'}}
 			<div class="main__full-width-form full-width-form width-full">
 				<div class=" full-width-form__container">
 					<div class="full-width-form__head">
@@ -757,7 +812,8 @@
 									<label class=''>
 										<input type="checkbox" name='agreement'>
 										<i></i>
-										<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
+										<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики
+												конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
 									</label>
 								</div>
 							</div>
@@ -765,8 +821,8 @@
 					</div>
 				</div>
 			</div>
-			{{/widgets/popup/popup}}
-			{{#> widgets/popup/popup type='popup-vacancy' container='true'}}
+		{{/widgets/popup/popup}}
+		{{#> widgets/popup/popup type='popup-vacancy' container='true'}}
 			<div class="main__full-width-form full-width-form width-full">
 				<div class=" full-width-form__container">
 					<div class="full-width-form__head">
@@ -808,7 +864,8 @@
 									<label class=''>
 										<input type="checkbox" name='agreement'>
 										<i></i>
-										<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
+										<span>я принимаю условия <a class='text-underline' href="/privacy" target="blank">Политики
+												конфиденциальности</a>, и даю согласие на обработку персональных данных</span>
 									</label>
 								</div>
 							</div>
@@ -816,9 +873,9 @@
 					</div>
 				</div>
 			</div>
-			{{/widgets/popup/popup}}
+		{{/widgets/popup/popup}}
 
-		</div>
-	</body>
+	</div>
+</body>
 
 </html>

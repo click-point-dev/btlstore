@@ -1,7 +1,4 @@
 .page__vacancies {
-   .header {
-      position: relative;
-   }
 }
 
 .vacancies-page {
@@ -41,81 +38,55 @@
    }
 }
 
-.spollers {
-   // .spollers__navigation
+.vacancies .spollers {
+   & > li {
+      border-bottom: 1px solid currentColor;
+   }
+   [data-spoller] {
+      justify-content: space-between;
 
-   &__navigation {
+      &:after {
+         display: none;
+      }
+
+      &._spoller-active {
+         color: $accent1;
+         .title__decor {
+            rotate: 90deg;
+            .icon-star-4pins {
+               color: inherit;
+            }
+         }
+      }
    }
 
-   // .spollers__title
-
-   &__title {
-      @include adaptiveValue('padding-block', 34, 20);
-      border-bottom: 1px solid $mainColor;
+   .title__decor {
+      position: relative;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      flex: 0;
-      cursor: pointer;
-      transition: color $anim;
-
-      .title__decor {
-         position: relative;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-shrink: 0;
-         flex-grow: 0;
-         @include adaptiveValue('flex-basis', 103, 80);
-         pointer-events: none;
-         transition: rotate $anim;
-      }
-
-      span {
-         position: absolute;
-      }
+      flex-shrink: 0;
+      flex-grow: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      pointer-events: none;
+      transition: rotate $anim;
 
       .icon-star-4pins {
-         // font-size: 2.4em;
-         // font-size: 103px;
-         @include adaptiveValue('font-size', 103, 80);
+         @include adaptiveValue('font-size', 70, 55);
          color: $accent3;
          transition: color $anim;
       }
 
       .icon-arrow {
+         position: absolute;
          // font-size: 0.9em;
          // font-size: 34px;
-         @include adaptiveValue('font-size', 34, 28);
+         @include adaptiveValue('font-size', 19, 13);
          color: $white;
          translate: 0.0533em 0.0533em;
          rotate: -45deg;
       }
-
-      &:not(:last-child) {
-         @include adaptiveValue('margin-bottom', 30, 36);
-      }
-   }
-
-   ._tab-active {
-      color: $accent1;
-      .title__decor {
-         rotate: 90deg;
-      }
-      .icon-star-4pins {
-         color: $accent1;
-      }
-   }
-
-   // .spollers__content
-
-   &__content {
-   }
-
-   // .spollers__body
-
-   &__body {
-      @include adaptiveValue('padding-bottom', 92, 40);
    }
 }
 
