@@ -3,15 +3,11 @@ import { documentUnlock, isAvaliableURI } from '../../shared';
 
 export function hideLoader(): void {
    // if (!isAvaliableURI()) return;
+   const loader: HTMLElement = document.querySelector('.loader');
+   if (!loader) return;
 
    const point = document.querySelector('.first-screen__logo');
    const cords = point && point.getBoundingClientRect();
-   const loader: HTMLElement = document.querySelector('.loader');
-
-   // loader.style.top = `${window.scrollY - 20}px`;
-   // console.log(window.scrollY);
-
-   if (!point && !cords && !loader) return;
 
    const tlLoader = gsap.timeline({ paused: true });
 

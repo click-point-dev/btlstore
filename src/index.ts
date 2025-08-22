@@ -40,7 +40,6 @@ import {
 import cssHasPseudo from 'css-has-pseudo/browser';
 cssHasPseudo(document);
 
-documentLock();
 document.addEventListener('DOMContentLoaded', function () {
    const screenWidth = window.innerWidth;
    headerMenu();
