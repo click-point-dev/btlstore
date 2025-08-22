@@ -11,7 +11,9 @@ import gsap from 'gsap';
 export function spoller2() {
    function createSpoller(spoller: HTMLElement) {
       const activeClass = '_spoller-active';
-      const spollerItems = gsap.utils.toArray<HTMLLIElement>('li', spoller);
+      const spollerSelector = gsap.utils.selector(spoller);
+      const spollerItems = spollerSelector('& > li');
+      const duration = parseInt(spoller.getAttribute('data-duration')) / 1000;
 
       if (!spollerItems || !spollerItems.length)
          throw new Error('Invalid spoiler structure. Item must be LI element');
@@ -46,7 +48,10 @@ export function spoller2() {
       }
 
       function open(target: GSAPTweenTarget, imageIndex?: number) {
-         const tl = gsap.timeline({ paused: true });
+         const tl = gsap.timeline({
+            paused: true,
+            defaults: { duration: duration ? duration : 0.3 },
+         });
 
          if (spollerImages && spollerImages.length > 0) {
             return tl
@@ -79,14 +84,21 @@ export function spoller2() {
             const button = item.querySelector('[data-spoller]') as HTMLElement;
             const isActive = button.classList.contains(activeClass);
             const details = button.nextElementSibling;
+            const targetPrototype = event.target.constructor?.name;
 
             if (!clickEventPath.includes(item)) {
                button.classList.remove(activeClass);
                close(details, itemIndex).play();
             }
             if (clickEventPath.includes(item)) {
+               if (
+                  (targetPrototype === 'HTMLButtonElement' && !clickEventPath.includes(button)) ||
+                  targetPrototype === 'HTMLAnchorElement'
+               )
+                  return;
                button.classList.toggle(activeClass, !isActive);
                !isActive ? open(details, itemIndex).play() : close(details, itemIndex).play();
+               // open(details, itemIndex).play();
             }
          });
       });
