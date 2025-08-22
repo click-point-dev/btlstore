@@ -585,7 +585,7 @@
 .form-2-input:not([type='checkbox']) {
    width: 100%;
    padding-inline: 10px;
-   @include adaptiveValue('padding-block', 12, 14, 1440, 360, 0, false);
+   @include adaptiveValue('padding-block', 12, 14, 1440, 360, 1, false);
    position: relative;
    z-index: 1;
    color: inherit;
