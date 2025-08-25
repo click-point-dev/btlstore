@@ -418,17 +418,18 @@
 								<h4 class="h4 consultation-form__title text-white">Узнайте, сколько будет стоить ваше мероприятие</h4>
 							</div>
 							<div>
-								<form class="form-2__form text-button-pressed form" action="" method='post'>
+								<form class="form-2__form form " action="" method='post'>
 									<div class="form__loader">
 										<img src="/images/SvgSpinnersBlocksScale.svg" alt="" />
 									</div>
-									<div class='form-2__row'>
-										<input class="input form-2__input form-2-input" id='form-2-name' type="text" name='name' placeholder=''>
+									<div class='form-2__row text-button-pressed'>
+										<input class="input form-2__input form-2-input text-button-pressed" id='form-2-name' type="text" name='name'
+											placeholder=''>
 										<label for="form-2-name">Имя</label>
 									</div>
 									<div class='form-2__row'>
 										<div class='search-with-dropdown' data-search-block>
-											<div class="search-input dropdown-initializer" data-search-input>
+											<div class="search-input dropdown-initializer text-button-pressed" data-search-input>
 												<input class="input form-2__input form-2-input" id='city' type="text" autocomplete="off"
 													autocomplete="new-password" name='city' placeholder=''>
 												<label for="city">Город</label>
@@ -442,12 +443,17 @@
 											</div>
 										</div>
 									</div>
-									<div class='form-2__row'><input class="input form-2__input form-2-input" id='form-2-phone' type="tel"
-											name='phone' placeholder=''><label for="form-2-phone">Телефон</label></div>
-									<div class='form-2__row'><textarea class="input form-2__input form-2-input" id='form-2-budget' type="text"
-											name='comment' placeholder=''></textarea><label for="form-2-budget">Опишите, что вам требуется
-											организовать</label></div>
-									<div class='form-2__row'>
+									<div class='form-2__row text-button-pressed'>
+										<input class="input form-2__input form-2-input" id='form-2-phone' type="tel" name='phone' placeholder=''>
+										<label for="form-2-phone">Телефон</label>
+									</div>
+									<div class='form-2__row text-button-pressed'>
+										<textarea class="input form-2__input form-2-input" id='form-2-budget' type="text" name='comment'
+											placeholder=''></textarea>
+										<label for="form-2-budget">Опишите, что вам требуется
+											организовать</label>
+									</div>
+									<div class='form-2__row text-button-pressed'>
 										<div class='checkbox text-xxs checkbox-width-14' data-checkbox>
 											<label class=''>
 												<input type="checkbox" name='agreement'>
