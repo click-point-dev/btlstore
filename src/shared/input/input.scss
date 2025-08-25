@@ -1,3 +1,11 @@
+.input {
+   .bg-accent1:has(&) & {
+      &:is(:hover, :focus-visible) {
+         border-bottom-color: white;
+      }
+   }
+}
+
 .input-block {
    position: relative;
    // z-index: 100;
