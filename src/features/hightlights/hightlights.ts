@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import Swiper from 'swiper';
-import { Keyboard, Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 import { documentLock, documentUnlock } from '../../shared';
 // import 'swiper/css';
 
@@ -28,9 +28,8 @@ export function hightlights(): void {
 
    function sliderInit(target: HTMLElement) {
       const bulletActiveClass = 'swiper-pagination-bullet-active';
-      const sliderDelay = 5000;
       new Swiper(target.querySelector<HTMLElement>('.swiper'), {
-         modules: [Keyboard, Pagination, Autoplay, Navigation],
+         modules: [Keyboard, Pagination, Navigation],
          pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -43,10 +42,6 @@ export function hightlights(): void {
          navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-         },
-         autoplay: {
-            delay: sliderDelay,
-            pauseOnMouseEnter: true,
          },
          speed: 500,
          slidesPerView: 1,
