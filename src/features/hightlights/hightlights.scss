@@ -1,0 +1,200 @@
+.hightlights {
+   display: none;
+   visibility: hidden;
+   @media screen and (width < 575.98px) {
+      display: block;
+      visibility: visible;
+      position: relative;
+      .hightlights-init {
+         // .hightlights-init__content
+
+         &__content {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+         }
+
+         // .hightlights-init__button
+
+         &__button {
+            flex: 0 1 25%;
+            max-width: 72px;
+            cursor: pointer;
+         }
+
+         // .hightlights-init__image
+
+         &__image {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            border-width: 2px !important;
+
+            img {
+               height: 100%;
+               width: 100%;
+               object-fit: cover;
+            }
+         }
+
+         // .hightlights-init__title
+
+         &__title {
+            text-align: center;
+         }
+      }
+
+      .hightlights-content {
+         display: none;
+         opacity: 0;
+
+         .logo,
+         .logo a {
+            width: unset;
+            // height: 46px;
+            height: 100%;
+         }
+
+         position: fixed;
+         z-index: 200;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100dvh;
+         // z-index: 200;
+         background-color: rgba(57, 57, 57, 0.283);
+         backdrop-filter: blur(10px);
+
+         .hightlights-backlink {
+            position: absolute;
+            z-index: 2;
+            top: 74px;
+            left: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            div:first-child {
+               width: 15px;
+               aspect-ratio: 1;
+               border-left: 2px solid white;
+               border-bottom: 2px solid white;
+               border-bottom-left-radius: 2px;
+               rotate: 45deg;
+            }
+
+            div:has(img) {
+               width: 32px;
+               aspect-ratio: 1;
+               border-radius: 100%;
+               overflow: hidden;
+               border: 2px solid white;
+
+               img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+            }
+         }
+
+         .swiper-slide {
+            // width: 100vw;
+            // height: 100dvh;
+         }
+
+         img {
+            width: 100vw;
+            height: 100dvh;
+            object-fit: contain;
+         }
+
+         .hightlights-navigation {
+            position: absolute;
+            z-index: 3;
+            height: 46px;
+            width: min(324px, 100%);
+            bottom: 20px;
+            left: 50%;
+            translate: -50% 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding-inline: 10px;
+
+            div:has(> .logo) {
+               height: inherit;
+               padding-block: 6px;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+               padding: 10px;
+               i {
+                  display: block;
+                  width: 10px;
+                  height: 10px;
+                  border-left: 2px solid $accent1;
+                  border-bottom: 2px solid $accent1;
+                  border-bottom-left-radius: 2px;
+                  rotate: 45deg;
+               }
+            }
+
+            .swiper-button-next {
+               scale: -1 -1;
+            }
+         }
+
+         .swiper-pagination {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            gap: 6px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px;
+
+            .swiper-pagination-bullet {
+               flex-grow: 1;
+               height: 3px;
+               text-align: center;
+               font-size: 12px;
+               background-color: white;
+               border-radius: 1px;
+               overflow: hidden;
+            }
+
+            .swiper-pagination-bullet-active {
+               position: relative;
+               color: #fff;
+
+               i {
+                  content: '';
+                  position: absolute;
+                  inset: 0;
+                  top: 0;
+                  // left: 0;
+                  background-color: $accent1;
+                  // animation: progress 5s forwards linear;
+
+                  @keyframes progress {
+                     0% {
+                        transform: translateX(-100px);
+                     }
+                     100% {
+                        transform: translateX(0px);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

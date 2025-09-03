@@ -1,5 +1,5 @@
 import { hideLoader } from './app';
-import { tabs, spollers } from './features';
+import { tabs, spollers, hightlights } from './features';
 // import { spollers } from './features/spollers';
 import './index.scss';
 import {
@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
    if (screenWidth <= 1280) {
       sliderParams();
    }
+   hightlights();
    form();
 });
 
