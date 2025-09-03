@@ -153,6 +153,12 @@
    // .main__about
 
    &__about {
+      .about__wrapper {
+         display: flex;
+         gap: 20px;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
    }
 }
 .about {
