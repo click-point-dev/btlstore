@@ -35,3 +35,8 @@
    @include adaptiveValue('border-radius', 30, 10);
    overflow: hidden;
 }
+
+.radius-full {
+   border-radius: 9999px;
+   overflow: hidden;
+}
