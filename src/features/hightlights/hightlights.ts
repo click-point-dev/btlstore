@@ -13,7 +13,7 @@ export function hightlights(): void {
       const timeline = gsap.timeline();
 
       timeline.to(target, { display: 'block', opacity: 1 });
-      console.log('mount', target);
+      // console.log('mount', target);
 
       return timeline;
    }
@@ -21,7 +21,7 @@ export function hightlights(): void {
       const timeline = gsap.timeline();
 
       timeline.to(target, { display: 'none', opacity: 0 });
-      console.log('unmount', target);
+      // console.log('unmount', target);
 
       return timeline;
    }
@@ -29,7 +29,7 @@ export function hightlights(): void {
    function sliderInit(target: HTMLElement) {
       const bulletActiveClass = 'swiper-pagination-bullet-active';
       const sliderDelay = 5000;
-      const sliderHightlights = new Swiper(target.querySelector<HTMLElement>('.swiper'), {
+      new Swiper(target.querySelector<HTMLElement>('.swiper'), {
          modules: [Keyboard, Pagination, Autoplay, Navigation],
          pagination: {
             el: '.swiper-pagination',
@@ -96,39 +96,4 @@ export function hightlights(): void {
          });
       });
    });
-
-   // hightlightsContentBlocks.forEach(item => {
-   //    const bulletActiveClass = 'swiper-pagination-bullet-active';
-   //    const sliderDelay = 5000;
-   //    const sliderHightlights = new Swiper(item.querySelector<HTMLElement>('.swiper'), {
-   //       modules: [Keyboard, Pagination, Autoplay, Navigation],
-   //       // If we need pagination
-   //       pagination: {
-   //          el: '.swiper-pagination',
-   //          clickable: true,
-   //          bulletActiveClass: bulletActiveClass,
-   //          renderBullet: function (_, className) {
-   //             return /*html*/ `<span class='${className}'><i></i></span>`;
-   //          },
-   //       },
-
-   //       // Navigation arrows
-   //       navigation: {
-   //          nextEl: '.swiper-button-next',
-   //          prevEl: '.swiper-button-prev',
-   //       },
-   //       autoplay: {
-   //          delay: sliderDelay,
-   //          pauseOnMouseEnter: true,
-   //       },
-   //       speed: 500,
-   //       // initialSlide: 2,
-   //       slidesPerView: 1,
-   //       centeredSlides: true,
-   //       loop: true,
-   //       keyboard: {
-   //          enabled: true,
-   //       },
-   //    });
-   // });
 }
