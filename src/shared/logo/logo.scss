@@ -1,5 +1,6 @@
 .logo {
-   @include adaptiveValue('width', 333, 160, 1920, 1100, 1, false);
+   @include adaptiveValue('width', 333, 160, 1920, 1100, 1);
+   text-align: center;
    // height: 100%;
    a {
       display: inline-block;
